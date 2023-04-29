@@ -77,5 +77,6 @@ github: publish
 
 requirements:
 	pip-compile --output-file requirements.txt requirements.in --resolver=backtracking
+	pip install -r requirements.txt
 
 .PHONY: html help clean regenerate serve serve-global devserver publish github
