@@ -11,6 +11,9 @@ TIMEZONE = 'Pacific/Auckland'
 
 DEFAULT_LANG = 'en'
 
+OUTPUT_PATH = 'docs/'
+OUTPUT_RETENTION = ["CNAME"]
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
