@@ -1,4 +1,4 @@
 pelican
-pelican-pandoc-reader
+# pelican-pandoc-reader
 invoke
 livereload
