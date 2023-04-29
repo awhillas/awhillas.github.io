@@ -1,6 +1,9 @@
 AUTHOR = 'Alexander Whillas'
-SITENAME = 'Too Much Information'
-SITEURL = 'http://alexander.whillas.com`~~~'
+SITENAME = 'Alexander Whillas\' Weblog'
+SITEURL = ''
+# SITEURL = 'http://alexander.whillas.com'
+
+THEME = "/home/alex/dev/opp/pelican-themes/mnmlist"
 
 PATH = 'content'
 
@@ -22,7 +25,7 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
+SOCIAL = (('Sebastian Sequoiah-Grayson, Logic and Philosophy are his game', 'http://logicalrockpools.com/'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = False
