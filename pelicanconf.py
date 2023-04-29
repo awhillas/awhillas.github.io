@@ -1,6 +1,5 @@
 AUTHOR = 'Alexander Whillas'
 SITENAME = 'Alexander Whillas\' Weblog'
-SITEURL = 'https://alexander.whillas.com/'
 # SITEURL = 'http://alexander.whillas.com'
 
 THEME = "/home/alex/dev/opp/pelican-themes/mnmlist"
