@@ -1,6 +1,6 @@
 AUTHOR = 'Alexander Whillas'
 SITENAME = 'Too Much Information'
-SITEURL = ''
+SITEURL = 'http://alexander.whillas.com`~~~'
 
 PATH = 'content'
 
