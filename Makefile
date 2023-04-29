@@ -75,5 +75,7 @@ github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
 
+requirements:
+	pip-compile --output-file requirements.txt requirements.in --resolver=backtracking
 
 .PHONY: html help clean regenerate serve serve-global devserver publish github

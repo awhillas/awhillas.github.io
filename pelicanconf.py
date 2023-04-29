@@ -12,6 +12,7 @@ TIMEZONE = 'Pacific/Auckland'
 DEFAULT_LANG = 'en'
 
 OUTPUT_PATH = 'docs/'
+DELETE_OUTPUT_DIRECTORY = True
 OUTPUT_RETENTION = ["CNAME"]
 
 # Feed generation is usually not desired when developing
