@@ -36,11 +36,29 @@
 </blockquote>
 <p>This made me think of what used to be called &ldquo;online learning&rdquo; or real-time learning<sup id="fnref:online"><a class="footnote-ref" href="#fn:online">1</a></sup>.</p>
 <p>So now I&rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&rsquo;m <a href="/a-new-hope.html">learning Rust</a> incidentally.</p>
+<h2 id="predator-and-prey">Predator and Prey<a class="headerlink" href="#predator-and-prey" title="Permanent link">&para;</a></h2>
+<p>The first experiment I&rsquo;m going to try is a simple hunter-prey simulation like this</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tVNoetVLuQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>What <a href="https://www.youtube.com/@PezzzasWork">Pezzza</a> is doing here is to take a fixed architecture neural network (NN) with input from a visual field, lines that trace out from the agent and detect the presence of ether friend or foe, and fully connect them to two outputs: speed and direction.</p>
+<p><img alt="Pezzza's agent Neural Network" src="/images/Pezzzas_NN.png" /></p>
+<p>Then, instead of using backpropagation to tune the NN&rsquo;s weights he is choosing them randomly and letting natural selection kill off the bad ones<sup id="fnref:mutation"><a class="footnote-ref" href="#fn:mutation">2</a></sup> while the ones that survive long enough to multiply propagate. This allows him to train a NN without an objective function.</p>
+<p>I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.</p>
+<h2 id="in-search-of-an-objective">In search of an objective<a class="headerlink" href="#in-search-of-an-objective" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go">AlphaZero</a> they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.</p>
+<p>From the paper <a href="https://arxiv.org/pdf/1712.01815.pdf">Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</a></p>
+<p>to be continued&hellip;<sup id="fnref:wip"><a class="footnote-ref" href="#fn:wip">3</a></sup></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:online">
 <p>&ldquo;Real-time&rdquo; might be a better term as &ldquo;online&rdquo; implies the internet these days.&#160;<a class="footnote-backref" href="#fnref:online" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:mutation">
+<p>Possibly he&rsquo;s also mutating the offspring in order to get variation into the population. There might be crossover, the splicing of genes, by randomly selecting one of the other survivors to mate/share-genes with.&#160;<a class="footnote-backref" href="#fnref:mutation" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wip">
+<p>This whole page is a work-in-progress and is just to document, and help me work through my ideas&#160;<a class="footnote-backref" href="#fnref:wip" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

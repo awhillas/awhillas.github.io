@@ -16,6 +16,32 @@ He goes on to say that he believes the Chinese Room does not understand even if 
 
 This made me think of what used to be called "online learning" or real-time learning[^online].
 
+[^online]: "Real-time" might be a better term as "online" implies the internet these days.
+
 So now I'm interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I'm [learning Rust]({filename}/a-new-hope.md) incidentally.
 
-[^online]: "Real-time" might be a better term as "online" implies the internet these days.
+## Predator and Prey
+
+The first experiment I'm going to try is a simple hunter-prey simulation like this
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tVNoetVLuQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+What [Pezzza](https://www.youtube.com/@PezzzasWork) is doing here is to take a fixed architecture neural network (NN) with input from a visual field, lines that trace out from the agent and detect the presence of ether friend or foe, and fully connect them to two outputs: speed and direction.
+
+![Pezzza's agent Neural Network]({static}/images/Pezzzas_NN.png)
+
+Then, instead of using backpropagation to tune the NN's weights he is choosing them randomly and letting natural selection kill off the bad ones[^mutation] while the ones that survive long enough to multiply propagate. This allows him to train a NN without an objective function.
+
+[^mutation]: Possibly he's also mutating the offspring in order to get variation into the population. There might be crossover, the splicing of genes, by randomly selecting one of the other survivors to mate/share-genes with.
+
+I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.
+
+## In search of an objective
+
+[AlphaZero](https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go) they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.
+
+From the paper [Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm](https://arxiv.org/pdf/1712.01815.pdf)
+
+to be continued...[^wip]
+
+[^wip]: This whole page is a work-in-progress and is just to document, and help me work through my ideas
