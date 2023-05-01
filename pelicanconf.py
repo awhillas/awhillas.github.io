@@ -2,7 +2,8 @@ AUTHOR = 'Alexander Whillas'
 SITENAME = 'Alexander Whillas'
 # SITEURL = 'http://alexander.whillas.com'
 
-THEME = "/home/alex/dev/opp/pelican-themes/cid" # best!
+# THEME = "/home/alex/dev/opp/pelican-themes/flex"
+THEME = "/home/alex/dev/opp/pelican_themes/Pelican-Cid" # best!
 
 LANDING_PAGE_ABOUT = "Something about me"
 
