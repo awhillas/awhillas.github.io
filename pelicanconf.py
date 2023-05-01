@@ -1,8 +1,10 @@
 AUTHOR = 'Alexander Whillas'
-SITENAME = 'Alexander Whillas\' Weblog'
+SITENAME = 'Alexander Whillas'
 # SITEURL = 'http://alexander.whillas.com'
 
-THEME = "/home/alex/dev/opp/pelican-themes/mnmlist"
+THEME = "/home/alex/dev/opp/pelican-themes/cid" # best!
+
+LANDING_PAGE_ABOUT = "Something about me"
 
 PATH = 'content'
 
