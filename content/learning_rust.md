@@ -1,7 +1,7 @@
 ---
 Title: Learning Rust
 date: 2023-04-29
-Category: Programming, Rust
+Category: Rust
 ---
 
 ## I'm learning Rust!
