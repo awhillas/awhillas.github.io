@@ -4,7 +4,7 @@ date: 2023-04-29
 Category: Rust
 ---
 
-## I'm learning Rust!
+But why...?
 
 Its always good to make decision based on data.
 
@@ -29,3 +29,10 @@ But its still early days and I think these issues will be address in time.
 [^young]: The average age of C++ devs is over 40 these days, see [Q2 and Q3](https://isocpp.org/files/papers/CppDevSurvey-2022-summary.pdf), also Q6 notes the major pain point is "Managing libraries my application depends on".
 
 [^everytime]: This is why Netflix and Spotify are unicorns despite the fact that you can download everything they publish on torrents for free.
+
+# First steps
+
+Some projects I'm thinking of starting
+
+- Chess engine - or now I'm thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?
+- Kids, open-world, adventure game. I'm thinking something like Don't Starve (but less scary), or Stardew valley (with less detail). I'm thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). I was going to call it Cave Boy. Have been looking at [Bevy](https://bevyengine.org/), an [ECS](https://www.wikiwand.com/en/Entity_component_system) game system which is fairly advanced. Bevy does have a hard time with vector graphics but apparently you can [use the ECS system without the rest](https://www.reddit.com/r/bevy/comments/131eryb/ecs_without_the_rest/).

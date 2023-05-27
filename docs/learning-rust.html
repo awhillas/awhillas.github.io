@@ -37,7 +37,7 @@
         </header>
 
         <article>
-            <h2 id="im-learning-rust">I&rsquo;m learning Rust!<a class="headerlink" href="#im-learning-rust" title="Permanent link">&para;</a></h2>
+            <p>But why&hellip;?</p>
 <p>Its always good to make decision based on data.</p>
 <p><img alt="Graph from Stackoverflow Trends. Extrapolate the lines..." src="/images/cpp_vs_rust_2023.svg" /></p>
 <p>I&rsquo;m interested in Rust as I predict it will overtake C++ in popularity within the next 1-2 years if the trends in the above graph from <a href="https://insights.stackoverflow.com/trends?tags=c%2B%2B%2Crust">Stackoverflow Trends</a> continues. Rust is growing in popularity exponentially and C++ seems to have a linear decline.</p>
@@ -48,6 +48,12 @@
 <p><img alt="C++ vs Rust meme" src="/images/cpp_vs_rust_meme.png" /></p>
 <p>No native linear algebra libraries or <a href="https://www.reddit.com/r/rust/comments/smdl3m/rust_and_scientifichighperformance_computing/">Scientific/High-Performance Computing</a> (HPC). It does have bindings for OpenBLAS a C++ lib but its apparently a nightmare to get working cross platform. This holds it back from deep learning and general data science which both rely heavily on matrix operations.</p>
 <p>But its still early days and I think these issues will be address in time.</p>
+<h1 id="first-steps">First steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h1>
+<p>Some projects I&rsquo;m thinking of starting</p>
+<ul>
+<li>Chess engine - or now I&rsquo;m thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?</li>
+<li>Kids, open-world, adventure game. I&rsquo;m thinking something like Don&rsquo;t Starve (but less scary), or Stardew valley (with less detail). I&rsquo;m thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). I was going to call it Cave Boy. Have been looking at <a href="https://bevyengine.org/">Bevy</a>, an <a href="https://www.wikiwand.com/en/Entity_component_system">ECS</a> game system which is fairly advanced. Bevy does have a hard time with vector graphics but apparently you can <a href="https://www.reddit.com/r/bevy/comments/131eryb/ecs_without_the_rest/">use the ECS system without the rest</a>.</li>
+</ul>
 <div class="footnote">
 <hr />
 <ol>
@@ -62,7 +68,7 @@
         </article>
 
         <footer>
-            <p>This entry is posted in <a href="/category/programming-rust.html">Programming, Rust</a>.</p>
+            <p>This entry is posted in <a href="/category/rust.html">Rust</a>.</p>
         </footer>
 
 
