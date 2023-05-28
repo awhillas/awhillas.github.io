@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>    Solid Pod Server
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/cid.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="container">
+
+<header class="blog-header">
+    <h1><a href="">Alexander Whillas</a></h1>
+    <p></p>
+    <nav>
+        <a href="/">INDEX</a>
+        <a href="/archives">ARCHIVES</a>
+        <a href="/categories">CATEGORIES</a>
+    </nav>
+</header>
+
+    <div class="post">
+
+        <header>
+            <h1>Solid Pod Server</h1>
+            <p class="date">Written on <time datetime="2023-05-28T00:00:00+12:00">May 28, 2023</time></p>
+        </header>
+
+        <article>
+            <p><a href="https://solidproject.org/">Solid</a> is an attempt at making standards for returning control over your data, getting it out of the big tech silos. You run your own content server called a Solid Pod that you keep all your data in and control access to third party web apps to via OAuth2.</p>
+<h1 id="some-background">Some background<a class="headerlink" href="#some-background" title="Permanent link">&para;</a></h1>
+<p>Tim Berners-Lee started the Solid Project which is a lose collection of standards, still in its infancy after more than a decade, which defines Solid Pod Servers, which are an online identity for you, described in Turtle/RDF and a place to keep your public and private data. The</p>
+<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
+<p>I was thinking this might take off more if it was easy to deploy a personal solid server on a cloud provider where storage is cheap and you could use lambda/cloud functions to do the serving i.e. your not paying for them when they are not being used. Uses OAuth2 as authentication and the server is just a web server so all the components are already available as Rust crates, just have to bring it together. I&rsquo;ve also seen some examples of using <a href="https://github.com/nogibjj/rust-mlops-template/tree/main/lambdathreads">Rust for AWS lambda functions</a> and apparently is much cheaper because of the speedup.</p>
+<h2 id="persistent-storage-on-the-cheap">Persistent storage on the cheap?<a class="headerlink" href="#persistent-storage-on-the-cheap" title="Permanent link">&para;</a></h2>
+<p>The OAuth2 server needs to some persistent state to track the sessions and their details. Persistent state can be expensive in cloud as databases are not cheap.</p>
+<ul>
+<li>DynamoDB on AWS is <a href="https://aws.amazon.com/free/database/?p=ft&amp;z=subnav&amp;loc=3">aways free</a> under a certain amount (which it should be). There are <a href="https://docs.aws.amazon.com/sdk-for-rust/latest/dg/rust_dynamodb_code_examples.html">Rust examples</a>. Does force vendor lock in to AWS :( There are <a href="https://docs.aws.amazon.com/sdk-for-rust/latest/dg/rust_dynamodb_code_examples.html">examples using the Rust SDK</a></li>
+<li>AWS <a href="https://aws.amazon.com/simpledb/">SimpleDB</a>: Amazon SimpleDB is a highly available NoSQL data store that offloads the work of database administration. 25 SimpleDB Machine Hours and 1 GB of Storage for free each month. Sadlt there are no examples online for using SimpleDB and rust :(</li>
+<li>Keep a SQLite file in a bucket and load it for every request? Vendor agnostic but might be slow?</li>
+</ul>
+        </article>
+
+        <footer>
+            <p>This entry is posted in:
+                    <a href="/category/rust.html">Rust</a>, 
+                    <a href="/category/solid.html">Solid</a>
+            </p>
+        </footer>
+
+
+    </div>
+
+
+<footer class="blog-footer">
+
+    <ul class="nav">
+    </ul>
+
+    <p class="disclaimer">
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.
+    </p>
+</footer>
+            </div>
+    </body>
+</html>

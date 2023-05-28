@@ -45,11 +45,14 @@
         {% endfor %}
     </address>
     {% endif %}
-    {% if article.category %}
+    {% comment %} {% if article.category %}
     <div class="category">
         Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
     </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
+    {% for cat in article.categories or [article.category] %}
+      <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>{{ ', ' if not loop.last }}
+    {% endfor %}
     {% if article.tags %}
     <div class="tags">
         Tags:

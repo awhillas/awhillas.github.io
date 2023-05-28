@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file=requirements.txt --resolver=backtracking requirements.in
 #
-beautifulsoup4==4.12.2
-    # via pelican-pandoc-reader
 blinker==1.6.2
     # via pelican
 docutils==0.19
@@ -20,8 +18,6 @@ livereload==2.6.3
     # via -r requirements.in
 markdown-it-py==2.2.0
     # via rich
-markdown-word-count==0.0.1
-    # via pelican-pandoc-reader
 markupsafe==2.1.2
     # via jinja2
 mdurl==0.1.2
@@ -29,8 +25,8 @@ mdurl==0.1.2
 pelican==4.8.0
     # via
     #   -r requirements.in
-    #   pelican-pandoc-reader
-pelican-pandoc-reader==1.2.0
+    #   pelican-more-categories
+pelican-more-categories==0.1.0
     # via -r requirements.in
 pygments==2.15.1
     # via
@@ -42,20 +38,12 @@ pytz==2023.3
     # via
     #   feedgenerator
     #   pelican
-pyyaml==5.4.1
-    # via pelican-pandoc-reader
 rich==13.3.5
     # via pelican
-ruamel-yaml==0.17.21
-    # via pelican-pandoc-reader
-ruamel-yaml-clib==0.2.7
-    # via ruamel-yaml
 six==1.16.0
     # via
     #   livereload
     #   python-dateutil
-soupsieve==2.4.1
-    # via beautifulsoup4
 tornado==6.3.1
     # via livereload
 unidecode==1.3.6
