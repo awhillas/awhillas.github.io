@@ -1,7 +1,10 @@
 ---
 Title: Learning Rust
+summary: Why I'm learning Rust and how I'm doing it.
 date: 2023-04-29
+Modified: 2023-06-05
 Category: Rust, Software Engineering
+Authors: Alexander Whillas
 ---
 
 ## But why...?
@@ -30,10 +33,18 @@ But its still early days and I think these issues will be address in time.
 
 [^everytime]: This is why Netflix and Spotify are unicorns despite the fact that you can download everything they publish on torrents for free.
 
+# But How?
+
+Here are some materials I've been using:
+
+- [The Rust Lang Book video series](https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8) is quite handy to get up to speed on Rust quickly. Its basically going over the official [The Rust Programming Language Book](https://doc.rust-lang.org/book/) which takes you through all the features of Rust in a systematic way. I find someone going over the material (at double speed) seems to be easier than reading the material directly. But its not enough by itself. Need to apply what I've learning quickly or else it doesn't sink in.
+    - There is also an interactive [quiz based](https://rust-book.cs.brown.edu/) leaning aid that I just discovered while writing this. I have never been into puzzels that much but I know if you don't try to apply what you have just learnt
+- [Learn Bevy Engine 0.10 Beginner Tutorial Series](https://www.youtube.com/playlist?list=PLVnntJRoP85JHGX7rGDu6LaF3fmDDbqyd) [Bevy](https://bevyengine.org/) is an [ECS](https://www.wikiwand.com/en/Entity_component_system) game system. ECS are all the range in game development because they are fast because they take advantage of CPU caching. This tutorial series takes you from zero to build a basic interactive game and give you a template for your own project. Although I'm not familiar will all of Rust's syntax I find learning by doing the best strategy. I've just finished the first 10 episodes which is all there is at this time. Time to make my first game with this template.
+
 ## First steps
 
 Some projects I'm thinking of starting:
-
+- **An Educational Game** - Asher is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. The idea is some and I'm going to build it off the back of the Bevy tutorial I've been going through.
 - [Chess engine](https://github.com/awhillas/check) - or now I'm thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?
-- Kids, open-world, adventure game. I've started [prototyping in Python](https://github.com/awhillas/caveboy). I'm thinking something like Don't Starve (but less scary), or Stardew valley (with less detail). I'm thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). I was going to call it Cave Boy. Have been looking at [Bevy](https://bevyengine.org/), an [ECS](https://www.wikiwand.com/en/Entity_component_system) game system which is fairly advanced. Bevy does have a hard time with vector graphics but apparently you can [use the ECS system without the rest](https://www.reddit.com/r/bevy/comments/131eryb/ecs_without_the_rest/).
-- [Solid Pod Server]({filename}/solid-pod-server.md) - all in one content, authorisation and identity server.
+- **Cave Boy**, a kids, open-world, adventure game. I've started [prototyping in Python](https://github.com/awhillas/caveboy). I'm thinking something like Don't Starve (but less scary), or Stardew valley (with less detail) with a Captain Underpants sense of humour (i.e. potty). I'm thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). TODO: break this out into a full blog post (i will as I get more into it). I have some concept art already!
+- [Solid Pod Server]({filename}/solid-pod-server.md) - all in one identity/public+private content server with built in authorization (OAuth+). The hard part of Solid, becuase it was very boring, was trying to understand the standards which are verbose and incomplete. It also uses OAuth + OpenID Connect at the core of its authorization protocol which in itself was the hardest part, because its complicated and I found it hard to find a [straight forward explanation](https://www.youtube.com/results?search_query=oauth2+flow). (TODO: Break out into a separate blog post/page).
