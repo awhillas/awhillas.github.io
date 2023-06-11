@@ -1,6 +1,7 @@
 ---
 Title: Realtime Machine Learning
 date: 2023-04-29
+Modified: 2023-06-11
 Category: Machine Learning
 ---
 
@@ -35,6 +36,9 @@ Then, instead of using backpropagation to tune the NN's weights he is choosing t
 [^mutation]: Possibly he's also mutating the offspring in order to get variation into the population. There might be crossover, the splicing of genes, by randomly selecting one of the other survivors to mate/share-genes with.
 
 I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.
+
+There is also [this very similar approch](https://www.reddit.com/r/bevy/comments/1464kcq/i_built_a_self_driving_car_ai_using_rust_and_bevy/), in [Rust and using the Bevy framework](https://github.com/bones-ai/rust-drive-ai) which is exactly where I wanted to go with it.
+[AI learns to play retro game road fighter (Reinforcement learning)](https://www.youtube.com/watch?v=H7RWcNgE-6s&t=1s&ab_channel=BonesAI)
 
 ## In search of an objective
 
