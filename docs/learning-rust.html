@@ -33,7 +33,8 @@
 
         <header>
             <h1>Learning Rust</h1>
-            <p class="date">Written on <time datetime="2023-04-29T00:00:00+12:00">Apr 29, 2023</time></p>
+
+            <p class="date">Started <em><time datetime="2023-04-29T00:00:00+12:00">Apr 29, 2023</time></em> ; Updated <em>Jun 13, 2023</em></p>
         </header>
 
         <article>
@@ -58,11 +59,15 @@
 <li><a href="https://www.youtube.com/playlist?list=PLVnntJRoP85JHGX7rGDu6LaF3fmDDbqyd">Learn Bevy Engine 0.10 Beginner Tutorial Series</a> <a href="https://bevyengine.org/">Bevy</a> is an <a href="https://www.wikiwand.com/en/Entity_component_system">ECS</a> game system. ECS are all the range in game development because they are fast because they take advantage of CPU caching. This tutorial series takes you from zero to build a basic interactive game and give you a template for your own project. Although I&rsquo;m not familiar will all of Rust&rsquo;s syntax I find learning by doing the best strategy. I&rsquo;ve just finished the first 10 episodes which is all there is at this time. Time to make my first game with this template.</li>
 </ul>
 <h2 id="first-steps">First steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
-<p>Some projects I&rsquo;m thinking of starting:
-- <strong>An Educational Game</strong> - Asher is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. The idea is some and I&rsquo;m going to build it off the back of the Bevy tutorial I&rsquo;ve been going through.
-- <a href="https://github.com/awhillas/check">Chess engine</a> - or now I&rsquo;m thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?
-- <strong>Cave Boy</strong>, a kids, open-world, adventure game. I&rsquo;ve started <a href="https://github.com/awhillas/caveboy">prototyping in Python</a>. I&rsquo;m thinking something like Don&rsquo;t Starve (but less scary), or Stardew valley (with less detail) with a Captain Underpants sense of humour (i.e. potty). I&rsquo;m thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). TODO: break this out into a full blog post (i will as I get more into it). I have some concept art already!
-- <a href="/solid-pod-server.html">Solid Pod Server</a> - all in one identity/public+private content server with built in authorization (OAuth+). The hard part of Solid, because it was very boring, was trying to understand the standards which are verbose and incomplete. It also uses OAuth + OpenID Connect at the core of its authorization protocol which in itself was the hardest part, because its complicated and I found it hard to find a <a href="https://www.youtube.com/results?search_query=oauth2+flow">straight forward explanation</a>.</p>
+<p>Some projects I&rsquo;m thinking of starting or have started in current order of enthusiasm:</p>
+<ul>
+<li><a href="/alpha-betical-game-dev-log.html">Alphabetical Game</a> - My son is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. I&rsquo;m going to build it off the back of the Bevy tutorial I&rsquo;ve been going through.</li>
+<li><a href="/realtime-machine-learning.html">Online Machine Learning</a> - I&rsquo;ve seen some simple simulations on YouTube where people evolve neural networks (NN) to operate, embodied in a simple simulated environment. I want to do something similar but I want to do online/real-time training of the NN. I think this will lead to a more aware AI.</li>
+<li><a href="https://github.com/awhillas/check">Chess engine</a> - or now I&rsquo;m thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?</li>
+<li><a href="/solid-pod-server.html">Solid Pod Server</a> - all in one identity/public+private content server with built in authorization (OAuth+). The hard part of Solid, because it was very boring, was trying to understand the standards which are verbose and incomplete. It also uses OAuth + OpenID Connect at the core of its authorization protocol which in itself was the hardest part, because its complicated and I found it hard to find a <a href="https://www.youtube.com/results?search_query=oauth2+flow">straight forward explanation</a>.</li>
+<li><strong>Cave Boy</strong>, a kids, open-world, adventure game. I&rsquo;ve started <a href="https://github.com/awhillas/caveboy">prototyping in Python</a>. I&rsquo;m thinking something like Don&rsquo;t Starve (but less scary), or Stardew valley (with less detail) with a Captain Underpants sense of humour (i.e. potty). I&rsquo;m thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). TODO: break this out into a full blog post (i will as I get more into it). I have some concept art already!</li>
+</ul>
+<p>This list is getting long&hellip;</p>
 <div class="footnote">
 <hr />
 <ol>

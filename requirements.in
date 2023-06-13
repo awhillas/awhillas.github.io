@@ -1,4 +1,6 @@
+pip-tools
 pelican
+markdown
 # pelican-pandoc-reader
 invoke
 livereload

@@ -1,5 +1,6 @@
 ---
 Title: Solid Pod Server
+summary: Trying to get behind the linked data movement by following Tim Berners-Lee's latest crazy vision of the future of the web.
 date: 2023-05-28
 Category: Rust, Solid
 ---

@@ -1,5 +1,6 @@
 ---
 Title: Realtime Machine Learning
+summary: Experiments in online/real-time Machine learning.
 date: 2023-04-29
 Modified: 2023-06-11
 Category: Machine Learning

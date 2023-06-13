@@ -2,9 +2,8 @@
 Title: Learning Rust
 summary: Why I'm learning Rust and how I'm doing it.
 date: 2023-04-29
-Modified: 2023-06-05
+Modified: 2023-06-13
 Category: Rust, Software Engineering
-Authors: Alexander Whillas
 ---
 
 ## But why...?
@@ -43,8 +42,12 @@ Here are some materials I've been using:
 
 ## First steps
 
-Some projects I'm thinking of starting:
-- **An Educational Game** - Asher is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. The idea is some and I'm going to build it off the back of the Bevy tutorial I've been going through.
+Some projects I'm thinking of starting or have started in current order of enthusiasm:
+
+- [Alphabetical Game]({filename}/alphabetical.md) - My son is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. I'm going to build it off the back of the Bevy tutorial I've been going through.
+- [Online Machine Learning]({filename}/online_learning.md) - I've seen some simple simulations on YouTube where people evolve neural networks (NN) to operate, embodied in a simple simulated environment. I want to do something similar but I want to do online/real-time training of the NN. I think this will lead to a more aware AI.
 - [Chess engine](https://github.com/awhillas/check) - or now I'm thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?
-- **Cave Boy**, a kids, open-world, adventure game. I've started [prototyping in Python](https://github.com/awhillas/caveboy). I'm thinking something like Don't Starve (but less scary), or Stardew valley (with less detail) with a Captain Underpants sense of humour (i.e. potty). I'm thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). TODO: break this out into a full blog post (i will as I get more into it). I have some concept art already!
 - [Solid Pod Server]({filename}/solid-pod-server.md) - all in one identity/public+private content server with built in authorization (OAuth+). The hard part of Solid, because it was very boring, was trying to understand the standards which are verbose and incomplete. It also uses OAuth + OpenID Connect at the core of its authorization protocol which in itself was the hardest part, because its complicated and I found it hard to find a [straight forward explanation](https://www.youtube.com/results?search_query=oauth2+flow).
+- **Cave Boy**, a kids, open-world, adventure game. I've started [prototyping in Python](https://github.com/awhillas/caveboy). I'm thinking something like Don't Starve (but less scary), or Stardew valley (with less detail) with a Captain Underpants sense of humour (i.e. potty). I'm thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). TODO: break this out into a full blog post (i will as I get more into it). I have some concept art already!
+
+This list is getting long...
