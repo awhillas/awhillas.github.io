@@ -1,5 +1,5 @@
 ---
-Title: Alpha-Betical Game Dev Log
+Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
 Category: Rust, Software Engineering, Game Development
