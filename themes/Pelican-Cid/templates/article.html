@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ article.title|striptags}}
+{% endblock title %}
+
+{% block content %}
+
+    <div class="post">
+
+        <header>
+            <h1>{{ article.title }}</h1>
+
+            <p class="date">Started <em><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d, %Y') }}</time></em> {% if article.modified %}; Updated <em>{{ article.modified.strftime('%b %d, %Y') }}{% endif %}</em></p>
+        </header>
+
+        <article>
+            {{ article.content }}
+        </article>
+
+        <footer>
+            <p>This entry is posted in:
+                {% for cat in article.categories or [article.category] %}
+                    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>{{ ', ' if not loop.last }}
+                {% endfor %}
+            </p>
+        </footer>
+
+        {% include "disqus.html" %}
+
+    </div>
+
+{% endblock content %}
