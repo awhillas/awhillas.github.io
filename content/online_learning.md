@@ -2,7 +2,7 @@
 Title: Realtime Machine Learning
 summary: Experiments in online/real-time Machine learning.
 date: 2023-04-29
-Modified: 2023-06-11
+Modified: 2023-06-14
 Category: Machine Learning
 ---
 
@@ -46,6 +46,10 @@ There is also [this very similar approch](https://www.reddit.com/r/bevy/comments
 [AlphaZero](https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go) they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.
 
 From the paper [Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm](https://arxiv.org/pdf/1712.01815.pdf)
+
+## Predictive Models
+
+[Filip Piekniewski](http://blog.piekniewski.info/) has this idea of [predictive vision models](http://blog.piekniewski.info/2016/11/04/predictive-vision-in-a-nutshell/) which basically try to guess the next frame of video and there by model the world. One might look at this as the [language modelling](https://en.wikipedia.org/wiki/Language_model) task of vision. He's also suggesting adding online learning to this mix so the model trains and predicts at the same time, thus, according to Francois Chollet's thesis would make it adaptive and thus conscious? And he's got feedback from top back to bottom.
 
 to be continued...[^wip]
 
