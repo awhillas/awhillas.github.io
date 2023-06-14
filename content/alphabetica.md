@@ -5,6 +5,12 @@ date: 2023-06-11
 Category: Rust, Software Engineering, Game Development
 ---
 
+## 15th June, 2023 - Sound problems
+
+SO I have the button on the screen and it makes a sound when you press it. If you smash the button, which 5yos will do, it triggers so much that I fear the app will crash. I thought to try and fix this by installing a Bevy Kira extension but it very difficult to install. Will ask on some forums how to get it going. Don't want to lose momentum so I'll just use the built in stuff. Sound always plays second fiddle to graphics in games.
+
+Next I need to investigate evens in Bevy and get the letters spawning when the button is pressed. I'm thinking SVG for letters so I can go crazy with fonts.
+
 ## 13th June, 2023 - First steps
 
 So after watching a few game dev videos on YouTube about indie success stories, they seem to recommend keeping a game dev log to help with motivation. So here I am.
