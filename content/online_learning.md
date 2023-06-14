@@ -49,7 +49,7 @@ From the paper [Mastering Chess and Shogi by Self-Play with a General Reinforcem
 
 ## Predictive Models
 
-[Filip Piekniewski](http://blog.piekniewski.info/) has this idea of [predictive vision models](http://blog.piekniewski.info/2016/11/04/predictive-vision-in-a-nutshell/) which basically try to guess the next frame of video and there by model the world. One might look at this as the [language modelling](https://en.wikipedia.org/wiki/Language_model) task of vision. He's also suggesting adding online learning to this mix so the model trains and predicts at the same time, thus, according to Francois Chollet's thesis would make it adaptive and thus conscious? And he's got feedback from top back to bottom.
+[Filip Piekniewski](http://blog.piekniewski.info/) has this idea of [predictive vision models](http://blog.piekniewski.info/2016/11/04/predictive-vision-in-a-nutshell/) which basically try to guess the next frame of video and there by model the world. One might look at this as the [language modelling](https://en.wikipedia.org/wiki/Language_model) task of vision. He's also suggesting adding online learning to this mix so the model trains and predicts at the same time, thus, according to Francois Chollet's thesis would make it adaptive and thus conscious? And he's got feedback from top back to bottom. He carries on about [Associate Memory](https://www.tutorialspoint.com/artificial_neural_network/artificial_neural_network_associate_memory.htm) which is a type of NN (I need to look into)
 
 to be continued...[^wip]
 
