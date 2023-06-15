@@ -2,6 +2,7 @@
 Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
+Modified: 2023-06-15
 Category: Rust, Software Engineering, Game Development
 ---
 
@@ -11,6 +12,47 @@ SO I have the button on the screen and it makes a sound when you press it. If yo
 
 Next I need to investigate [events](https://bevy-cheatbook.github.io/programming/events.html) in Bevy and get the letters spawning when the button is pressed. I'm thinking SVG for letters so I can go crazy with fonts.
 
+### Bevy Events
+
+There are pretty simple. Four steps
+
+1. Create a plain public struct for the event
+
+```rust
+pub struct MyEvent {};
+```
+
+2. Register it on your main app
+
+```rust
+fn main() {
+    App::new()
+        .add_event::<MyEvent>()
+        ...
+}
+```
+
+3. Trigger events in a system using an EventWriter
+
+```rust
+fn some_system(
+    mut somthing_happened_event: EventWriter<MyEvent>,
+) {
+    somthing_happened_event.send(MyEvent{});
+}
+```
+
+4. Then receive the event in as many systems as you like
+
+```rust
+fn debug_system(
+    mut somthing_happened_events: EventReader<MyEvent>,
+) {
+    for event in somthing_happened_events.iter() {
+        println!("Somthing did indeed happen...");
+    }
+}
+```
 
 ## 13th June, 2023 - First steps
 

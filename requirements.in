@@ -1,7 +1,8 @@
 pip-tools
 pelican
+pelican-more-categories
+# pelican-syntax-highlighting
 markdown
-# pelican-pandoc-reader
 invoke
 livereload
-pelican-more-categories
+Pygments

@@ -10,7 +10,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/theme/css/cid.css">
+        <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/highlight.css">
+        <link href="http://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="http://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -20,12 +23,12 @@
             <div class="container">
 
 <header class="blog-header">
-    <h1><a href="">Alexander Whillas</a></h1>
+    <h1><a href="http://alexander.whillas.com">Alexander Whillas</a></h1>
     <p></p>
     <nav>
-        <a href="/">INDEX</a>
-        <a href="/archives">ARCHIVES</a>
-        <a href="/categories">CATEGORIES</a>
+        <a href="http://alexander.whillas.com/">INDEX</a>
+        <a href="http://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="http://alexander.whillas.com/categories">CATEGORIES</a>
     </nav>
 </header>
 
@@ -48,13 +51,13 @@
 <p>If you understand what you&rsquo;re doing then you can adapt what you&rsquo;re doing when the world changes you can learn and adapt and improve and if you don&rsquo;t understand what you&rsquo;re doing then you&rsquo;re stuck with a static skill and that&rsquo;s really how you tell the difference between understanding and not understanding</p>
 </blockquote>
 <p>This made me think of what used to be called &ldquo;online learning&rdquo; or real-time learning<sup id="fnref:online"><a class="footnote-ref" href="#fn:online">1</a></sup>.</p>
-<p>So now I&rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&rsquo;m <a href="/a-new-hope.html">learning Rust</a> incidentally.</p>
+<p>So now I&rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&rsquo;m <a href="http://alexander.whillas.com/a-new-hope.html">learning Rust</a> incidentally.</p>
 <h2 id="predator-and-prey">Predator and Prey<a class="headerlink" href="#predator-and-prey" title="Permanent link">&para;</a></h2>
 <p>The first experiment I&rsquo;m going to try is a simple hunter-prey simulation like this</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tVNoetVLuQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <p>What <a href="https://www.youtube.com/@PezzzasWork">Pezzza</a> is doing here is to take a fixed architecture neural network (NN) with input from a visual field, lines that trace out from the agent and detect the presence of ether friend or foe, and fully connect them to two outputs: speed and direction.</p>
-<p><img alt="Pezzza's agent Neural Network" src="/images/Pezzzas_NN.png" /></p>
+<p><img alt="Pezzza's agent Neural Network" src="http://alexander.whillas.com/images/Pezzzas_NN.png" /></p>
 <p>Then, instead of using backpropagation to tune the NN&rsquo;s weights he is choosing them randomly and letting natural selection kill off the bad ones<sup id="fnref:mutation"><a class="footnote-ref" href="#fn:mutation">2</a></sup> while the ones that survive long enough to multiply propagate. This allows him to train a NN without an objective function.</p>
 <p>I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.</p>
 <p>There is also <a href="https://www.reddit.com/r/bevy/comments/1464kcq/i_built_a_self_driving_car_ai_using_rust_and_bevy/">this very similar approch</a>, in <a href="https://github.com/bones-ai/rust-drive-ai">Rust and using the Bevy framework</a> which is exactly where I wanted to go with it.
@@ -83,7 +86,7 @@
 
         <footer>
             <p>This entry is posted in:
-                    <a href="/category/machine-learning.html">Machine Learning</a>
+                    <a href="http://alexander.whillas.com/category/machine-learning.html">Machine Learning</a>
             </p>
         </footer>
 
@@ -94,6 +97,9 @@
 <footer class="blog-footer">
 
     <ul class="nav">
+            <li><a href="https://twitter.com/awhillas">Twitter</a></li>
+            <li><a href="https://github.com/awhillas">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/whillas/">Linkedin</a></li>
     </ul>
 
     <p class="disclaimer">

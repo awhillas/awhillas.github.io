@@ -10,7 +10,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/theme/css/cid.css">
+        <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/highlight.css">
+        <link href="http://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="http://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -20,12 +23,12 @@
             <div class="container">
 
 <header class="blog-header">
-    <h1><a href="">Alexander Whillas</a></h1>
+    <h1><a href="http://alexander.whillas.com">Alexander Whillas</a></h1>
     <p></p>
     <nav>
-        <a href="/">INDEX</a>
-        <a href="/archives">ARCHIVES</a>
-        <a href="/categories">CATEGORIES</a>
+        <a href="http://alexander.whillas.com/">INDEX</a>
+        <a href="http://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="http://alexander.whillas.com/categories">CATEGORIES</a>
     </nav>
 </header>
 
@@ -34,13 +37,53 @@
         <header>
             <h1>Alphabetica Game Dev Log</h1>
 
-            <p class="date">Started <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em> </em></p>
+            <p class="date">Started <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em> ; Updated <em>Jun 15, 2023</em></p>
         </header>
 
         <article>
             <h2 id="15th-june-2023-sound-problems">15th June, 2023 - Sound problems<a class="headerlink" href="#15th-june-2023-sound-problems" title="Permanent link">&para;</a></h2>
 <p>SO I have the button on the screen and it makes a sound when you press it. If you smash the button, which 5yos will do, it triggers so much that I fear the app will crash. I thought to try and fix this by installing a Bevy Kira extension but it very difficult to install. Will ask on some forums how to get it going. Don&rsquo;t want to lose momentum so I&rsquo;ll just use the built in stuff. Sound always plays second fiddle to graphics in games.</p>
 <p>Next I need to investigate <a href="https://bevy-cheatbook.github.io/programming/events.html">events</a> in Bevy and get the letters spawning when the button is pressed. I&rsquo;m thinking SVG for letters so I can go crazy with fonts.</p>
+<h3 id="bevy-events">Bevy Events<a class="headerlink" href="#bevy-events" title="Permanent link">&para;</a></h3>
+<p>There are pretty simple. Four steps</p>
+<ol>
+<li>Create a plain public struct for the event</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">MyEvent</span><span class="w"> </span><span class="p">{};</span>
+</code></pre></div>
+
+<ol>
+<li>Register it on your main app</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">App</span>::<span class="n">new</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">add_event</span>::<span class="o">&lt;</span><span class="n">MyEvent</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="w">        </span><span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>Trigger events in a system using an EventWriter</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">some_system</span><span class="p">(</span>
+<span class="w">    </span><span class="k">mut</span><span class="w"> </span><span class="n">somthing_happened_event</span>: <span class="nc">EventWriter</span><span class="o">&lt;</span><span class="n">MyEvent</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">somthing_happened_event</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">MyEvent</span><span class="p">{});</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>Then receive the event in as many systems as you like</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">debug_system</span><span class="p">(</span>
+<span class="w">    </span><span class="k">mut</span><span class="w"> </span><span class="n">somthing_happened_events</span>: <span class="nc">EventReader</span><span class="o">&lt;</span><span class="n">MyEvent</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">somthing_happened_events</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Somthing did indeed happen...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h2 id="13th-june-2023-first-steps">13th June, 2023 - First steps<a class="headerlink" href="#13th-june-2023-first-steps" title="Permanent link">&para;</a></h2>
 <p>So after watching a few game dev videos on YouTube about indie success stories, they seem to recommend keeping a game dev log to help with motivation. So here I am.</p>
 <p>My son is five and a half and beginning to learn to read. Tonight actually he spelt out the word &lsquo;wash&rsquo; in a Sesame Street book I was reading him to my amazement. I wanted to make a game for him to help him with the sounding out of letters and ultimately help him to sound out letters. My only fear is that it will take too long and he wont need it by the time I finish.</p>
@@ -62,9 +105,9 @@
 
         <footer>
             <p>This entry is posted in:
-                    <a href="/category/rust.html">Rust</a>, 
-                    <a href="/category/software-engineering.html">Software Engineering</a>, 
-                    <a href="/category/game-development.html">Game Development</a>
+                    <a href="http://alexander.whillas.com/category/rust.html">Rust</a>, 
+                    <a href="http://alexander.whillas.com/category/software-engineering.html">Software Engineering</a>, 
+                    <a href="http://alexander.whillas.com/category/game-development.html">Game Development</a>
             </p>
         </footer>
 
@@ -75,6 +118,9 @@
 <footer class="blog-footer">
 
     <ul class="nav">
+            <li><a href="https://twitter.com/awhillas">Twitter</a></li>
+            <li><a href="https://github.com/awhillas">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/whillas/">Linkedin</a></li>
     </ul>
 
     <p class="disclaimer">
