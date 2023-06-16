@@ -10,7 +10,11 @@
         <header>
             <h1>{{ article.title }}</h1>
 
-            <p class="date">Started <em><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d, %Y') }}</time></em> {% if article.modified %}; Updated <em>{{ article.modified.strftime('%b %d, %Y') }}{% endif %}</em></p>
+            <p class="date">Started
+                <em><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d, %Y') }}</time></em>
+                {% if article.modified %}; Updated
+                    <em>{{ article.modified.strftime('%b %d, %Y') }}
+                {% endif %}</em></p>
         </header>
 
         <article>

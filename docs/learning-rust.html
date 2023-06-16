@@ -9,6 +9,7 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="http://alexander.whillas.com/theme/favicon.ico">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/cid.css">
         <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/highlight.css">
@@ -37,22 +38,26 @@
         <header>
             <h1>Learning Rust</h1>
 
-            <p class="date">Started <em><time datetime="2023-04-29T00:00:00+12:00">Apr 29, 2023</time></em> ; Updated <em>Jun 13, 2023</em></p>
+            <p class="date">Started
+                <em><time datetime="2023-04-29T00:00:00+12:00">Apr 29, 2023</time></em>
+; Updated
+                    <em>Jun 13, 2023
+</em></p>
         </header>
 
         <article>
-            <h2 id="but-why">But why&hellip;?<a class="headerlink" href="#but-why" title="Permanent link">&para;</a></h2>
+            <h2>But why&hellip;?</h2>
 <p>Its always good to make decision based on data.</p>
 <p><img alt="Graph from Stackoverflow Trends. Extrapolate the lines..." src="http://alexander.whillas.com/images/cpp_vs_rust_2023.svg" /></p>
 <p>I&rsquo;m interested in Rust as I predict it will overtake C++ in popularity within the next 1-2 years if the trends in the above graph from <a href="https://insights.stackoverflow.com/trends?tags=c%2B%2B%2Crust">Stackoverflow Trends</a> continues. Rust is growing in popularity exponentially and C++ seems to have a linear decline.</p>
 <p>The reasons for this, I think, are many.</p>
 <p>Rust has a built in package manager which also handles compilation and makes the developer experience easy. Easy always trumps difficult, every time<sup id="fnref:everytime"><a class="footnote-ref" href="#fn:everytime">2</a></sup>. This is a huge boon to productivity and also a huge breath of fresh air after C++. It took me about 6 weeks to get started with C++ (finding a package manager amongst many, trying to understand CMake). I think what is happening is young<sup id="fnref:young"><a class="footnote-ref" href="#fn:young">1</a></sup>, C++ developers are trying Rust and then being won over by this after struggling through C++.</p>
 <p>Rust has a lot of modern language features like, what JavaScript would call &ldquo;promises&rdquo;. And they are used consistently and everywhere within the standard lib. Some C++ people say that the syntax is horrible, but its just different and I find it more concise and not littered with as much noise as C++.</p>
-<h2 id="current-problems-with-rust">Current problems with Rust<a class="headerlink" href="#current-problems-with-rust" title="Permanent link">&para;</a></h2>
+<h2>Current problems with Rust</h2>
 <p><img alt="C++ vs Rust meme" src="http://alexander.whillas.com/images/cpp_vs_rust_meme.png" /></p>
 <p>No native linear algebra libraries or <a href="https://www.reddit.com/r/rust/comments/smdl3m/rust_and_scientifichighperformance_computing/">Scientific/High-Performance Computing</a> (HPC). It does have bindings for OpenBLAS a C++ lib but its apparently a nightmare to get working cross platform. This holds it back from deep learning and general data science which both rely heavily on matrix operations.</p>
 <p>But its still early days and I think these issues will be address in time.</p>
-<h1 id="but-how">But How?<a class="headerlink" href="#but-how" title="Permanent link">&para;</a></h1>
+<h1>But How?</h1>
 <p>Here are some materials I&rsquo;ve been using:</p>
 <ul>
 <li><a href="https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8">The Rust Lang Book video series</a> is quite handy to get up to speed on Rust quickly. Its basically going over the official <a href="https://doc.rust-lang.org/book/">The Rust Programming Language Book</a> which takes you through all the features of Rust in a systematic way. I find someone going over the material (at double speed) seems to be easier than reading the material directly. But its not enough by itself. Need to apply what I&rsquo;ve learning quickly or else it doesn&rsquo;t sink in.<ul>
@@ -61,7 +66,7 @@
 </li>
 <li><a href="https://www.youtube.com/playlist?list=PLVnntJRoP85JHGX7rGDu6LaF3fmDDbqyd">Learn Bevy Engine 0.10 Beginner Tutorial Series</a> <a href="https://bevyengine.org/">Bevy</a> is an <a href="https://www.wikiwand.com/en/Entity_component_system">ECS</a> game system. ECS are all the range in game development because they are fast because they take advantage of CPU caching. This tutorial series takes you from zero to build a basic interactive game and give you a template for your own project. Although I&rsquo;m not familiar will all of Rust&rsquo;s syntax I find learning by doing the best strategy. I&rsquo;ve just finished the first 10 episodes which is all there is at this time. Time to make my first game with this template.</li>
 </ul>
-<h2 id="first-steps">First steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
+<h2>First steps</h2>
 <p>Some projects I&rsquo;m thinking of starting or have started in current order of enthusiasm:</p>
 <ul>
 <li><a href="http://alexander.whillas.com/alphabetica-game-dev-log.html">Alphabetica Game</a> - My son is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. I&rsquo;m going to build it off the back of the Bevy tutorial I&rsquo;ve been going through.</li>
@@ -104,7 +109,9 @@
     </ul>
 
     <p class="disclaimer">
-    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.<br />
+    <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
     </p>
 </footer>
             </div>

@@ -9,6 +9,7 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="http://alexander.whillas.com/theme/favicon.ico">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/cid.css">
         <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/highlight.css">
@@ -37,16 +38,18 @@
         <header>
             <h1>Solid Pod Server</h1>
 
-            <p class="date">Started <em><time datetime="2023-05-28T00:00:00+12:00">May 28, 2023</time></em> </em></p>
+            <p class="date">Started
+                <em><time datetime="2023-05-28T00:00:00+12:00">May 28, 2023</time></em>
+</em></p>
         </header>
 
         <article>
             <p><a href="https://solidproject.org/">Solid</a> is an attempt at making standards for returning control over your data, getting it out of the big tech silos. You run your own content server called a Solid Pod that you keep all your data in and control access to third party web apps to via OAuth2.</p>
-<h1 id="some-background">Some background<a class="headerlink" href="#some-background" title="Permanent link">&para;</a></h1>
+<h1>Some background</h1>
 <p>Tim Berners-Lee started the Solid Project which is a lose collection of standards, still in its infancy after more than a decade, which defines Solid Pod Servers, which are an online identity for you, described in Turtle/RDF and a place to keep your public and private data. The</p>
-<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
+<h2>The idea</h2>
 <p>I was thinking this might take off more if it was easy to deploy a personal solid server on a cloud provider where storage is cheap and you could use lambda/cloud functions to do the serving i.e. your not paying for them when they are not being used. Uses OAuth2 as authentication and the server is just a web server so all the components are already available as Rust crates, just have to bring it together. I&rsquo;ve also seen some examples of using <a href="https://github.com/nogibjj/rust-mlops-template/tree/main/lambdathreads">Rust for AWS lambda functions</a> and apparently is much cheaper because of the speedup.</p>
-<h2 id="persistent-storage-on-the-cheap">Persistent storage on the cheap?<a class="headerlink" href="#persistent-storage-on-the-cheap" title="Permanent link">&para;</a></h2>
+<h2>Persistent storage on the cheap?</h2>
 <p>The OAuth2 server needs to some persistent state to track the sessions and their details. Persistent state can be expensive in cloud as databases are not cheap.</p>
 <ul>
 <li>DynamoDB on AWS is <a href="https://aws.amazon.com/free/database/?p=ft&amp;z=subnav&amp;loc=3">aways free</a> under a certain amount (which it should be). There are <a href="https://docs.aws.amazon.com/sdk-for-rust/latest/dg/rust_dynamodb_code_examples.html">Rust examples</a>. Does force vendor lock in to AWS :( There are <a href="https://docs.aws.amazon.com/sdk-for-rust/latest/dg/rust_dynamodb_code_examples.html">examples using the Rust SDK</a></li>
@@ -75,7 +78,9 @@
     </ul>
 
     <p class="disclaimer">
-    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.<br />
+    <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
     </p>
 </footer>
             </div>

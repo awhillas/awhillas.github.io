@@ -1,276 +1,29 @@
-.highlight .hll {
-    background-color: #ffc
+/* My tweaks */
+
+.headerlink {
+    color: #eee;
+    font-size: 0.8em;
+    margin-left: 0.3em;
 }
 
-.c {
-    color: #0099FF;
-    font-style: italic
+header .date {
+    font-size: 0.8em;
+    color: #999;
 }
 
-.err {
-    color: #AA0000;
-    background-color: #faa
+header .date em {
+    color: #000;
 }
 
-.k {
-    color: #006699;
-    font-weight: bold
-}
 
-.o {
-    color: #555
-}
+/* Theme stuff */
 
-.cm {
-    color: #0099FF;
-    font-style: italic
-}
-
-.cp {
-    color: #099
-}
-
-.c1 {
-    color: #0099FF;
-    font-style: italic
-}
-
-.cs {
-    color: #0099FF;
-    font-weight: bold;
-    font-style: italic
-}
-
-.gd {
-    background-color: #FFCCCC;
-    border: 1px solid #c00
-}
-
-.ge {
-    font-style: italic
-}
-
-.gr {
-    color: red
-}
-
-.gh {
-    color: #003300;
-    font-weight: bold
-}
-
-.gi {
-    background-color: #CCFFCC;
-    border: 1px solid #0c0
-}
-
-.go {
-    color: #aaa
-}
-
-.gp {
-    color: #000099;
-    font-weight: bold
-}
-
-.gs {
-    font-weight: bold
-}
-
-.gu {
-    color: #003300;
-    font-weight: bold
-}
-
-.gt {
-    color: #9c6
-}
-
-.kc {
-    color: #006699;
-    font-weight: bold
-}
-
-.kd {
-    color: #006699;
-    font-weight: bold
-}
-
-.kn {
-    color: #006699;
-    font-weight: bold
-}
-
-.kp {
-    color: #069
-}
-
-.kr {
-    color: #006699;
-    font-weight: bold
-}
-
-.kt {
-    color: #007788;
-    font-weight: bold
-}
-
-.m {
-    color: #f60
-}
-
-.s {
-    color: #c30
-}
-
-.na {
-    color: #309
-}
-
-.nb {
-    color: #366
-}
-
-.nc {
-    color: #00AA88;
-    font-weight: bold
-}
-
-.no {
-    color: #360
-}
-
-.nd {
-    color: #99f
-}
-
-.ni {
-    color: #999999;
-    font-weight: bold
-}
-
-.ne {
-    color: #CC0000;
-    font-weight: bold
-}
-
-.nf {
-    color: #c0f
-}
-
-.nl {
-    color: #99f
-}
-
-.nn {
-    color: #00CCFF;
-    font-weight: bold
-}
-
-.nt {
-    color: #330099;
-    font-weight: bold
-}
-
-.nv {
-    color: #033
-}
-
-.ow {
-    color: #000000;
-    font-weight: bold
-}
-
-.w {
-    color: #bbb
-}
-
-.mf {
-    color: #f60
-}
-
-.mh {
-    color: #f60
-}
-
-.mi {
-    color: #f60
-}
-
-.mo {
-    color: #f60
-}
-
-.sb {
-    color: #c30
-}
-
-.sc {
-    color: #c30
-}
-
-.sd {
-    color: #CC3300;
-    font-style: italic
-}
-
-.s2 {
-    color: #c30
-}
-
-.se {
-    color: #CC3300;
-    font-weight: bold
-}
-
-.sh {
-    color: #c30
-}
-
-.si {
-    color: #a00
-}
-
-.sx {
-    color: #c30
-}
-
-.sr {
-    color: #3aa
-}
-
-.s1 {
-    color: #c30
-}
-
-.ss {
-    color: #fc3
-}
-
-.bp {
-    color: #366
-}
-
-.vc {
-    color: #033
-}
-
-.vg {
-    color: #033
-}
-
-.vi {
-    color: #033
-}
-
-.il {
-    color: #f60
-}
-
+/*
 * {
     background-color: #fefefe;
     color: #030303
 }
+*/
 
 code,
 kbd,
@@ -285,7 +38,8 @@ body {
 }
 
 body a {
-    font-weight: 400
+    font-weight: 400;
+    color: #030303
 }
 
 body h1,
@@ -314,7 +68,8 @@ body iframe {
 
 .disclaimer {
     text-align: center;
-    font-size: 0.8em
+    font-size: 0.8em;
+    color: #eee
 }
 
 .nav {
@@ -434,6 +189,10 @@ body iframe {
     text-align: center
 }
 
+.container .blog-footer a {
+    color: #eee;
+}
+
 .container .post-list .post-overview {
     margin: 1em;
     position: relative;
@@ -538,5 +297,7 @@ body iframe {
     margin: 2em 0 3em;
     text-align: right
 }
+
+
 
 /*# sourceMappingURL=cid.css.map */

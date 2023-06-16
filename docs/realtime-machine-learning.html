@@ -9,6 +9,7 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="http://alexander.whillas.com/theme/favicon.ico">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/cid.css">
         <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/highlight.css">
@@ -37,7 +38,11 @@
         <header>
             <h1>Realtime Machine Learning</h1>
 
-            <p class="date">Started <em><time datetime="2023-04-29T00:00:00+12:00">Apr 29, 2023</time></em> ; Updated <em>Jun 14, 2023</em></p>
+            <p class="date">Started
+                <em><time datetime="2023-04-29T00:00:00+12:00">Apr 29, 2023</time></em>
+; Updated
+                    <em>Jun 14, 2023
+</em></p>
         </header>
 
         <article>
@@ -52,7 +57,7 @@
 </blockquote>
 <p>This made me think of what used to be called &ldquo;online learning&rdquo; or real-time learning<sup id="fnref:online"><a class="footnote-ref" href="#fn:online">1</a></sup>.</p>
 <p>So now I&rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&rsquo;m <a href="http://alexander.whillas.com/a-new-hope.html">learning Rust</a> incidentally.</p>
-<h2 id="predator-and-prey">Predator and Prey<a class="headerlink" href="#predator-and-prey" title="Permanent link">&para;</a></h2>
+<h2>Predator and Prey</h2>
 <p>The first experiment I&rsquo;m going to try is a simple hunter-prey simulation like this</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tVNoetVLuQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -62,10 +67,10 @@
 <p>I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.</p>
 <p>There is also <a href="https://www.reddit.com/r/bevy/comments/1464kcq/i_built_a_self_driving_car_ai_using_rust_and_bevy/">this very similar approch</a>, in <a href="https://github.com/bones-ai/rust-drive-ai">Rust and using the Bevy framework</a> which is exactly where I wanted to go with it.
 <a href="https://www.youtube.com/watch?v=H7RWcNgE-6s&amp;t=1s&amp;ab_channel=BonesAI">AI learns to play retro game road fighter (Reinforcement learning)</a></p>
-<h2 id="in-search-of-an-objective">In search of an objective<a class="headerlink" href="#in-search-of-an-objective" title="Permanent link">&para;</a></h2>
+<h2>In search of an objective</h2>
 <p><a href="https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go">AlphaZero</a> they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.</p>
 <p>From the paper <a href="https://arxiv.org/pdf/1712.01815.pdf">Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</a></p>
-<h2 id="predictive-models">Predictive Models<a class="headerlink" href="#predictive-models" title="Permanent link">&para;</a></h2>
+<h2>Predictive Models</h2>
 <p><a href="http://blog.piekniewski.info/">Filip Piekniewski</a> has this idea of <a href="http://blog.piekniewski.info/2016/11/04/predictive-vision-in-a-nutshell/">predictive vision models</a> which basically try to guess the next frame of video and there by model the world. One might look at this as the <a href="https://en.wikipedia.org/wiki/Language_model">language modelling</a> task of vision. He&rsquo;s also suggesting adding online learning to this mix so the model trains and predicts at the same time, thus, according to Francois Chollet&rsquo;s thesis would make it adaptive and thus conscious? And he&rsquo;s got feedback from top back to bottom. He carries on about <a href="https://www.tutorialspoint.com/artificial_neural_network/artificial_neural_network_associate_memory.htm">Associate Memory</a> which is a type of NN (I need to look into)</p>
 <p>to be continued&hellip;<sup id="fnref:wip"><a class="footnote-ref" href="#fn:wip">3</a></sup></p>
 <div class="footnote">
@@ -103,7 +108,9 @@
     </ul>
 
     <p class="disclaimer">
-    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.<br />
+    <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
     </p>
 </footer>
             </div>

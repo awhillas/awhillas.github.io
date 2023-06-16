@@ -10,7 +10,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;This made me think of what used to be called &amp;ldquo;online learning&amp;rdquo; or real-time learning&lt;sup id="fnref:online"&gt;&lt;a class="footnote-ref" href="#fn:online"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;So now I&amp;rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&amp;rsquo;m &lt;a href="http://alexander.whillas.com/a-new-hope.html"&gt;learning Rust&lt;/a&gt; incidentally.&lt;/p&gt;
-&lt;h2 id="predator-and-prey"&gt;Predator and Prey&lt;a class="headerlink" href="#predator-and-prey" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Predator and Prey&lt;/h2&gt;
 &lt;p&gt;The first experiment I&amp;rsquo;m going to try is a simple hunter-prey simulation like this&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/tVNoetVLuQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -20,10 +20,10 @@
 &lt;p&gt;I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.&lt;/p&gt;
 &lt;p&gt;There is also &lt;a href="https://www.reddit.com/r/bevy/comments/1464kcq/i_built_a_self_driving_car_ai_using_rust_and_bevy/"&gt;this very similar approch&lt;/a&gt;, in &lt;a href="https://github.com/bones-ai/rust-drive-ai"&gt;Rust and using the Bevy framework&lt;/a&gt; which is exactly where I wanted to go with it.
 &lt;a href="https://www.youtube.com/watch?v=H7RWcNgE-6s&amp;amp;t=1s&amp;amp;ab_channel=BonesAI"&gt;AI learns to play retro game road fighter (Reinforcement learning)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="in-search-of-an-objective"&gt;In search of an objective&lt;a class="headerlink" href="#in-search-of-an-objective" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;In search of an objective&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go"&gt;AlphaZero&lt;/a&gt; they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.&lt;/p&gt;
 &lt;p&gt;From the paper &lt;a href="https://arxiv.org/pdf/1712.01815.pdf"&gt;Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="predictive-models"&gt;Predictive Models&lt;a class="headerlink" href="#predictive-models" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Predictive Models&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://blog.piekniewski.info/"&gt;Filip Piekniewski&lt;/a&gt; has this idea of &lt;a href="http://blog.piekniewski.info/2016/11/04/predictive-vision-in-a-nutshell/"&gt;predictive vision models&lt;/a&gt; which basically try to guess the next frame of video and there by model the world. One might look at this as the &lt;a href="https://en.wikipedia.org/wiki/Language_model"&gt;language modelling&lt;/a&gt; task of vision. He&amp;rsquo;s also suggesting adding online learning to this mix so the model trains and predicts at the same time, thus, according to Francois Chollet&amp;rsquo;s thesis would make it adaptive and thus conscious? And he&amp;rsquo;s got feedback from top back to bottom. He carries on about &lt;a href="https://www.tutorialspoint.com/artificial_neural_network/artificial_neural_network_associate_memory.htm"&gt;Associate Memory&lt;/a&gt; which is a type of NN (I need to look into)&lt;/p&gt;
 &lt;p&gt;to be continued&amp;hellip;&lt;sup id="fnref:wip"&gt;&lt;a class="footnote-ref" href="#fn:wip"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
