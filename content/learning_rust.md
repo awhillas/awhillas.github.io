@@ -32,6 +32,8 @@ To start with I have no idea where to begin with the C++ project. There are no c
 
 The splitting of C++ code into header files and implementation files is bananas. No other language does this, is laborious to write and painful to read.
 
+But I guess the real genius of Rust is that it ditched Object Oriented Programming while keeping its best feature: polymorphism.
+
 ## Current problems with Rust
 
 The main thing Rust suffers from right now is being young. A lot of the ecosystem is immature. This is changing rapidly and there are opportunities for keen, young developers to get in there and become a major part of the ecosystem.
