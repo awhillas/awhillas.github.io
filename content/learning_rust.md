@@ -34,6 +34,8 @@ The splitting of C++ code into header files and implementation files is bananas.
 
 ## Current problems with Rust
 
+The main thing Rust suffers from right now is being young. A lot of the ecosystem is immature. This is changing rapidly and there are opportunities for keen, young developers to get in there and become a major part of the ecosystem.
+
 No native linear algebra libraries or [Scientific/High-Performance Computing](https://www.reddit.com/r/rust/comments/smdl3m/rust_and_scientifichighperformance_computing/) (HPC). It does have bindings for OpenBLAS a C++ lib but its apparently a nightmare to get working cross platform. This holds it back from deep learning and general data science which both rely heavily on matrix operations.
 
 But its still early days and I think these issues will be address in time.
