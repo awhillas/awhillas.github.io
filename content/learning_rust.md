@@ -2,7 +2,7 @@
 Title: Learning Rust
 summary: Why I'm learning Rust and how I'm doing it.
 date: 2023-04-29
-Modified: 2023-06-13
+Modified: 2023-06-17
 Category: Rust, Software Engineering
 ---
 
@@ -14,15 +14,25 @@ Its always good to make decision based on data.
 
 I'm interested in Rust as I predict it will overtake C++ in popularity within the next 1-2 years if the trends in the above graph from [Stackoverflow Trends](https://insights.stackoverflow.com/trends?tags=c%2B%2B%2Crust) continues. Rust is growing in popularity exponentially and C++ seems to have a linear decline.
 
+There is also the results of the [Stackoverflow Annual Survey for 2023 Admired and Desired section](https://survey.stackoverflow.co/2023/?utm_source=banner&utm_medium=display&utm_campaign=dev-survey-results-2023&utm_content=survey-results#section-admired-and-desired-programming-scripting-and-markup-languages)
+
+> Rust is the most admired language, more than 80% of developers that use it want to use it again next year
+
 The reasons for this, I think, are many.
 
 Rust has a built in package manager which also handles compilation and makes the developer experience easy. Easy always trumps difficult, every time[^everytime]. This is a huge boon to productivity and also a huge breath of fresh air after C++. It took me about 6 weeks to get started with C++ (finding a package manager amongst many, trying to understand CMake). I think what is happening is young[^young], C++ developers are trying Rust and then being won over by this after struggling through C++.
 
-Rust has a lot of modern language features like, what JavaScript would call "promises". And they are used consistently and everywhere within the standard lib. Some C++ people say that the syntax is horrible, but its just different and I find it more concise and not littered with as much noise as C++.
-
-## Current problems with Rust
+Rust has a lot of modern language features like the Monads Option(Maybe) and Result(Either) which tackle uncertainty up front. They are used consistently and everywhere within the standard lib.
 
 ![C++ vs Rust meme]({attach}images/cpp_vs_rust_meme.png)
+
+Some C++ people say that the syntax is horrible, but I find it quite a contrary. I've studied C++ for a year and I still can't open a C++ project and understand it. For example compare a tokenizer written in C++, Google's [sentencepiece](https://github.com/google/sentencepiece) written in a modern C++ style and following the conventions of Google's C++ guideline (presumably), verse OpenAI's [TikToken](https://github.com/openai/tiktoken) which are both [BPE](https://www.wikiwand.com/en/Byte_pair_encoding) tokeniser. I know what they both do so it should be easy to interpret the code, right?
+
+To start with I have no idea where to begin with the C++ project. There are no conventions for project layout or naming stuff. I know CMake is the de facto build tool for C++ but the [CMakeLists.txt](https://github.com/google/sentencepiece/blob/master/CMakeLists.txt) file is long and cryptic. It imperative unlike the declarative Cargo.toml of TiKToken which is much shorter (21 lines vs 170!). I know exactly where to look for the entry point in any Rust project in ether the `src/lib.rs` if it a library or the `src/main.rs` if its an executable.
+
+The splitting of C++ code into header files and implementation files is bananas. No other language does this, is laborious to write and painful to read.
+
+## Current problems with Rust
 
 No native linear algebra libraries or [Scientific/High-Performance Computing](https://www.reddit.com/r/rust/comments/smdl3m/rust_and_scientifichighperformance_computing/) (HPC). It does have bindings for OpenBLAS a C++ lib but its apparently a nightmare to get working cross platform. This holds it back from deep learning and general data science which both rely heavily on matrix operations.
 
