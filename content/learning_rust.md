@@ -2,7 +2,7 @@
 Title: Learning Rust
 summary: Why I'm learning Rust and how I'm doing it.
 date: 2023-04-29
-Modified: 2023-06-17
+Modified: 2023-06-18
 Category: Rust, Software Engineering
 ---
 
@@ -38,7 +38,7 @@ But I guess the real genius of Rust is that it ditched Object Oriented Programmi
 
 The main thing Rust suffers from right now is being young. A lot of the ecosystem is immature. This is changing rapidly and there are opportunities for keen, young developers to get in there and become a major part of the ecosystem.
 
-No native linear algebra libraries or [Scientific/High-Performance Computing](https://www.reddit.com/r/rust/comments/smdl3m/rust_and_scientifichighperformance_computing/) (HPC). It does have bindings for OpenBLAS a C++ lib but its apparently a nightmare to get working cross platform. This holds it back from deep learning and general data science which both rely heavily on matrix operations.
+No native linear algebra libraries or [Scientific/High-Performance Computing](https://www.reddit.com/r/rust/comments/smdl3m/rust_and_scientifichighperformance_computing/) (HPC). It does have bindings for OpenBLAS a C++ lib but its apparently a nightmare to get working cross platform. This holds it back from deep learning and general data science which both rely heavily on matrix operations. [But this is changing](https://www.reddit.com/r/rust/comments/obghx7/fast_linear_algebra_library_for_rust/).
 
 But its still early days and I think these issues will be address in time.
 
