@@ -14,8 +14,11 @@ I found a hard time getting help with this as the Bevy subreddit has been taken 
 
 In the mean time my son needs some help with reading so I'm going to pivot to pygame as I know I can bag out something fast.
 
-I'll learn Rust on one of my other side projects. I think approchingit from the other side, see what low hanging fruit there is a and make a game around it rather than fighting Bevy to do something specific. There is a [fluid simulation lib](https://github.com/dimforge/salva) I found (which is based on a good, [pure Rust linear algebra lib](https://nalgebra.org/)) which would be fun for kids as they love water parks especially sandpits with water!
+I'll learn Rust on one of my other side projects. I think approaching it from the other side, see what low hanging fruit there is a and make a game around it rather than fighting Bevy to do something specific. There is a [fluid simulation lib](https://github.com/dimforge/salva) I found (which is based on a good, [pure Rust linear algebra lib](https://nalgebra.org/)) which would be fun for kids as they love water parks especially sandpits with water!
 
+### Starting at the end
+
+So the first thing I want to do is figure out how to make a n executable from my python script so I can CI/CD all the time and have it playable on 3 OSes (not sure if i get it working on MacOS if that will work on an iPad as that would be a great market). There are two options I can see [pyInstaller](https://pyinstaller.org/en/stable/) and [cx_Freeze](https://cx-freeze.readthedocs.io/en/latest/). In both cases you need to run their build on the target OS.
 
 ## 15th June, 2023 - Sound problems
 
