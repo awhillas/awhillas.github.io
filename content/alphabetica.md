@@ -2,9 +2,19 @@
 Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-06-15
+Modified: 2023-06-23
 Category: Rust, Software Engineering, Game Development
 ---
+
+## 23 June, 2023 - Pivot to pygame
+
+So as much as I like the setup of Bevy's ECS I hit a major road block and can't get any help on it. I basically want to get the pixel size of a scaled image and there doesn't seem to be any way to do that in Bevy. I think because transforms are in WebGPU (WGPU) and Bevy its a one way street with from Bevy to WGPU.
+
+I found a hard time getting help with this as the Bevy subreddit has been taken down due the the [Reddit hullabaloo](https://www.eff.org/deeplinks/2023/06/what-reddit-got-wrong?utm_source=pocket_saves) that is going on. The moderator didn't bother with a transition period so there is nowhere to ask questions. I tried posting the same question on the [bevy's github discussion board](https://github.com/bevyengine/bevy/discussions/8919), [/r/rust_gamedev](https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/) and [Stack Overflow](https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy) to see which one would get a response but so far nada.
+
+In the mean time my son needs some help with reading so I'm going to pivot to pygame as I know i can bag out something fast. I'll learn Rust on one of my other side projects.
+
+
 
 ## 15th June, 2023 - Sound problems
 
