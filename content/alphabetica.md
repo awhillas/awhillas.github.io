@@ -12,8 +12,9 @@ So as much as I like the setup of Bevy's ECS I hit a major road block and can't 
 
 I found a hard time getting help with this as the Bevy subreddit has been taken down due the the [Reddit hullabaloo](https://www.eff.org/deeplinks/2023/06/what-reddit-got-wrong?utm_source=pocket_saves) that is going on. The moderator didn't bother with a transition period so there is nowhere to ask questions. I tried posting the same question on the [bevy's github discussion board](https://github.com/bevyengine/bevy/discussions/8919), [/r/rust_gamedev](https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/) and [Stack Overflow](https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy) to see which one would get a response but so far nada.
 
-In the mean time my son needs some help with reading so I'm going to pivot to pygame as I know i can bag out something fast. I'll learn Rust on one of my other side projects.
+In the mean time my son needs some help with reading so I'm going to pivot to pygame as I know I can bag out something fast.
 
+I'll learn Rust on one of my other side projects. I think approchingit from the other side, see what low hanging fruit there is a and make a game around it rather than fighting Bevy to do something specific. There is a [fluid simulation lib](https://github.com/dimforge/salva) I found (which is based on a good, [pure Rust linear algebra lib](https://nalgebra.org/)) which would be fun for kids as they love water parks especially sandpits with water!
 
 
 ## 15th June, 2023 - Sound problems
