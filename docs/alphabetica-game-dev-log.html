@@ -41,12 +41,46 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Jun 23, 2023
+                    <em>Jun 26, 2023
 </em></p>
         </header>
 
         <article>
-            <h2>23 June, 2023 - Pivot to pygame</h2>
+            <h2>26 June, 2023 - Pivot (again) to Kivy</h2>
+<p>So while setting up pygame, which is really going back to basics, I was reminded of <a href="https://kivy.org/">Kivy</a> which is designed to make user interfaces. I discovered also that it was difficult to compile pygame for iOS, and that is a target of this project i.e. touch screens are what I&rsquo;m designing for, and Kivy makes his easy out of the box.</p>
+<p>The only problem with Kivy is that its model is a but opaque and the documentation is in various stages of freshness. The API documentation seems up to date but doesn&rsquo;t have so many examples of common use cases and the tutorials are over a decade old. There are <a href="https://github.com/kivy/kivy/tree/master/examples">examples</a> that I have yet to delve into, most of them are pushing a decade old.</p>
+<h3>On the Bevy front</h3>
+<p>I did a little experiment on Friday. I had a question that I posted in three places, the <a href="https://github.com/bevyengine/bevy/discussions/8919">bevy github discussion</a>, <a href="https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy">Stack Overflow</a> and <a href="https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/?sort=new">r/rust_gamedev</a>. The only one that got a reply and indeed and answer was Reddit (took 3 days). I think that Reddit works so well because developers go there for many reasons, news; gossip; ideas and help, all mixed together. So if you need help you have the highest chance the person with the answer&rsquo;s eyeballs will see your post. Since the other two are just help support, people are less likely to look there. There is a threaded Help channel in the Discord that I didn&rsquo;t look at which seems active, I&rsquo;ll try that next time.</p>
+<p>So anyway the answer was you have to figure out scaling stuff yourself but you can get the info in the Transform:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">fn</span> <span class="nf">print_sprite_bounding_boxes</span><span class="p">(</span>
+<span class="w">    </span><span class="k">mut</span><span class="w"> </span><span class="n">sprite_query</span>: <span class="nc">Query</span><span class="o">&lt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Transform</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">Image</span><span class="o">&gt;</span><span class="p">),</span><span class="w"> </span><span class="n">With</span><span class="o">&lt;</span><span class="n">Sprite</span><span class="o">&gt;&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">assets</span>: <span class="nc">Res</span><span class="o">&lt;</span><span class="n">Assets</span><span class="o">&lt;</span><span class="n">Image</span><span class="o">&gt;&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">transform</span><span class="p">,</span><span class="w"> </span><span class="n">image_handle</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">sprite_query</span><span class="p">.</span><span class="n">iter_mut</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">image_dimensions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">assets</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">image_handle</span><span class="p">).</span><span class="n">unwrap</span><span class="p">().</span><span class="n">size</span><span class="p">();</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">scaled_image_dimension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image_dimensions</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">transform</span><span class="p">.</span><span class="n">scale</span><span class="p">.</span><span class="n">truncate</span><span class="p">();</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bounding_box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rect</span>::<span class="n">from_center_size</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="n">translation</span><span class="p">.</span><span class="n">truncate</span><span class="p">(),</span><span class="w"> </span><span class="n">scaled_image_dimension</span><span class="p">);</span>
+
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;bounding_box: {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bounding_box</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+
+<p>So since I got an answer I might persevere with it a bit longer.</p>
+<h3>New Strategy</h3>
+<p>I might do two versions of the project at the same time. Since it takes soooooo loooong to get Bev answers I&rsquo;ll work in Bevy until I hit a blocker, ask a question and then swtich to Kivy until I hot a blocker and then switch back again. I really want to learn Rust and I don&rsquo;t have the bandwidth to learn it separately from the one side project I do have time for so I&rsquo;ll keep tyring to shoehorn it in.</p>
+<h2>23 June, 2023 - Pivot to pygame</h2>
 <p>So as much as I like the setup of Bevy&rsquo;s ECS I hit a major road block and can&rsquo;t get any help on it. I basically want to get the pixel size of a scaled image and there doesn&rsquo;t seem to be any way to do that in Bevy. I think because transforms are in WebGPU (WGPU) and Bevy its a one way street with from Bevy to WGPU.</p>
 <p>I found a hard time getting help with this as the Bevy subreddit has been taken down due the the <a href="https://www.eff.org/deeplinks/2023/06/what-reddit-got-wrong?utm_source=pocket_saves">Reddit hullabaloo</a> that is going on. The moderator didn&rsquo;t bother with a transition period so there is nowhere to ask questions. I tried posting the same question on the <a href="https://github.com/bevyengine/bevy/discussions/8919">bevy&rsquo;s github discussion board</a>, <a href="https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/">/r/rust_gamedev</a> and <a href="https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy">Stack Overflow</a> to see which one would get a response but so far nada.</p>
 <p>In the mean time my son needs some help with reading so I&rsquo;m going to pivot to pygame as I know I can bag out something fast.</p>

@@ -2,9 +2,40 @@
 Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-06-23
+Modified: 2023-06-26
 Category: Rust, Software Engineering, Game Development
 ---
+## 26 June, 2023 - Pivot (again) to Kivy
+
+So while setting up pygame, which is really going back to basics, I was reminded of [Kivy](https://kivy.org/) which is designed to make user interfaces. I discovered also that it was difficult to compile pygame for iOS, and that is a target of this project i.e. touch screens are what I'm designing for, and Kivy makes his easy out of the box.
+
+The only problem with Kivy is that its model is a but opaque and the documentation is in various stages of freshness. The API documentation seems up to date but doesn't have so many examples of common use cases and the tutorials are over a decade old. There are [examples](https://github.com/kivy/kivy/tree/master/examples) that I have yet to delve into, most of them are pushing a decade old.
+
+### On the Bevy front
+
+I did a little experiment on Friday. I had a question that I posted in three places, the [bevy github discussion](https://github.com/bevyengine/bevy/discussions/8919), [Stack Overflow](https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy) and [r/rust_gamedev](https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/?sort=new). The only one that got a reply and indeed and answer was Reddit (took 3 days). I think that Reddit works so well because developers go there for many reasons, news; gossip; ideas and help, all mixed together. So if you need help you have the highest chance the person with the answer's eyeballs will see your post. Since the other two are just help support, people are less likely to look there. There is a threaded Help channel in the Discord that I didn't look at which seems active, I'll try that next time.
+
+So anyway the answer was you have to figure out scaling stuff yourself but you can get the info in the Transform:
+```rust
+fn print_sprite_bounding_boxes(
+    mut sprite_query: Query<(&Transform, &Handle<Image>), With<Sprite>>,
+    assets: Res<Assets<Image>>,
+) {
+    for (transform, image_handle) in sprite_query.iter_mut() {
+        let image_dimensions = assets.get(image_handle).unwrap().size();
+        let scaled_image_dimension = image_dimensions * transform.scale.truncate();
+        let bounding_box = Rect::from_center_size(transform.translation.truncate(), scaled_image_dimension);
+
+        println!("bounding_box: {:?}", bounding_box);
+    }
+}
+```
+
+So since I got an answer I might persevere with it a bit longer.
+
+### New Strategy
+
+I might do two versions of the project at the same time. Since it takes soooooo loooong to get Bev answers I'll work in Bevy until I hit a blocker, ask a question and then swtich to Kivy until I hot a blocker and then switch back again. I really want to learn Rust and I don't have the bandwidth to learn it separately from the one side project I do have time for so I'll keep tyring to shoehorn it in.
 
 ## 23 June, 2023 - Pivot to pygame
 
