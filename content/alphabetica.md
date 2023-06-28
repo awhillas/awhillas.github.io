@@ -2,14 +2,33 @@
 Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-06-26
+Modified: 2023-06-29
 Category: Rust, Software Engineering, Game Development
 ---
+## 29 June, 2023 - Research time
+
+So, I've hit the point in which I've run out of things to code and need to do some research and design.
+
+> phonemic awareness performance can predict literacy performance more accurately than variables such as intelligence, vocabulary knowledge, and socioeconomic status[^1] The good news is that phonological awareness is one of the few factors that teachers are able to influence significantly through instruction—unlike intelligence, vocabulary, and socioeconomic status [^2]. [cite](https://www.readnaturally.com/research/5-components-of-reading/phonological-awareness#:~:text=Phonological%20Awareness%20Skills,onset%2Drime%2C%20and%20phoneme.)
+
+![Phonological Awareness Skills]({static}/images/Phonological_Awareness_Skills.png)
+
+> Blending phonemes into words and segmenting words into phonemes contribute directly to learning to read and spell well. In fact, these two phonemic awareness skills contribute more to learning to read and spell well than any of the other activities under the phonological awareness umbrella. [^3]
+
+[^1]: Gillon, G. T. (2004). Phonological awareness: From research to practice. New York: The Guilford Press.
+
+[^2]: Lane, H. B., and P. C. Pullen. (2004). A sound beginning: Phonological awareness assessment and instruction. Boston: Allyn & Bacon.
+
+[^3]:
+    National Reading Panel. (2000). Teaching children to read: An evidence-based assessment of the scientific research literature on reading and its implications for reading instruction. Washington, DC: National Institute of Child Health and Human Development.
+
+    Snider, V. A. (1995). A primer on phonemic awareness: What it is, why it’s important, and how to teach it. School Psychology Review, 24(3), pp. 443-456.
+
 ## 26 June, 2023 - Pivot (again) to Kivy
 
-So while setting up pygame, which is really going back to basics, I was reminded of [Kivy](https://kivy.org/) which is designed to make user interfaces. I discovered also that it was difficult to compile pygame for iOS, and that is a target of this project i.e. touch screens are what I'm designing for, and Kivy makes his easy out of the box.
+So while setting up pygame, which is really going back to basics, I was reminded of [Kivy](https://kivy.org/) which is designed to make user interfaces. Another issue with pygame is that it is difficult to compile for iOS, and that is a target of this project i.e. touch screens are what I'm designing for, and Kivy makes his easy out of the box.
 
-The only problem with Kivy is that its model is a but opaque and the documentation is in various stages of freshness. The API documentation seems up to date but doesn't have so many examples of common use cases and the tutorials are over a decade old. There are [examples](https://github.com/kivy/kivy/tree/master/examples) that I have yet to delve into, most of them are pushing a decade old.
+The only problem with Kivy is that its model is a but opaque and the documentation is in various stages of freshness. The API documentation seems up to date but doesn't have so many examples of common use cases and the tutorials are over a decade old. There are [examples](https://github.com/kivy/kivy/tree/master/examples) that I have yet to delve into, most of them are pushing a decade old as well.
 
 ### On the Bevy front
 

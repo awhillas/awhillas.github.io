@@ -41,14 +41,23 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Jun 26, 2023
+                    <em>Jun 29, 2023
 </em></p>
         </header>
 
         <article>
-            <h2>26 June, 2023 - Pivot (again) to Kivy</h2>
-<p>So while setting up pygame, which is really going back to basics, I was reminded of <a href="https://kivy.org/">Kivy</a> which is designed to make user interfaces. I discovered also that it was difficult to compile pygame for iOS, and that is a target of this project i.e. touch screens are what I&rsquo;m designing for, and Kivy makes his easy out of the box.</p>
-<p>The only problem with Kivy is that its model is a but opaque and the documentation is in various stages of freshness. The API documentation seems up to date but doesn&rsquo;t have so many examples of common use cases and the tutorials are over a decade old. There are <a href="https://github.com/kivy/kivy/tree/master/examples">examples</a> that I have yet to delve into, most of them are pushing a decade old.</p>
+            <h2>29 June, 2023 - Research time</h2>
+<p>So, I&rsquo;ve hit the point in which I&rsquo;ve run out of things to code and need to do some research and design.</p>
+<blockquote>
+<p>phonemic awareness performance can predict literacy performance more accurately than variables such as intelligence, vocabulary knowledge, and socioeconomic status<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The good news is that phonological awareness is one of the few factors that teachers are able to influence significantly through instruction—unlike intelligence, vocabulary, and socioeconomic status <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. <a href="https://www.readnaturally.com/research/5-components-of-reading/phonological-awareness#:~:text=Phonological%20Awareness%20Skills,onset%2Drime%2C%20and%20phoneme.">cite</a></p>
+</blockquote>
+<p><img alt="Phonological Awareness Skills" src="http://alexander.whillas.com/images/Phonological_Awareness_Skills.png" /></p>
+<blockquote>
+<p>Blending phonemes into words and segmenting words into phonemes contribute directly to learning to read and spell well. In fact, these two phonemic awareness skills contribute more to learning to read and spell well than any of the other activities under the phonological awareness umbrella. <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+</blockquote>
+<h2>26 June, 2023 - Pivot (again) to Kivy</h2>
+<p>So while setting up pygame, which is really going back to basics, I was reminded of <a href="https://kivy.org/">Kivy</a> which is designed to make user interfaces. Another issue with pygame is that it is difficult to compile for iOS, and that is a target of this project i.e. touch screens are what I&rsquo;m designing for, and Kivy makes his easy out of the box.</p>
+<p>The only problem with Kivy is that its model is a but opaque and the documentation is in various stages of freshness. The API documentation seems up to date but doesn&rsquo;t have so many examples of common use cases and the tutorials are over a decade old. There are <a href="https://github.com/kivy/kivy/tree/master/examples">examples</a> that I have yet to delve into, most of them are pushing a decade old as well.</p>
 <h3>On the Bevy front</h3>
 <p>I did a little experiment on Friday. I had a question that I posted in three places, the <a href="https://github.com/bevyengine/bevy/discussions/8919">bevy github discussion</a>, <a href="https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy">Stack Overflow</a> and <a href="https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/?sort=new">r/rust_gamedev</a>. The only one that got a reply and indeed and answer was Reddit (took 3 days). I think that Reddit works so well because developers go there for many reasons, news; gossip; ideas and help, all mixed together. So if you need help you have the highest chance the person with the answer&rsquo;s eyeballs will see your post. Since the other two are just help support, people are less likely to look there. There is a threaded Help channel in the Discord that I didn&rsquo;t look at which seems active, I&rsquo;ll try that next time.</p>
 <p>So anyway the answer was you have to figure out scaling stuff yourself but you can get the info in the Transform:</p>
@@ -161,6 +170,21 @@
 <p>I&rsquo;d forgotten how much fun fonts can be! Its going to be easy to give letters character using different fonts.</p>
 <h3>Follow the fun</h3>
 <p>But how to make it fun? I have a very basic idea of what I&rsquo;m going to start with and hope by getting my son to play test it I can figure out what he likes about it a follow that. I saw a video by <a href="https://www.wikiwand.com/en/Sid_Meier">Sid Meier</a> (Sim City, The Sims) on Master Class about making games and his advise was to prototype ideas fast and test them for fun. You wont always know until you play what mechanic/dynamic will be the fun part. &ldquo;Follow the fun!&rdquo;.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Gillon, G. T. (2004). Phonological awareness: From research to practice. New York: The Guilford Press.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Lane, H. B., and P. C. Pullen. (2004). A sound beginning: Phonological awareness assessment and instruction. Boston: Allyn &amp; Bacon.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>National Reading Panel. (2000). Teaching children to read: An evidence-based assessment of the scientific research literature on reading and its implications for reading instruction. Washington, DC: National Institute of Child Health and Human Development.</p>
+<p>Snider, V. A. (1995). A primer on phonemic awareness: What it is, why it’s important, and how to teach it. School Psychology Review, 24(3), pp. 443-456.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
         </article>
 
         <footer>
@@ -188,7 +212,10 @@
     <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
     </p>
-</footer>
+
+<a title="Google Analytics Alternative" href="https://clicky.com/101416154"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+<script async data-id="101416154" src="//static.getclicky.com/js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101416154ns.gif" /></p></noscript></footer>
             </div>
     </body>
 </html>
