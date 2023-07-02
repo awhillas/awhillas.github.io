@@ -2,9 +2,28 @@
 Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-06-29
+Modified: 2023-07-03
 Category: Rust, Software Engineering, Game Development
 ---
+
+## 3 July, 2023 - Good Motivator?
+
+I've read and been told that keeping a dev-blog for the game one is creating is key in finishing a game. But why?
+
+I've been pondering motivation for awhile now. There is the old adage by [Antoine de Saint-Exupéry](https://en.wikipedia.org/wiki/Antoine_de_Saint-Exup%C3%A9ry) which has been my guiding light for many years now:
+
+> If you want to build a ship, don't drum up people to collect wood and don't assign them tasks and work, but rather teach them to long for the endless immensity of the sea.
+
+Which talks about motivation. With motivation, people will organise themselves, learn anything that is required press on, working into the night. But how to muster motivation? How do you command it?
+
+I've noticed that problems I have spent a long time working on, for work, tend to linger in my mind and I continue to think about them until they are solved. This seems to be a general rule: the more you think about something the more motivated you are by it.
+
+Having read some of [László Polgár](https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Polg%C3%A1r)'s book, '[Bring Up Genius!](https://www.goodreads.com/book/show/20877035-bring-up-genius)', which covers how he raise his three daughters to become chess champions his main technique seems to have been to saturate them in chess culture. He decorated their rooms with chess games and puzzles and they were constantly playing each other and selected opponents. (He also attributed positive feed back as aslo being very important, 10 positive for every 1 negative). He started this at a young age.
+
+All that exposure to chess must have permeated the child's mind, so they were thinking about it almost non-stop. Perhaps after a certain level of exposure there is a run away effect and this leads to obsession? I noticed that when I was into sound art I would help [going to performances](https://www.nkprojekt.de/) constantly helped keep me inspired.
+
+So, **consistent exposure to what ever you want to me motivated to do is the key to staying motivated.**
+
 ## 29 June, 2023 - Research time
 
 So, I've hit the point in which I've run out of things to code and need to do some research and design.
@@ -14,6 +33,8 @@ So, I've hit the point in which I've run out of things to code and need to do so
 ![Phonological Awareness Skills]({static}/images/Phonological_Awareness_Skills.png)
 
 > Blending phonemes into words and segmenting words into phonemes contribute directly to learning to read and spell well. In fact, these two phonemic awareness skills contribute more to learning to read and spell well than any of the other activities under the phonological awareness umbrella. [^3]
+
+So blending phonemes into words and segmenting words into phonemes are the main objectives of this project.
 
 [^1]: Gillon, G. T. (2004). Phonological awareness: From research to practice. New York: The Guilford Press.
 
