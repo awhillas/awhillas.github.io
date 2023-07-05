@@ -1,9 +1,9 @@
 ---
-Title: Motivation
+Title: Reflections on Motivation
 summary: Reflections on what makes motivation in us.
 date: 2023-07-04
-# Modified: 2023-07-29
-Category: Rust, Software Engineering, Game Development
+Modified: 2023-07-05
+Category: Life
 ---
 
 I've read, and been told, that while working on a computer game its important to keep a dev-log of your progress, your thoughts and musings. But why?
