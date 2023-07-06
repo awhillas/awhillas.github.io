@@ -14,6 +14,10 @@ This book review came up on [Hacker News](https://news.ycombinator.com/item?id=3
 
 I should look into the reference he uses for the game stuff. I haven't thought about how how games can help train and improve working memory. Could be an interesting direction.
 
+He also goes into Flow which is another topic I need to investigate in regards to education
+
+> Klingberg concludes with a short chapter on the "information flood" that exists today and studies of its effects on cognitive ability. The results of some of these studies point to a kind of 'sweet spot' of information flow --- we perform best when the challenge presented is just at the limits of our skill. He refers to a diagram developed by Mihály Csíkszentmihályi, who defines 'flow' as "characterized by a high level of challenge and skill, in which the capacity of the doer exactly matches the demands of the task being done.... [W]hen challenge exceeds skill, we get stress. When skill exceeds challenge, we get a sense of control, which becomes boredom as the level of challenge drops." (p. 168)
+
 ## 29 June, 2023 - Research time
 
 So, I've hit the point in which I've run out of things to code and need to do some research and design.
