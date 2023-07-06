@@ -2,9 +2,17 @@
 Title: Alphabetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-07-29
+Modified: 2023-07-06
 Category: Rust, Software Engineering, Game Development
 ---
+
+## 6th July, 2023 - working memory and games
+
+This book review came up on [Hacker News](https://news.ycombinator.com/item?id=36605085) today:
+
+> He devotes an entire chapter to the issue of computer games and the question of whether they are a negative influence or a positive one (in terms of cognitive ability --- he sidesteps the 'violence debate') . He points out that there is no general answer, referring back to the earlier discussion: some types of training are more effective than others, and it is critical that the working memory be pushed to its limit repeatedly. Thus it is critical to consider particular computer games, instead of trying to make a general statement about computer games as a whole. He describes a variety of studies that show some types of computer games as having a positive influence on cognitive skills. - [Book Review: 'The Overflowing Brain' by Torkel Klingberg](https://tertulia-moderna.blogspot.com/2010/12/overflowing-brain-by-torkel-klingberg.html)
+
+I should look into the reference he uses for the game stuff. I haven't thought about how how games can help train and improve working memory. Could be an interesting direction.
 
 ## 29 June, 2023 - Research time
 
