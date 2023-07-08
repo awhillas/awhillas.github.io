@@ -1,10 +1,34 @@
 ---
-Title: Alphabetica Game Dev Log
+Title: Phonetica Game Dev Log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-07-06
-Category: Rust, Software Engineering, Game Development
+Modified: 2023-07-08
+Category: Rust, Software Engineering, Game Development, Linguistics
 ---
+
+## 8th July, 2023 - Building a Syllabus
+
+I finished organising the English phonetic sounds I gathered from the [phonic letter sounds video](https://www.youtube.com/watch?v=XUCUhHUDZIY). It has both the English and American pronunciations but seemingly only for 42 out of 44 phonemes for some reason.
+
+But now what?
+
+### Data driven syllabus
+
+I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle's [English Word Frequency: ⅓ Million Most Frequent English Words on the Web](https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download). So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the orthography into IPA phonemes. Fortunately someone has compiled such a dictionary: [ipa-dict](https://github.com/open-dict-data/ipa-dict) - Monolingual wordlists with pronunciation information in IPA. Its
+
+![Storybooks Speech and Hearing]({static}/images/african_stories.jpg)
+I also found a great [collection of African stories](https://global-asp.github.io/storybooks-sah/stories/en/#) for different reading levels which might come in handy with IPA versions.
+
+*[IPA]: International Phonetic Alphabet
+*[orthography]: the conventional spelling system of a language
+
+### Name change
+
+Change the project name to "Phonetica"! Maybe that can be the name of a fantasy kingdom and the phonemes that inhabit it can anthropomorphised?
+
+### Side note on Rust
+
+I found this really great [online synth called Ironfish](https://makepad.nl/makepad/examples/ironfish/src/index.html) written in Rust as a demo for a UI lib called [makepad](https://github.com/makepad/makepad) ([RustNL 2023 talk](https://www.youtube.com/watch?v=rC4FCS-oMpg&t=1298s&ab_channel=RustNederland%28RustNL%29)). Making the game in Rust will mean that a web version will easy(er) to make. Worth considering.
 
 ## 6th July, 2023 - working memory and games
 
