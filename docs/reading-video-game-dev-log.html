@@ -41,16 +41,25 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Jul 08, 2023
+                    <em>Jul 09, 2023
 </em></p>
         </header>
 
         <article>
-            <h2>8th July, 2023 - Building a Syllabus</h2>
+            <h2>9th July, 2023 - Chat with a Speech Pathologist</h2>
+<p>Had a chat with my old friend Khye who is a speech pathologist.</p>
+<p>Her advice was to start on the simple one letter to one sound i.e. one-to-one mappings between glyphs and phonemes. Once they are confident with that start them on simple words.</p>
+<p>The words should be two to three letters and also only use one-to-one, one glyph to one phoneme sounds. There are some texts with this goal in mind released by the NSW government called <a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/literacy-and-numeracy/teaching-and-learning-resources/literacy/effective-reading-in-the-early-years-of-school/decodable-texts">decodable texts</a></p>
+<blockquote>
+<p>Decodable texts are specifically written for beginning readers as they are developing their blending and segmenting skills and their knowledge of the alphabetic code. Decodable texts support students as they practise by using a continuous meaningful text.
+Decodable texts contain a very large percentage of words that incorporate the letter-sound relationships that students have been taught. Decodable texts increase in complexity as the student learns more of the phonetic code.</p>
+</blockquote>
+<p>These texts are behind a login so not accessible to the general public (for some reason?), but with the <a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> I should be able to make my own: Filter words that have matching number of letters and phonemes, sort by word frequency, filter by number of letters/phonemes i.e. start with 2 and 3 letter words and go up from there. I guess the next step would be to make narratives out of these words.</p>
+<h2>8th July, 2023 - Building a Syllabus</h2>
 <p>I finished organising the English phonetic sounds I gathered from the <a href="https://www.youtube.com/watch?v=XUCUhHUDZIY">phonic letter sounds video</a>. It has both the English and American pronunciations but seemingly only for 42 out of 44 phonemes for some reason.</p>
 <p>But now what?</p>
 <h3>Data driven syllabus</h3>
-<p>I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle&rsquo;s <a href="https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download">English Word Frequency: ⅓ Million Most Frequent English Words on the Web</a>. So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the <abbr title="the conventional spelling system of a language">orthography</abbr> into <abbr title="International Phonetic Alphabet">IPA</abbr> phonemes.</p>
+<p>I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle&rsquo;s <a href="https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download">English Word Frequency: ⅓ Million Most Frequent English Words on the Web</a>. So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the <abbr title="the conventional spelling system of a language">orthography</abbr> into <abbr title="International Phonetic Alphabet">IPA</abbr> phonemes. Fortunately someone has compiled such a dictionary: <a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> - Monolingual wordlists with pronunciation information in <abbr title="International Phonetic Alphabet">IPA</abbr>. Its</p>
 <p><img alt="Storybooks Speech and Hearing" src="http://alexander.whillas.com/images/african_stories.jpg" />
 I also found a great <a href="https://global-asp.github.io/storybooks-sah/stories/en/#">collection of African stories</a> for different reading levels which might come in handy with <abbr title="International Phonetic Alphabet">IPA</abbr> versions.</p>
 <h3>Name change</h3>
