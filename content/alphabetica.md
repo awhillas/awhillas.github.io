@@ -11,14 +11,14 @@ Category: Rust, Software Engineering, Game Development, Linguistics
 
 Had a chat with my old friend Khye who is a speech pathologist.
 
-Her advice was to start on the simple one letter to one sound i.e. one-to-one mappings between glyphs and phonemes. Once they are confident with that start them on simple words.
+Her advice was to start on the simple one letter to one sound i.e. one-to-one mappings between glyphs and phonemes. Once they are confident with that start them on simple words. Then with words that do not have consonant clusters i.e. /brick/ where the "ck" are acting as one sound, better is /dog/ where each letter is a single sound and those are constant
 
 The words should be two to three letters and also only use one-to-one, one glyph to one phoneme sounds. There are some texts with this goal in mind released by the NSW government called [decodable texts](https://education.nsw.gov.au/teaching-and-learning/curriculum/literacy-and-numeracy/teaching-and-learning-resources/literacy/effective-reading-in-the-early-years-of-school/decodable-texts)
 
 >  Decodable texts are specifically written for beginning readers as they are developing their blending and segmenting skills and their knowledge of the alphabetic code. Decodable texts support students as they practise by using a continuous meaningful text.
 > Decodable texts contain a very large percentage of words that incorporate the letter-sound relationships that students have been taught. Decodable texts increase in complexity as the student learns more of the phonetic code.
 
-These texts are behind a login so not accessible to the general public (for some reason?), but with the [ipa-dict](https://github.com/open-dict-data/ipa-dict) I should be able to make my own: Filter words that have matching number of letters and phonemes, sort by word frequency, filter by number of letters/phonemes i.e. start with 2 and 3 letter words and go up from there. I guess the next step would be to make narratives out of these words.
+These texts are behind a login so not accessible to the general public (for some reason?), but with the [ipa-dict](https://github.com/open-dict-data/ipa-dict) I should be able to make my own: Filter words that have matching number of letters and phonemes, sort by [word frequency](https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download), filter by number of letters/phonemes i.e. start with 2 and 3 letter words and go up from there. I guess the next step would be to make narratives out of these words.
 
 
 ## 8th July, 2023 - Building a Syllabus
