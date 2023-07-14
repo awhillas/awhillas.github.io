@@ -3,9 +3,31 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-07-09
+Modified: 2023-07-14
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
+
+
+## 14th July, 2023 - Deep diving into Phonemes
+
+So I'm trying to build the game content/levels aka the syllabus. The general structure is going to be:
+
+    Phonemes/Phones -> Words -> Texts
+
+I'm focusing on the first step, but would like to incorporate some of the second. To begin with I need a list of the phonemes in English and grouped into vowels and consonants. I also need a list of short words (2-3 letters/phonemes) starting with the simple consonants, one vowel sound only. I combined the word frequencies with the word->phoneme dictionary and then filtered to a list of words with one-to-one mapping of letters to phonemes (was a crude estimate will update the Gruut IPA module [see bellow])
+
+### Gruut IPA module
+
+![International Phonetic Alphabet code diagram]({static}/images/ipa.png)
+
+I found a great python module for working with phonemes called [Gruut IPA](https://github.com/rhasspy/gruut-ipa). It has some [data](https://github.com/rhasspy/gruut-ipa/tree/master/gruut_ipa/data) for different languages (I'm keeping this in the back of my mind). I might try and do Russian in parallel so I can use the game for learning Russian and use myself as a test subject, but don't want to get too side tracked for now. The [British English file](https://github.com/rhasspy/gruut-ipa/blob/master/gruut_ipa/data/en-gb/phonemes.txt) has phonemes grouped which is handy. There are 42 phonemes. I don't know where the 44 came from?.
+
+I tried to install the module and use the "print" function but it seems to only spit out 33 phonemes? I'm just going to write my own parser for its data files and move on. Lost a day to digging around it's code. Its got way more info than I need.
+
+### Elsewhere
+
+This is all good research for doing Text-to-Speech which I want to get back into. I might train a model to convert text to IPA phonemes as I think I have an idea of how to do that now.
+
 
 ## 9th July, 2023 - Chat with a Speech Pathologist
 
@@ -29,7 +51,7 @@ But now what?
 
 ### Data driven syllabus
 
-I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle's [English Word Frequency: ⅓ Million Most Frequent English Words on the Web](https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download). So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the orthography into IPA phonemes. Fortunately someone has compiled such a dictionary: [ipa-dict](https://github.com/open-dict-data/ipa-dict) - Monolingual wordlists with pronunciation information in IPA. Its
+I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle's [English Word Frequency: ⅓ Million Most Frequent English Words on the Web](https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download). So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the orthography into IPA phonemes. Fortunately someone has compiled such a dictionary: [ipa-dict](https://github.com/open-dict-data/ipa-dict) - Monolingual wordlists with pronunciation information in IPA.
 
 ![Storybooks Speech and Hearing]({static}/images/african_stories.jpg)
 I also found a great [collection of African stories](https://global-asp.github.io/storybooks-sah/stories/en/#) for different reading levels which might come in handy with IPA versions.
@@ -44,6 +66,7 @@ Change the project name to "Phonetica"! Maybe that can be the name of a fantasy 
 ### Side note on Rust
 
 I found this really great [online synth called Ironfish](https://makepad.nl/makepad/examples/ironfish/src/index.html) written in Rust as a demo for a UI lib called [makepad](https://github.com/makepad/makepad) ([RustNL 2023 talk](https://www.youtube.com/watch?v=rC4FCS-oMpg&t=1298s&ab_channel=RustNederland%28RustNL%29)). Making the game in Rust will mean that a web version will easy(er) to make. Worth considering.
+
 
 ## 6th July, 2023 - working memory and games
 
@@ -78,6 +101,7 @@ So blending phonemes into words and segmenting words into phonemes are the main 
 
     Snider, V. A. (1995). A primer on phonemic awareness: What it is, why it’s important, and how to teach it. School Psychology Review, 24(3), pp. 443-456.
 
+
 ## 26 June, 2023 - Pivot (again) to Kivy
 
 So while setting up pygame, which is really going back to basics, I was reminded of [Kivy](https://kivy.org/) which is designed to make user interfaces. Another issue with pygame is that it is difficult to compile for iOS, and that is a target of this project i.e. touch screens are what I'm designing for, and Kivy makes his easy out of the box.
@@ -109,6 +133,7 @@ So since I got an answer I might persevere with it a bit longer.
 ### New Strategy
 
 I might do two versions of the project at the same time. Since it takes soooooo loooong to get Bev answers I'll work in Bevy until I hit a blocker, ask a question and then swtich to Kivy until I hot a blocker and then switch back again. I really want to learn Rust and I don't have the bandwidth to learn it separately from the one side project I do have time for so I'll keep tyring to shoehorn it in.
+
 
 ## 23 June, 2023 - Pivot to pygame
 

@@ -41,12 +41,24 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Jul 09, 2023
+                    <em>Jul 14, 2023
 </em></p>
         </header>
 
         <article>
-            <h2>9th July, 2023 - Chat with a Speech Pathologist</h2>
+            <h2>14th July, 2023 - Deep diving into Phonemes</h2>
+<p>So I&rsquo;m trying to build the game content/levels aka the syllabus. The general structure is going to be:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Phonemes</span><span class="o">/</span><span class="n">Phones</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Words</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Texts</span>
+</code></pre></div></td></tr></table></div>
+
+<p>I&rsquo;m focusing on the first step, but would like to incorporate some of the second. To begin with I need a list of the phonemes in English and grouped into vowels and consonants. I also need a list of short words (2-3 letters/phonemes) starting with the simple consonants, one vowel sound only. I combined the word frequencies with the word-&gt;phoneme dictionary and then filtered to a list of words with one-to-one mapping of letters to phonemes (was a crude estimate will update the Gruut <abbr title="International Phonetic Alphabet">IPA</abbr> module [see bellow])</p>
+<h3>Gruut <abbr title="International Phonetic Alphabet">IPA</abbr> module</h3>
+<p><img alt="International Phonetic Alphabet code diagram" src="http://alexander.whillas.com/images/ipa.png" /></p>
+<p>I found a great python module for working with phonemes called <a href="https://github.com/rhasspy/gruut-ipa">Gruut <abbr title="International Phonetic Alphabet">IPA</abbr></a>. It has some <a href="https://github.com/rhasspy/gruut-ipa/tree/master/gruut_ipa/data">data</a> for different languages (I&rsquo;m keeping this in the back of my mind). I might try and do Russian in parallel so I can use the game for learning Russian and use myself as a test subject, but don&rsquo;t want to get too side tracked for now. The <a href="https://github.com/rhasspy/gruut-ipa/blob/master/gruut_ipa/data/en-gb/phonemes.txt">British English file</a> has phonemes grouped which is handy. There are 42 phonemes. I don&rsquo;t know where the 44 came from?.</p>
+<p>I tried to install the module and use the &ldquo;print&rdquo; function but it seems to only spit out 33 phonemes? I&rsquo;m just going to write my own parser for its data files and move on. Lost a day to digging around it&rsquo;s code. Its got way more info than I need.</p>
+<h3>Elsewhere</h3>
+<p>This is all good research for doing Text-to-Speech which I want to get back into. I might train a model to convert text to <abbr title="International Phonetic Alphabet">IPA</abbr> phonemes as I think I have an idea of how to do that now.</p>
+<h2>9th July, 2023 - Chat with a Speech Pathologist</h2>
 <p>Had a chat with my old friend Khye who is a speech pathologist.</p>
 <p>Her advice was to start on the simple one letter to one sound i.e. one-to-one mappings between glyphs and phonemes. Once they are confident with that start them on simple words. Then with words that do not have consonant clusters i.e. /brick/ where the &ldquo;ck&rdquo; are acting as one sound, better is /dog/ where each letter is a single sound and those are constant</p>
 <p>The words should be two to three letters and also only use one-to-one, one glyph to one phoneme sounds. There are some texts with this goal in mind released by the NSW government called <a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/literacy-and-numeracy/teaching-and-learning-resources/literacy/effective-reading-in-the-early-years-of-school/decodable-texts">decodable texts</a></p>
@@ -59,7 +71,7 @@ Decodable texts contain a very large percentage of words that incorporate the le
 <p>I finished organising the English phonetic sounds I gathered from the <a href="https://www.youtube.com/watch?v=XUCUhHUDZIY">phonic letter sounds video</a>. It has both the English and American pronunciations but seemingly only for 42 out of 44 phonemes for some reason.</p>
 <p>But now what?</p>
 <h3>Data driven syllabus</h3>
-<p>I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle&rsquo;s <a href="https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download">English Word Frequency: ⅓ Million Most Frequent English Words on the Web</a>. So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the <abbr title="the conventional spelling system of a language">orthography</abbr> into <abbr title="International Phonetic Alphabet">IPA</abbr> phonemes. Fortunately someone has compiled such a dictionary: <a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> - Monolingual wordlists with pronunciation information in <abbr title="International Phonetic Alphabet">IPA</abbr>. Its</p>
+<p>I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle&rsquo;s <a href="https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download">English Word Frequency: ⅓ Million Most Frequent English Words on the Web</a>. So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the <abbr title="the conventional spelling system of a language">orthography</abbr> into <abbr title="International Phonetic Alphabet">IPA</abbr> phonemes. Fortunately someone has compiled such a dictionary: <a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> - Monolingual wordlists with pronunciation information in <abbr title="International Phonetic Alphabet">IPA</abbr>.</p>
 <p><img alt="Storybooks Speech and Hearing" src="http://alexander.whillas.com/images/african_stories.jpg" />
 I also found a great <a href="https://global-asp.github.io/storybooks-sah/stories/en/#">collection of African stories</a> for different reading levels which might come in handy with <abbr title="International Phonetic Alphabet">IPA</abbr> versions.</p>
 <h3>Name change</h3>
