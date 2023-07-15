@@ -3,9 +3,48 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-07-14
+Modified: 2023-07-15
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
+
+## 14th July, 2023 - Just graphimes to phonemes
+
+Phonetics is quite the rabbit hole. I juts need English spellings, or graphiems, and their related phonemes. I found this chart for Australian English (I think)
+
+![alphabetic-code-chart]({static}/images/alphabetic-code-chart.png)
+
+> In order to represent the 44 phonemes of Australian English we use a range of graphemes (letters or letter combinations).  Children need to know 150 - 200 of these phoneme/grapheme correspondences in order to read a reasonably complex text and these need to be taught explicitly and systematically. - [cite](https://www.jocelynseamereducation.com/blog/46913-phonemes-and-graphemes)
+
+This two part video series about [helping children sounding out words](https://www.youtube.com/watch?v=yxIrK5R8n0g) I found quite helpful. The [second part](https://www.youtube.com/watch?v=5ID2fMAjx94) mentions some recent research[^reading] on the topic and apparently the current approach to looking at the pictures and guessing the words is poor or "inefficient". She recommends a problem solving approach of breaking the word up by underlining the phonemes and helping them with phonemes that the don't know but letting them sound out the word phoneme by phoneme until they get the word.
+
+[^reading]:
+    [National Inquiry into the Teaching of Literacy (Australia) – The Rowe Report](https://ldaustralia.org/research-papers/national-inquiry-into-the-teaching-of-literacy-australia-the-rowe-report/), Ken Rowe - December, 2005
+
+    [Read about it: Scientific evidence for effective teaching of reading](https://www.deb.co.nz/content/uploads/2023/04/Read-About-It.pdf), K Hempenstall, J Buckingham - 2016
+
+### An Idea!
+
+This has given me the idea to have words broken up into their respective phonemes, with different colours, but written correctly and then slowly drift apart. The player then has to hit the phonemes in the order they were originally, sounding out the word. This then multiplied into many examples of the same thing with the letters getting mixed up, like soup, and the challenge is to put them all back together, click-on/touch them in the right order to clear the level.
+
+### How to start
+
+There is a great set of documents which outline the Australian reading syllibus at [Firefly Education](https://www.fireflyeducation.com.au/series/soundwaves/features/).
+
+*[CVC]: Consonant-Vowel-Consonant e.g mat, sat, did, nap
+
+I'm going to base my syllibus on the [Sound Waves NSW Early Stage 1 Syllabus](https://www.fireflyeducation.com.au/downloads/Sound_Waves_NSW_Syllabus_Match_Early_Stage_1.pdf). From that document:
+
+> In Sound Waves Foundation, phoneme–grapheme relationships are introduced in a very specific order. This minimises confusion for students and ensures they are up and running quickly with reading and spelling. The order begins with m, a, t, s, i, d, f, n and p so students can read and spell CVC words such as mat, sat, did, nap etc.
+
+![Sound Waves Foundation principles]({static}/images/sound_wave_foundation_princibles.png)
+
+They have a system of pairing graphical icons for phonemes with the graphemes which is a good idea but stems from using print as a medium. I hope that I can just relate the sound of the phoneme directly with the graphemes by playing the sound when they touch the grapheme. This is the advantage of using an interactive medium (I hope).
+
+### Tracking learning
+
+Also, I want to track the learning of a child. At the very minimum I'm going to need keep track of which part of the syllibus they are up to. The video game way is to just make them start from the beginning every time. Perhaps they unlock levels as they progress which gives them new icons at the start of they game so they can jump start at the latest or revisit previous levels?
+
+Also, some sort of report for for parents and teachers would be good. Not sure what they would like it see? Perhaps what they are good and bad at in terms of grapheme-phoneme mapping?
 
 
 ## 14th July, 2023 - Deep diving into Phonemes
