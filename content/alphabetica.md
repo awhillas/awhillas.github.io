@@ -7,9 +7,9 @@ Modified: 2023-07-15
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
-## 14th July, 2023 - Just graphimes to phonemes
+## 14th July, 2023 - Just graphemes to phonemes
 
-Phonetics is quite the rabbit hole. I juts need English spellings, or graphiems, and their related phonemes. I found this chart for Australian English (I think)
+Phonetics is quite the rabbit hole. I juts need English spellings, or graphemes, and their related phonemes. I found this chart for Australian English (I think)
 
 ![alphabetic-code-chart]({static}/images/alphabetic-code-chart.png)
 
@@ -28,11 +28,11 @@ This has given me the idea to have words broken up into their respective phoneme
 
 ### How to start
 
-There is a great set of documents which outline the Australian reading syllibus at [Firefly Education](https://www.fireflyeducation.com.au/series/soundwaves/features/).
+There is a great set of documents which outline the Australian reading syllabus at [Firefly Education](https://www.fireflyeducation.com.au/series/soundwaves/features/).
 
 *[CVC]: Consonant-Vowel-Consonant e.g mat, sat, did, nap
 
-I'm going to base my syllibus on the [Sound Waves NSW Early Stage 1 Syllabus](https://www.fireflyeducation.com.au/downloads/Sound_Waves_NSW_Syllabus_Match_Early_Stage_1.pdf). From that document:
+I'm going to base my syllabus on the [Sound Waves NSW Early Stage 1 Syllabus](https://www.fireflyeducation.com.au/downloads/Sound_Waves_NSW_Syllabus_Match_Early_Stage_1.pdf). From that document:
 
 > In Sound Waves Foundation, phoneme–grapheme relationships are introduced in a very specific order. This minimises confusion for students and ensures they are up and running quickly with reading and spelling. The order begins with m, a, t, s, i, d, f, n and p so students can read and spell CVC words such as mat, sat, did, nap etc.
 
@@ -42,7 +42,7 @@ They have a system of pairing graphical icons for phonemes with the graphemes wh
 
 ### Tracking learning
 
-Also, I want to track the learning of a child. At the very minimum I'm going to need keep track of which part of the syllibus they are up to. The video game way is to just make them start from the beginning every time. Perhaps they unlock levels as they progress which gives them new icons at the start of they game so they can jump start at the latest or revisit previous levels?
+Also, I want to track the learning of a child. At the very minimum I'm going to need keep track of which part of the syllabus they are up to. The video game way is to just make them start from the beginning every time. Perhaps they unlock levels as they progress which gives them new icons at the start of they game so they can jump start at the latest or revisit previous levels?
 
 Also, some sort of report for for parents and teachers would be good. Not sure what they would like it see? Perhaps what they are good and bad at in terms of grapheme-phoneme mapping?
 
