@@ -1,8 +1,8 @@
 ---
 Title: A new Hope...?
-summary: A bit about the phylosophy of this website.
+summary: A bit about the philosophy of this website.
 date: 2023-04-28
-Modified: 2023-06-16
+Modified: 2023-07-21
 Category: Life
 ---
 
@@ -14,5 +14,8 @@ The structure will be organic. These pages will in turn branch off into other pa
 
 I'm torn about weather I should use google analytics or not. I feel that is more about ego than useful data. But it would be cool to see a HN spike on the graph! Ultimately this site is for me and possibly my son when he is old enough to read, so he can see what was going on in his old mans head.
 
-
 [^1]: Funny that I look back on this blog post now, which I must have read in 2018, and realise that what I took away from that blog post was not what it was about. He saw the cumulative pageview chart as a sign that people ate looking for explanations not explorable wizardry. I saw it was the long game is about accumulating views over a long period.
+
+## Updated the font to IM Fell English
+
+After seeing the article [A 17th-century font in a 21st-century thesis](https://www.linyangchen.com/Typography-Fell-Types-font) on Hacker News I [hacked](https://developers.google.com/fonts/docs/getting_started) the [Pelican-Cid theme](https://github.com/hdra/Pelican-Cid) to use the IM Fell English font from [Google Fonts](https://fonts.google.com/specimen/IM+Fell+English).

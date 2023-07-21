@@ -1,5 +1,10 @@
 /* My tweaks */
 
+body {
+    font-family: 'IM Fell English', serif;
+    /* font-size: 48px; */
+}
+
 .headerlink {
     color: #eee;
     font-size: 0.8em;
@@ -33,7 +38,7 @@ samp {
 }
 
 body {
-    font-family: "Merriweather", "Georgia", serif;
+    /* font-family: "Merriweather", "Georgia", serif; */
     font-weight: 300
 }
 
@@ -42,14 +47,14 @@ body a {
     color: #030303
 }
 
-body h1,
+/* body h1,
 body h2,
 body h3,
 body h4,
 body h5,
 body h6 {
     font-family: "Gentium Book Basic", "Georgia", serif
-}
+} */
 
 body h1 a,
 body h2 a,
@@ -97,11 +102,11 @@ body iframe {
 .landing-container {
     width: 65%;
     margin: 2em auto 0;
-    font-family: "Merriweather", "Georgia", serif
+    /* font-family: "Merriweather", "Georgia", serif */
 }
 
 .landing-container li {
-    font-family: "Gentium Book Basic", "Georgia", serif
+    /* font-family: "Gentium Book Basic", "Georgia", serif */
 }
 
 @media screen and (max-width: 640px) {
