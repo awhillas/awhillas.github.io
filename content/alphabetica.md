@@ -7,9 +7,22 @@ Modified: 2023-07-15
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
+
+## 23 July, 2023 - Physics is fun
+
+![pymunk demp / animated logo]({static}/images/pymunk_logo_animation.gif)
+
+So I have a basic concept for the game. Its going to involve blocks dropping and using a physics engine to simulate that. I found a simple 2D physics engine called [pymunk](http://www.pymunk.org/) which is an interface to the C library [Chipmunk2D](http://chipmunk-physics.net/). pymunk is under active development while Chipmunk2D seems to be feature complete. There is heaps of tutorials with pygame and pymunk so getting up-to-speed is quite easy and fun! There was a lot of low hanging fruit! To list what I went through:
+
+    - [Python Physics Simulation. Galton Board. Pymunk Tutorial](https://www.youtube.com/watch?v=-q_Vje2a6eY&t=15s&ab_channel=CoderSpace) I watched this and used the code as a starting point. Great template for getting pygame and pymunk talking to each other.
+    - [Using mouse and keyboard](https://pymunk-tutorial.readthedocs.io/en/latest/mouse/mouse.html) helped me create the touch/click interaction I need for interacting with the blocks.
+
+I did give up on trying to rotate the images to the same angle as the physics block.
+
+
 ## 14th July, 2023 - Just graphemes to phonemes
 
-Phonetics is quite the rabbit hole. I juts need English spellings, or graphemes, and their related phonemes. I found this chart for Australian English (I think)
+Phonetics is quite the rabbit hole. I just need English spellings, or graphemes, and their related phonemes. I found this chart for Australian English (I think)
 
 ![alphabetic-code-chart]({static}/images/alphabetic-code-chart.png)
 
