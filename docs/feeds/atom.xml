@@ -31,6 +31,13 @@
 &lt;li&gt;Letters explode when right order is chosen&lt;/li&gt;
 &lt;li&gt;get the rest of the word sorted out. I just choose words I had voice recordings reading&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3&gt;Side note&lt;/h3&gt;
+&lt;p&gt;It was pretty cool to get the first(ish) version working, and actually it was very easy with python. When I first saw the thing I&amp;rsquo;ve had in my head for weeks appear on screen and start to work(ish) there was a buzz of gratification. Its a cool feeling.&lt;/p&gt;
+&lt;p&gt;I watched a short video of &lt;a href="https://www.youtube.com/shorts/K1JsNyEHrso"&gt;Trevor Noah talking about how he loves standup comedy&lt;/a&gt; and giving the life advice of:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Live in a space where you are doing what you love.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I think that games could be that space for me.&lt;/p&gt;
 &lt;h2&gt;23 July, 2023 - Physics is fun&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="pymunk demp / animated logo" src="http://alexander.whillas.com/images/pymunk_logo_animation.gif" /&gt;&lt;/p&gt;
 &lt;p&gt;So I have a basic concept for the game. Its going to involve blocks dropping and using a physics engine to simulate that. I found a simple 2D physics engine called &lt;a href="http://www.pymunk.org/"&gt;pymunk&lt;/a&gt; which is an interface to the C library &lt;a href="http://chipmunk-physics.net/"&gt;Chipmunk2D&lt;/a&gt;. pymunk is under active development while Chipmunk2D seems to be feature complete. There is heaps of tutorials with pygame and pymunk so getting up-to-speed is quite easy and fun! There was a lot of low hanging fruit! To list what I went through:&lt;/p&gt;

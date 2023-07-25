@@ -19,6 +19,16 @@ So I've started to code up the demo of the idea. Still much to do:
 - Letters explode when right order is chosen
 - get the rest of the word sorted out. I just choose words I had voice recordings reading
 
+### Side note
+
+It was pretty cool to get the first(ish) version working, and actually it was very easy with python. When I first saw the thing I've had in my head for weeks appear on screen and start to work(ish) there was a buzz of gratification. Its a cool feeling.
+
+I watched a short video of [Trevor Noah talking about how he loves stand up comedy](https://www.youtube.com/shorts/K1JsNyEHrso) and giving the life advice of:
+
+> Live in a space where you are doing what you love.
+
+I think that games could be that space for me.
+
 
 ## 23 July, 2023 - Physics is fun
 
