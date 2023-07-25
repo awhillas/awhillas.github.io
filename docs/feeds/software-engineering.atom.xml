@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Software Engineering</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/software-engineering.atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-07-15T00:00:00+12:00</updated><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-07-15T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;23 July, 2023 - Physics is fun&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Software Engineering</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/software-engineering.atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-07-25T00:00:00+12:00</updated><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-07-25T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;25th July, 2023 - First demo&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="First Demo" src="http://alexander.whillas.com/images/phonetica/mvp01.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;So I&amp;rsquo;ve started to code up the demo of the idea. Still much to do:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sound phenome when clicking box&lt;/li&gt;
+&lt;li&gt;Play word sound when phonemes appear&lt;/li&gt;
+&lt;li&gt;Track order that letters are selected in&lt;/li&gt;
+&lt;li&gt;Letters explode when right order is chosen&lt;/li&gt;
+&lt;li&gt;get the rest of the word sorted out. I just choose words I had voice recordings reading&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;23 July, 2023 - Physics is fun&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="pymunk demp / animated logo" src="http://alexander.whillas.com/images/pymunk_logo_animation.gif" /&gt;&lt;/p&gt;
 &lt;p&gt;So I have a basic concept for the game. Its going to involve blocks dropping and using a physics engine to simulate that. I found a simple 2D physics engine called &lt;a href="http://www.pymunk.org/"&gt;pymunk&lt;/a&gt; which is an interface to the C library &lt;a href="http://chipmunk-physics.net/"&gt;Chipmunk2D&lt;/a&gt;. pymunk is under active development while Chipmunk2D seems to be feature complete. There is heaps of tutorials with pygame and pymunk so getting up-to-speed is quite easy and fun! There was a lot of low hanging fruit! To list what I went through:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;

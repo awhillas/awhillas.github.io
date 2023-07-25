@@ -3,9 +3,21 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-07-15
+Modified: 2023-07-25
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
+
+## 25th July, 2023 - First demo
+
+![First Demo]({static}/images/phonetica/mvp01.gif)
+
+So I've started to code up the demo of the idea. Still much to do:
+
+- Sound phenome when clicking box
+- Play word sound when phonemes appear
+- Track order that letters are selected in
+- Letters explode when right order is chosen
+- get the rest of the word sorted out. I just choose words I had voice recordings reading
 
 
 ## 23 July, 2023 - Physics is fun
