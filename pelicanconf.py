@@ -31,6 +31,12 @@ MARKDOWN = {
         "markdown.extensions.codehilite": {"css_class": "highlight", "linenums": True},
         "markdown.extensions.meta": {},
         "smarty": {"smart_angled_quotes": "true"},
+        "pymdownx.tilde": {
+            "smart_delete": "true",
+            "delete": "true",
+            "subscript": "true",
+        },
+        "pymdownx.tasklist": {},
         # "markdown.extensions.toc": {
         #     "permalink": "true",
         # },

@@ -7,17 +7,23 @@ Modified: 2023-07-25
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
+## 3rd August, 2023 - Explosions!
+
+Got the explosions working. Had to improvise with pymunk as it doesn't have a built in explosion effect. I replace the block to blow up with a circle for ~200ms and then make it disappear. I also made the explosion weightless so it wouldn't roll down.
+
+I got the explosions sounds [here](https://www.freesoundeffects.com/free-sounds/explosion-10070/) and the image from [wikimedia](https://commons.wikimedia.org/wiki/File:Explosion-153710_icon.svg). Good bless creative commons!
+
 ## 25th July, 2023 - First demo
 
 ![First Demo]({static}/images/phonetica/mvp01.gif)
 
 So I've started to code up the demo of the idea. Still much to do:
 
-- Sound phenome when clicking box
-- Play word sound when phonemes appear
-- Track order that letters are selected in
-- Letters explode when right order is chosen
-- get the rest of the word sorted out. I just choose words I had voice recordings reading
+- [x] Sound phenome when clicking box
+- [x] Play word sound when phonemes appear
+- [x] Track order that letters are selected in
+- [x] Letters explode when right order is chosen
+- [ ] Compile rest of the words Content. (I just choose words I had voice recordings for)
 
 ### Side note
 

@@ -21,7 +21,9 @@ jinja2==3.1.2
 livereload==2.6.3
     # via -r requirements.in
 markdown==3.4.3
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   pymdown-extensions
 markdown-it-py==2.2.0
     # via rich
 markupsafe==2.1.2
@@ -43,6 +45,8 @@ pygments==2.15.1
     #   -r requirements.in
     #   pelican
     #   rich
+pymdown-extensions==10.1
+    # via -r requirements.in
 pyproject-hooks==1.0.0
     # via build
 python-dateutil==2.8.2
@@ -51,6 +55,8 @@ pytz==2023.3
     # via
     #   feedgenerator
     #   pelican
+pyyaml==6.0.1
+    # via pymdown-extensions
 rich==13.3.5
     # via pelican
 six==1.16.0

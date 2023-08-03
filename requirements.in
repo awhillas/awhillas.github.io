@@ -6,3 +6,4 @@ markdown
 invoke
 livereload
 Pygments
+pymdown-extensions
