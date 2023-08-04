@@ -7,6 +7,12 @@ Modified: 2023-07-25
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
+## 5th August, 2023 - "-er"?
+
+So I ran into an issue with translating "Asher" into phonemes. [IPA-dict](https://github.com/open-dict-data/ipa-dict) says its /'æʃɐ/ but I was unsure about the 'ɐ' sound/phone for UK English as it's the same as vowel in fox /fˈɒks/ (according to the same dictionary, but now that I look at it, its a different upside-down 'a'). According to the video ['er' Ending Words and the Schwa Phoneme](https://www.youtube.com/watch?v=ZyULNC_8SNw&ab_channel=EnglishLanguageClub) it should be the Schwa 'ə' sound. Anyway, I found this chart which is a better translation from IPA to all grapheme forms
+
+![Phoneme to Grapheme chart]({static}/images/phonetica/phonetics_chart.webp)
+
 ## 3rd August, 2023 - Explosions!
 
 Got the explosions working. Had to improvise with pymunk as it doesn't have a built in explosion effect. I replace the block to blow up with a circle for ~200ms and then make it disappear. I also made the explosion weightless so it wouldn't roll down.
