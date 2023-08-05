@@ -13,6 +13,8 @@ So I ran into an issue with translating "Asher" into phonemes. [IPA-dict](https:
 
 ![Phoneme to Grapheme chart]({static}/images/phonetica/phonetics_chart.webp)
 
+Although there is no 'ɐ' in that chart only 'ɒ'? According to this interactive chart it seems that 'ə' is in fact correct, but all three could be correct depending on which part of the UK your from? The [OED](https://www.oed.com/dictionary/basher_n1?tab=factsheet#26849264) says 'ə' so I guess I'll go with that.
+
 ## 3rd August, 2023 - Explosions!
 
 Got the explosions working. Had to improvise with pymunk as it doesn't have a built in explosion effect. I replace the block to blow up with a circle for ~200ms and then make it disappear. I also made the explosion weightless so it wouldn't roll down.
