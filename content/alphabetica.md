@@ -3,7 +3,7 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-07-25
+Modified: 2023-08-05
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
@@ -13,7 +13,7 @@ So I ran into an issue with translating "Asher" into phonemes. [IPA-dict](https:
 
 ![Phoneme to Grapheme chart]({static}/images/phonetica/phonetics_chart.webp)
 
-Although there is no 'ɐ' in that chart only 'ɒ'? According to this interactive chart it seems that 'ə' is in fact correct, but all three could be correct depending on which part of the UK your from? The [OED](https://www.oed.com/dictionary/basher_n1?tab=factsheet#26849264) says 'ə' so I guess I'll go with that.
+Although there is no 'ɐ' in that chart only 'ɒ'? According to the [IPA interactive chart](https://www.ipachart.com/) it seems that 'ə' is in fact correct, but all three could be correct depending on which part of the UK your from? The [OED](https://www.oed.com/dictionary/basher_n1?tab=factsheet#26849264) says 'ə' so I guess I'll go with that. I'm not sure how one decides what is the official phoneme for a pronunciation for a dialect. Maybe the OED is it?
 
 ## 3rd August, 2023 - Explosions!
 
