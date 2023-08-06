@@ -3,9 +3,24 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read.
 date: 2023-06-11
-Modified: 2023-08-05
+Modified: 2023-08-07
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
+
+## 7th August, 2023 - The need for bling
+
+So I have the basics of the game setup with simple level progressions. I'm not sure if it is fun yet? Time for some play testing with Asher?
+
+TODO:
+
+- [ ] Rest of the words
+    - [ ] Sound recordings of words being said, get from?
+    - [ ] Update the syllabus file, checking phonemes against OED
+- [ ] Bling Effects when!
+    - [ ] the countdown time is updated
+    - [ ] word changes
+    - [ ] background?
+
 
 ## 5th August, 2023 - "-er"?
 
