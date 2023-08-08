@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>    Free Energy Principle
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="http://alexander.whillas.com/theme/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM Fell English">
+        <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="http://alexander.whillas.com/theme/css/highlight.css">
+        <link href="http://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="http://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="container">
+
+<header class="blog-header">
+    <h1><a href="http://alexander.whillas.com">Alexander Whillas</a></h1>
+    <p></p>
+    <nav>
+        <a href="http://alexander.whillas.com/">INDEX</a>
+        <a href="http://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="http://alexander.whillas.com/categories">CATEGORIES</a>
+    </nav>
+</header>
+
+    <div class="post">
+
+        <header>
+            <h1>Free Energy Principle</h1>
+
+            <p class="date">Started
+                <em><time datetime="2023-08-08T00:00:00+12:00">Aug 08, 2023</time></em>
+; Updated
+                    <em>Aug 08, 2023
+</em></p>
+        </header>
+
+        <article>
+            <h2>The basics</h2>
+<p><img alt="Free Energy Principle, Basic outline" src="http://alexander.whillas.com/images/fep_simple.png" /></p>
+<p>So the Free Energy Principle (FEP) is a sort of universals objective function for cognitive agents i.e. agents with some sort of cognition or internal world representation that learns. It learns from sensory input and some actions that it can enact on the world.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Sensation</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Internal</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Actions</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">World</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Sensations</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">etc</span>
+</code></pre></div></td></tr></table></div>
+
+<p>Its a feedback loop. What they are calling free energy is the difference between the predicted (by the model) sensor(s) state and the actual sensor(s) state. The system tires to minimise this difference, or entropy, or &ldquo;surprise&rdquo; as its call in relation to the FEP.</p>
+<h2>My RoboCup Experience</h2>
+<p><img alt="Robocup Standard Platform league" src="http://alexander.whillas.com/images/robocup.png" /></p>
+<p>So I was vaguely involved in the <a href="https://www.robocup.org/">RoboCup</a><sup id="fnref:robocup"><a class="footnote-ref" href="#fn:robocup">1</a></sup> at UNSW when I was doing my masters back in 2013. The control systems on the bots then was very crude. I thought that UNSW would be using some sort of reinforcement learning (RL) to control walking but they were actually hand programming every movement. I realised there where all these sensors on the &ldquo;Standard Platform&rdquo; bot that we were not using and my thought at the time was that if we feed these into a feedback loop into a learning algorithm like RL<sup id="fnref:notRL"><a class="footnote-ref" href="#fn:notRL">2</a></sup> with the objective of keeping itself upright then it might be able to learn walk. Furth more, since the robots were getting damaged quite easily from falling over <em>a lot</em> individual robots might learn how to deal with their own particular damage.</p>
+<h2>Feedback is the key</h2>
+<p>From my days of making experimental music/noise I know that feedback is very powerful. It was what always made the most interesting results. Here too I think the feedback mechanism is a key factoring in making this work. The system balances itself.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:robocup">
+<p>Competition between universities to make robots play soccer. I&rsquo;d really like to get my hands on a simple robot I could program and try some of these ideas out on!&#160;<a class="footnote-backref" href="#fnref:robocup" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:notRL">
+<p>I would obviously say a deep neural network now.&#160;<a class="footnote-backref" href="#fnref:notRL" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+        </article>
+
+        <footer>
+            <p>This entry is posted in:
+                    <a href="http://alexander.whillas.com/category/machine-learning.html">Machine Learning</a>
+            </p>
+        </footer>
+
+
+    </div>
+
+
+<footer class="blog-footer">
+
+    <ul class="nav">
+            <li><a href="https://twitter.com/awhillas">Twitter</a></li>
+            <li><a href="https://github.com/awhillas">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/whillas/">Linkedin</a></li>
+    </ul>
+
+    <p class="disclaimer">
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.<br />
+    <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+    </p>
+
+<a title="Google Analytics Alternative" href="https://clicky.com/101416154">
+    Clicky
+</a>
+<script async data-id="101416154" src="//static.getclicky.com/js"></script></footer>
+            </div>
+    </body>
+</html>

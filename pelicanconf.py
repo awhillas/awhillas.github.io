@@ -50,6 +50,8 @@ CONTACTS = (
 )
 
 DEFAULT_PAGINATION = False
+ARTICLE_ORDER_BY = "reversed-date"
+PAGE_ORDER_BY = "reversed-date"
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

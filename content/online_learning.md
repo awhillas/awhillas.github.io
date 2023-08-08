@@ -2,7 +2,7 @@
 Title: Realtime Machine Learning
 summary: Experiments in online/real-time Machine learning.
 date: 2023-04-29
-Modified: 2023-06-14
+Modified: 2023-08-08
 Category: Machine Learning
 ---
 
@@ -46,6 +46,8 @@ There is also [this very similar approch](https://www.reddit.com/r/bevy/comments
 [AlphaZero](https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go) they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.
 
 From the paper [Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm](https://arxiv.org/pdf/1712.01815.pdf)
+
+The [Free Energy Principle]({filename}/free-energy-principle.md) seems to solve this problem by making the model try to predict the next sensor readings and minimising the difference between these predictions and the actual model state at the next time step. The model can also choose actions that it needs to predict the change in environment from. But how does it choose the action? Predicting the environment is key here but how does one steer the model to perform survival actions?
 
 ## Predictive Models
 
