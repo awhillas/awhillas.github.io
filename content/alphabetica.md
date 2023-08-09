@@ -7,12 +7,33 @@ Modified: 2023-08-07
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
+## 10 August, 2023 - First play test
+
+So I gave it to my son this morning and he played through it a bit. Some notes:
+
+- Was too fast. One second between words dropping was too short, especially at beginning. Perhaps increment as go.
+- Didn't get the idea of spelling out the word. Need to somehow be explained? Perhaps 3 phoneme words were too hard to start with, try 2. Will make discovery easier.
+- Found the explosions fun and laughed when they happened.
+- Once all the letters filled the screen it became a challenge. He had to know the order of the letters.
+- The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
+- He found blowing up his own name a kick :)
+
+Going forward:
+
+- Make the selection more obvious i.e. rotate colour of selected?
+- Have the word written somewhere, perhaps on the background
+- change background with word
+- Announce the number of words to explode left
+- Should track what he has played and what took him a long time vs what was easy and took less time.
+
+I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in **alphabetical order**! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I'm using phonemes not letters maybe its not. Though some letters have limited number of 2 and 3 words... still, will be easy for 3 letter words.
+
 ## 7th August, 2023 - The need for bling
 
 So I have the basics of the game setup with simple level progressions. I'm not sure if it is fun yet? Time for some play testing with Asher?
 
 TODO:
-
+- [ ] Empty scene transition between word
 - [ ] Rest of the words
     - [ ] Sound recordings of words being said, get from?
     - [ ] Update the syllabus file, checking phonemes against OED

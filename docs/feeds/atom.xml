@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-08-08T00:00:00+12:00</updated><entry><title>Free Energy Principle</title><link href="http://alexander.whillas.com/free-energy-principle.html" rel="alternate"></link><published>2023-08-08T00:00:00+12:00</published><updated>2023-08-08T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-08-08:/free-energy-principle.html</id><summary type="html">&lt;p&gt;My understanding of the Free Energy Principle and how it applies to (machine) learning agents.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;The basics&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-08-09T00:00:00+12:00</updated><entry><title>Free Energy Principle</title><link href="http://alexander.whillas.com/free-energy-principle.html" rel="alternate"></link><published>2023-08-08T00:00:00+12:00</published><updated>2023-08-09T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-08-08:/free-energy-principle.html</id><summary type="html">&lt;p&gt;My understanding of the Free Energy Principle and how it applies to (machine) learning agents.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;The basics&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="Free Energy Principle, Basic outline" src="http://alexander.whillas.com/images/fep_simple.png" /&gt;&lt;/p&gt;
 &lt;p&gt;So the Free Energy Principle (FEP) is a sort of universals objective function for cognitive agents i.e. agents with some sort of cognition or internal world representation that learns. It learns from sensory input and some actions that it can enact on the world.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Sensation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Internal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Actions&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;changes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Sensations&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;
@@ -9,6 +9,8 @@
 &lt;h2&gt;My RoboCup Experience&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="Robocup Standard Platform league" src="http://alexander.whillas.com/images/robocup.png" /&gt;&lt;/p&gt;
 &lt;p&gt;So I was vaguely involved in the &lt;a href="https://www.robocup.org/"&gt;RoboCup&lt;/a&gt;&lt;sup id="fnref:robocup"&gt;&lt;a class="footnote-ref" href="#fn:robocup"&gt;1&lt;/a&gt;&lt;/sup&gt; at UNSW when I was doing my masters back in 2013. The control systems on the bots then was very crude. I thought that UNSW would be using some sort of reinforcement learning (RL) to control walking but they were actually hand programming every movement. I realised there where all these sensors on the &amp;ldquo;Standard Platform&amp;rdquo; bot that we were not using and my thought at the time was that if we feed these into a feedback loop into a learning algorithm like RL&lt;sup id="fnref:notRL"&gt;&lt;a class="footnote-ref" href="#fn:notRL"&gt;2&lt;/a&gt;&lt;/sup&gt; with the objective of keeping itself upright then it might be able to learn walk. Furth more, since the robots were getting damaged quite easily from falling over &lt;em&gt;a lot&lt;/em&gt; individual robots might learn how to deal with their own particular damage.&lt;/p&gt;
+&lt;h2&gt;Consciousness?&lt;/h2&gt;
+&lt;p&gt;This leads to pondering if this is a system for understanding how consciousness might emerge i.e. if the system then has a model of itself in the world it is modelling, in fact, it would be hard to imagine how it would operate without it.&lt;/p&gt;
 &lt;h2&gt;Feedback is the key&lt;/h2&gt;
 &lt;p&gt;From my days of making experimental music/noise I know that feedback is very powerful. It was what always made the most interesting results. Here too I think the feedback mechanism is a key factoring in making this work. The system balances itself.&lt;/p&gt;
 &lt;div class="footnote"&gt;
@@ -45,22 +47,36 @@
 &lt;p&gt;Ideally it is uncreative else you might have a problem with the law.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="Life"></category></entry><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-08-07T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;7th August, 2023 - The need for bling&lt;/h2&gt;
+&lt;/div&gt;</content><category term="Life"></category></entry><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-08-07T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;10 August, 2023 - First play test&lt;/h2&gt;
+&lt;p&gt;So I gave it to my son this morning and he played through it a bit. Some notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Was too fast. One second between words dropping was too short, especially at beginning. Perhaps increment as go.&lt;/li&gt;
+&lt;li&gt;Didn&amp;rsquo;t get the idea of spelling out the word. Need to somehow be explained? Perhaps 3 phoneme words were too hard to start with, try 2. Will make discovery easier.&lt;/li&gt;
+&lt;li&gt;Found the explosions fun and laughed when they happened.&lt;/li&gt;
+&lt;li&gt;Once all the letters filled the screen it became a challenge. He had to know the order of the letters.&lt;/li&gt;
+&lt;li&gt;The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.&lt;/li&gt;
+&lt;li&gt;He found blowing up his own name a kick :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Going forward:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make the selection more obvious i.e. rotate colour of selected?&lt;/li&gt;
+&lt;li&gt;Have the word written somewhere, perhaps on the background&lt;/li&gt;
+&lt;li&gt;change background with word&lt;/li&gt;
+&lt;li&gt;Announce the number of words to explode left&lt;/li&gt;
+&lt;li&gt;Should track what he has played and what took him a long time vs what was easy and took less time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in &lt;strong&gt;alphabetical order&lt;/strong&gt;! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I&amp;rsquo;m . Though some letters have limited number of 2 and 3 words&amp;hellip; still, will be easy for 3 letter words.&lt;/p&gt;
+&lt;h2&gt;7th August, 2023 - The need for bling&lt;/h2&gt;
 &lt;p&gt;So I have the basics of the game setup with simple level progressions. I&amp;rsquo;m not sure if it is fun yet? Time for some play testing with Asher?&lt;/p&gt;
-&lt;p&gt;TODO:&lt;/p&gt;
-&lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Rest of the words&lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Sound recordings of words being said, get from?&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Update the syllabus file, checking phonemes against OED&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Bling Effects when!&lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; the countdown time is updated&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; word changes&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; background?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;TODO:
+- [ ] Empty scene transition between word
+- [ ] Rest of the words
+    - [ ] Sound recordings of words being said, get from?
+    - [ ] Update the syllabus file, checking phonemes against OED
+- [ ] Bling Effects when!
+    - [ ] the countdown time is updated
+    - [ ] word changes
+    - [ ] background?&lt;/p&gt;
 &lt;h2&gt;5th August, 2023 - &amp;ldquo;-er&amp;rdquo;?&lt;/h2&gt;
 &lt;p&gt;So I ran into an issue with translating &amp;ldquo;Asher&amp;rdquo; into phonemes. &lt;a href="https://github.com/open-dict-data/ipa-dict"&gt;&lt;abbr title="International Phonetic Alphabet"&gt;IPA&lt;/abbr&gt;-dict&lt;/a&gt; says its /&amp;rsquo;æʃɐ/ but I was unsure about the &amp;lsquo;ɐ&amp;rsquo; sound/phone for UK English as it&amp;rsquo;s the same as vowel in fox /fˈɒks/ (according to the same dictionary, but now that I look at it, its a different upside-down &amp;lsquo;a&amp;rsquo;). According to the video &lt;a href="https://www.youtube.com/watch?v=ZyULNC_8SNw&amp;amp;ab_channel=EnglishLanguageClub"&gt;&amp;lsquo;er&amp;rsquo; Ending Words and the Schwa Phoneme&lt;/a&gt; it should be the Schwa &amp;lsquo;ə&amp;rsquo; sound. Anyway, I found this chart which is a better translation from &lt;abbr title="International Phonetic Alphabet"&gt;IPA&lt;/abbr&gt; to all grapheme forms&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Phoneme to Grapheme chart" src="http://alexander.whillas.com/images/phonetica/phonetics_chart.webp" /&gt;&lt;/p&gt;

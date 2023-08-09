@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Linguistics</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/linguistics.atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-08-07T00:00:00+12:00</updated><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-08-07T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;7th August, 2023 - The need for bling&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Linguistics</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/linguistics.atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-08-07T00:00:00+12:00</updated><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-08-07T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;10 August, 2023 - First play test&lt;/h2&gt;
+&lt;p&gt;So I gave it to my son this morning and he played through it a bit. Some notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Was too fast. One second between words dropping was too short, especially at beginning. Perhaps increment as go.&lt;/li&gt;
+&lt;li&gt;Didn&amp;rsquo;t get the idea of spelling out the word. Need to somehow be explained? Perhaps 3 phoneme words were too hard to start with, try 2. Will make discovery easier.&lt;/li&gt;
+&lt;li&gt;Found the explosions fun and laughed when they happened.&lt;/li&gt;
+&lt;li&gt;Once all the letters filled the screen it became a challenge. He had to know the order of the letters.&lt;/li&gt;
+&lt;li&gt;The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.&lt;/li&gt;
+&lt;li&gt;He found blowing up his own name a kick :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Going forward:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make the selection more obvious i.e. rotate colour of selected?&lt;/li&gt;
+&lt;li&gt;Have the word written somewhere, perhaps on the background&lt;/li&gt;
+&lt;li&gt;change background with word&lt;/li&gt;
+&lt;li&gt;Announce the number of words to explode left&lt;/li&gt;
+&lt;li&gt;Should track what he has played and what took him a long time vs what was easy and took less time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in &lt;strong&gt;alphabetical order&lt;/strong&gt;! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I&amp;rsquo;m . Though some letters have limited number of 2 and 3 words&amp;hellip; still, will be easy for 3 letter words.&lt;/p&gt;
+&lt;h2&gt;7th August, 2023 - The need for bling&lt;/h2&gt;
 &lt;p&gt;So I have the basics of the game setup with simple level progressions. I&amp;rsquo;m not sure if it is fun yet? Time for some play testing with Asher?&lt;/p&gt;
-&lt;p&gt;TODO:&lt;/p&gt;
-&lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Rest of the words&lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Sound recordings of words being said, get from?&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Update the syllabus file, checking phonemes against OED&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Bling Effects when!&lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; the countdown time is updated&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; word changes&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; background?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;TODO:
+- [ ] Empty scene transition between word
+- [ ] Rest of the words
+    - [ ] Sound recordings of words being said, get from?
+    - [ ] Update the syllabus file, checking phonemes against OED
+- [ ] Bling Effects when!
+    - [ ] the countdown time is updated
+    - [ ] word changes
+    - [ ] background?&lt;/p&gt;
 &lt;h2&gt;5th August, 2023 - &amp;ldquo;-er&amp;rdquo;?&lt;/h2&gt;
 &lt;p&gt;So I ran into an issue with translating &amp;ldquo;Asher&amp;rdquo; into phonemes. &lt;a href="https://github.com/open-dict-data/ipa-dict"&gt;&lt;abbr title="International Phonetic Alphabet"&gt;IPA&lt;/abbr&gt;-dict&lt;/a&gt; says its /&amp;rsquo;æʃɐ/ but I was unsure about the &amp;lsquo;ɐ&amp;rsquo; sound/phone for UK English as it&amp;rsquo;s the same as vowel in fox /fˈɒks/ (according to the same dictionary, but now that I look at it, its a different upside-down &amp;lsquo;a&amp;rsquo;). According to the video &lt;a href="https://www.youtube.com/watch?v=ZyULNC_8SNw&amp;amp;ab_channel=EnglishLanguageClub"&gt;&amp;lsquo;er&amp;rsquo; Ending Words and the Schwa Phoneme&lt;/a&gt; it should be the Schwa &amp;lsquo;ə&amp;rsquo; sound. Anyway, I found this chart which is a better translation from &lt;abbr title="International Phonetic Alphabet"&gt;IPA&lt;/abbr&gt; to all grapheme forms&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Phoneme to Grapheme chart" src="http://alexander.whillas.com/images/phonetica/phonetics_chart.webp" /&gt;&lt;/p&gt;

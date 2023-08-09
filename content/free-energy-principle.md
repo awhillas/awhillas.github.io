@@ -3,7 +3,7 @@ Title: Free Energy Principle
 slug: free-energy-principle
 summary: My understanding of the Free Energy Principle and how it applies to (machine) learning agents.
 date: 2023-08-08
-Modified: 2023-08-08
+Modified: 2023-08-09
 Category: Machine Learning
 ---
 
@@ -22,6 +22,10 @@ Its a feedback loop. What they are calling free energy is the difference between
 ![Robocup Standard Platform league]({static}/images/robocup.png)
 
 So I was vaguely involved in the [RoboCup](https://www.robocup.org/)[^robocup] at UNSW when I was doing my masters back in 2013. The control systems on the bots then was very crude. I thought that UNSW would be using some sort of reinforcement learning (RL) to control walking but they were actually hand programming every movement. I realised there where all these sensors on the "Standard Platform" bot that we were not using and my thought at the time was that if we feed these into a feedback loop into a learning algorithm like RL[^notRL] with the objective of keeping itself upright then it might be able to learn walk. Furth more, since the robots were getting damaged quite easily from falling over _a lot_ individual robots might learn how to deal with their own particular damage.
+
+## Consciousness?
+
+This leads to pondering if this is a system for understanding how consciousness might emerge i.e. if the system then has a model of itself in the world it is modelling, in fact, it would be hard to imagine how it would operate without it.
 
 ## Feedback is the key
 
