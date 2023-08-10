@@ -15,16 +15,17 @@ So I gave it to my son this morning and he played through it a bit. Some notes:
 - Didn't get the idea of spelling out the word. Need to somehow be explained? Perhaps 3 phoneme words were too hard to start with, try 2. Will make discovery easier.
 - Found the explosions fun and laughed when they happened.
 - Once all the letters filled the screen it became a challenge. He had to know the order of the letters.
-- The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
 - He found blowing up his own name a kick :)
 
 ### Going forward
 
-- Make the selection more obvious i.e. rotate colour of selected?
-- Have the word written somewhere, perhaps on the background
-- change background with word
-- Announce the number of words to explode left
-- Should track what he has played and what took him a long time vs what was easy and took less time.
+- [ ] The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
+- [ ] Make the selection more obvious i.e. rotate colour of selected?
+- [ ] Have the word written somewhere, perhaps on the background
+- [ ] Change background with word.
+- [ ] Announce the number of words left to explode.
+- [ ] Should track what he has played and what took him a long time vs what was easy and took less time.
+- [ ] Bug in which the first word is repeated.
 
 ### New material
 
