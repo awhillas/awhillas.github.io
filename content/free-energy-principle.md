@@ -3,7 +3,7 @@ Title: Free Energy Principle
 slug: free-energy-principle
 summary: My understanding of the Free Energy Principle and how it applies to (machine) learning agents.
 date: 2023-08-08
-Modified: 2023-08-09
+Modified: 2023-08-10
 Category: Machine Learning
 ---
 
