@@ -42,50 +42,56 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Aug 07, 2023
+                    <em>Aug 12, 2023
 </em></p>
         </header>
 
         <article>
-            <h2>10 August, 2023 - First play test</h2>
+            <h2>TODOs:</h2>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Update the letter asset images.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Make the selection more obvious i.e. rotate colour of selected?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Have the word written somewhere, perhaps on the background.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Announce the number of words left to explode.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Should track what he has played and what took him a long time vs what was easy and took less time.</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled/> Bling Effects when:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> the countdown time is updated.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> word changes.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> background?</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked/> Change background with word.</p>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Bug in which the first word is repeated.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Rest of the words.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Sound recordings of words being said, get from?</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Update the syllabus file, checking phonemes against OED.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Empty scene transition between word.</li>
+</ul>
+<h2>12 August, 2023 - more play testing</h2>
+<p>Got an hour to work on the game today, Saturday. Added all the two word content. The three letter words is going to be <em>a lot</em> of work.</p>
+<p>I wrote a script to download the word audio from Google search page results when you proceed the word with &ldquo;define&rdquo;. Worked really well and got most of the missing two and three letter words.</p>
+<p>Also wrote a quick script to list all the audio and image assets that are missing. Made finding them and updating very quick. Asset testing is very handily when there are lot of details like this which need keeping track of. Some of the letter images I&rsquo;d downloaded at the beginning of this project need to be redone in Gimp. I also make a script to backup the assets to S3 as I don&rsquo;t want to keep them in github.</p>
+<p>Son played the game again today. I was fixing a bug next to him on the couch while he was watching TV. He stopped wating TV and started to play the game. He really got a kick out of the explosions this time and because most of the content is two letter words now he had an easier time of it.</p>
+<p>The selection thing is a bit confusing as the order of phonemes only gets checked once enough of them are selected to make up the word. Needs to happen on every selection and some sort of indication that the wrong order was selected. Perhaps play the phonemes in order as reinforcement?</p>
+<h2>10 August, 2023 - First play test</h2>
 <p>So I gave it to my son this morning and he played through it a bit. Some notes:</p>
 <ul>
 <li>Was too fast. One second between words dropping was too short, especially at beginning. Perhaps increment as go.</li>
 <li>Didn&rsquo;t get the idea of spelling out the word. Need to somehow be explained? Perhaps 3 phoneme words were too hard to start with, try 2. Will make discovery easier.</li>
 <li>Found the explosions fun and laughed when they happened.</li>
 <li>Once all the letters filled the screen it became a challenge. He had to know the order of the letters.</li>
-<li>He found blowing up his own name a kick :)</li>
-</ul>
-<h3>Going forward</h3>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Make the selection more obvious i.e. rotate colour of selected?</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Have the word written somewhere, perhaps on the background</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Change background with word.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Announce the number of words left to explode.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Should track what he has played and what took him a long time vs what was easy and took less time.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Bug in which the first word is repeated.</li>
+<li>He found blowing up his own name a kick 😂</li>
 </ul>
 <h3>New material</h3>
 <p><img alt="Word list from Sons's school" src="http://alexander.whillas.com/images/word_list_from_sons_school.jpg" /></p>
 <p>I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in <strong>alphabetical order</strong>! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I&rsquo;m using phonemes not letters maybe its not. Though some letters have limited number of 2 and 3 words&hellip; still, will be easy for 3 letter words.</p>
-<h2>7th August, 2023 - The need for bling</h2>
-<p>So I have the basics of the game setup with simple level progressions. I&rsquo;m not sure if it is fun yet? Time for some play testing with Asher?</p>
-<p>TODO:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled checked/> Empty scene transition between word</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Rest of the words<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Sound recordings of words being said, get from?</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Update the syllabus file, checking phonemes against OED</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Bling Effects when!<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> the countdown time is updated</li>
-<li class="task-list-item"><input type="checkbox" disabled/> word changes</li>
-<li class="task-list-item"><input type="checkbox" disabled/> background?</li>
-</ul>
-</li>
-</ul>
 <h2>5th August, 2023 - &ldquo;-er&rdquo;?</h2>
 <p>So I ran into an issue with translating &ldquo;Asher&rdquo; into phonemes. <a href="https://github.com/open-dict-data/ipa-dict"><abbr title="International Phonetic Alphabet">IPA</abbr>-dict</a> says its /&rsquo;æʃɐ/ but I was unsure about the &lsquo;ɐ&rsquo; sound/phone for UK English as it&rsquo;s the same as vowel in fox /fˈɒks/ (according to the same dictionary, but now that I look at it, its a different upside-down &lsquo;a&rsquo;). According to the video <a href="https://www.youtube.com/watch?v=ZyULNC_8SNw&amp;ab_channel=EnglishLanguageClub">&lsquo;er&rsquo; Ending Words and the Schwa Phoneme</a> it should be the Schwa &lsquo;ə&rsquo; sound.</p>
 <p>Although there is no &lsquo;ɐ&rsquo; in that chart only &lsquo;ɒ&rsquo;? According to the <a href="https://www.ipachart.com/"><abbr title="International Phonetic Alphabet">IPA</abbr> interactive chart</a> it seems that &lsquo;ə&rsquo; is in fact correct, but all three could be correct depending on which part of the UK your from? The <a href="https://www.oed.com/dictionary/basher_n1?tab=factsheet#26849264">OED</a> says &lsquo;ə&rsquo; so I guess I&rsquo;ll go with that. I&rsquo;m not sure how one decides what is the official phoneme for a pronunciation for a dialect. Maybe the OED is it?</p>

@@ -1,11 +1,43 @@
 ---
 Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
-summary: A new game I'm working on to help kids learn to read.
+summary: A new game I'm working on to help kids learn to read by sounding out words.
 date: 2023-06-11
-Modified: 2023-08-07
+Modified: 2023-08-12
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
+
+## TODOs:
+
+- [ ] Update the letter asset images.
+- [ ] Make the selection more obvious i.e. rotate colour of selected?
+- [ ] Have the word written somewhere, perhaps on the background.
+- [ ] Announce the number of words left to explode.
+- [ ] Should track what he has played and what took him a long time vs what was easy and took less time.
+- [ ] Bling Effects when:
+    - [ ] the countdown time is updated.
+    - [ ] word changes.
+    - [X] background?
+
+- [X] Change background with word.
+- [X] The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
+- [x] Bug in which the first word is repeated.
+- [X] Rest of the words.
+    - [X] Sound recordings of words being said, get from?
+    - [X] Update the syllabus file, checking phonemes against OED.
+- [x] Empty scene transition between word.
+
+## 12 August, 2023 - more play testing
+
+Got an hour to work on the game today, Saturday. Added all the two word content. The three letter words is going to be _a lot_ of work.
+
+I wrote a script to download the word audio from Google search page results when you proceed the word with "define". Worked really well and got most of the missing two and three letter words.
+
+Also wrote a quick script to list all the audio and image assets that are missing. Made finding them and updating very quick. Asset testing is very handily when there are lot of details like this which need keeping track of. Some of the letter images I'd downloaded at the beginning of this project need to be redone in Gimp. I also make a script to backup the assets to S3 as I don't want to keep them in github.
+
+Son played the game again today. I was fixing a bug next to him on the couch while he was watching TV. He stopped wating TV and started to play the game. He really got a kick out of the explosions this time and because most of the content is two letter words now he had an easier time of it.
+
+The selection thing is a bit confusing as the order of phonemes only gets checked once enough of them are selected to make up the word. Needs to happen on every selection and some sort of indication that the wrong order was selected. Perhaps play the phonemes in order as reinforcement?
 
 ## 10 August, 2023 - First play test
 
@@ -15,38 +47,13 @@ So I gave it to my son this morning and he played through it a bit. Some notes:
 - Didn't get the idea of spelling out the word. Need to somehow be explained? Perhaps 3 phoneme words were too hard to start with, try 2. Will make discovery easier.
 - Found the explosions fun and laughed when they happened.
 - Once all the letters filled the screen it became a challenge. He had to know the order of the letters.
-- He found blowing up his own name a kick :)
-
-### Going forward
-
-- [ ] The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
-- [ ] Make the selection more obvious i.e. rotate colour of selected?
-- [ ] Have the word written somewhere, perhaps on the background
-- [ ] Change background with word.
-- [ ] Announce the number of words left to explode.
-- [ ] Should track what he has played and what took him a long time vs what was easy and took less time.
-- [ ] Bug in which the first word is repeated.
+- He found blowing up his own name a kick 😂
 
 ### New material
 
 ![Word list from Sons's school]({static}images/word_list_from_sons_school.jpg)
 
 I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in **alphabetical order**! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I'm using phonemes not letters maybe its not. Though some letters have limited number of 2 and 3 words... still, will be easy for 3 letter words.
-
-## 7th August, 2023 - The need for bling
-
-So I have the basics of the game setup with simple level progressions. I'm not sure if it is fun yet? Time for some play testing with Asher?
-
-TODO:
-
-- [x] Empty scene transition between word
-- [ ] Rest of the words
-    - [ ] Sound recordings of words being said, get from?
-    - [ ] Update the syllabus file, checking phonemes against OED
-- [ ] Bling Effects when!
-    - [ ] the countdown time is updated
-    - [ ] word changes
-    - [ ] background?
 
 
 ## 5th August, 2023 - "-er"?
