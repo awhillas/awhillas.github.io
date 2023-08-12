@@ -60,7 +60,7 @@ I too the kid to school this morning and while I was waiting for the teacher to 
 
 So I ran into an issue with translating "Asher" into phonemes. [IPA-dict](https://github.com/open-dict-data/ipa-dict) says its /'æʃɐ/ but I was unsure about the 'ɐ' sound/phone for UK English as it's the same as vowel in fox /fˈɒks/ (according to the same dictionary, but now that I look at it, its a different upside-down 'a'). According to the video ['er' Ending Words and the Schwa Phoneme](https://www.youtube.com/watch?v=ZyULNC_8SNw&ab_channel=EnglishLanguageClub) it should be the Schwa 'ə' sound.
 
-Although there is no 'ɐ' in that chart only 'ɒ'? According to the [IPA interactive chart](https://www.ipachart.com/) it seems that 'ə' is in fact correct, but all three could be correct depending on which part of the UK your from? The [OED](https://www.oed.com/dictionary/basher_n1?tab=factsheet#26849264) says 'ə' so I guess I'll go with that. I'm not sure how one decides what is the official phoneme for a pronunciation for a dialect. Maybe the OED is it?
+According to the [IPA interactive chart](https://www.ipachart.com/) it seems that 'ə' is in fact correct, but all three could be correct depending on which part of the UK your from? The [OED](https://www.oed.com/dictionary/basher_n1?tab=factsheet#26849264) says 'ə' so I guess I'll go with that. I'm not sure how one decides what is the official phoneme for a pronunciation for a dialect. Maybe the OED is it?
 
 ## 3rd August, 2023 - Explosions!
 
