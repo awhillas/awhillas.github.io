@@ -3,22 +3,26 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read by sounding out words.
 date: 2023-06-11
-Modified: 2023-08-12
+Modified: 2023-08-13
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
 ## TODOs:
 
-- [ ] Update the letter asset images.
-- [ ] Make the selection more obvious i.e. rotate colour of selected?
-- [ ] Have the word written somewhere, perhaps on the background.
+- [ ] Port to Android
+- [ ] Port to iOS
+- [ ] Splash screen?
 - [ ] Announce the number of words left to explode.
-- [ ] Should track what he has played and what took him a long time vs what was easy and took less time.
+- [ ] Should track what has been played and what took a long time vs what was easy and took less time.
+- [ ] Make the selection more obvious i.e. rotate colour of selected?
 - [ ] Bling Effects when:
     - [ ] the countdown time is updated.
     - [ ] word changes.
     - [X] background?
 
+- [X] Have the word written somewhere, top right.
+- [X] Full screen
+- [X] Update the letter asset images.
 - [X] Change background with word.
 - [X] The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
 - [x] Bug in which the first word is repeated.

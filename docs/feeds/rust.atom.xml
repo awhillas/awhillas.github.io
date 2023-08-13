@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Rust</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/rust.atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-08-12T00:00:00+12:00</updated><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-08-12T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read by sounding out words.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;TODOs:&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Rust</title><link href="http://alexander.whillas.com/" rel="alternate"></link><link href="http://alexander.whillas.com/feeds/rust.atom.xml" rel="self"></link><id>http://alexander.whillas.com/</id><updated>2023-08-13T00:00:00+12:00</updated><entry><title>Phonetica Game Dev Log</title><link href="http://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-08-13T00:00:00+12:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read by sounding out words.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;TODOs:&lt;/h2&gt;
 &lt;ul class="task-list"&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Update the letter asset images.&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Make the selection more obvious i.e. rotate colour of selected?&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Have the word written somewhere, perhaps on the background.&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Port to Android&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Port to iOS&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Splash screen?&lt;/li&gt;
 &lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Announce the number of words left to explode.&lt;/li&gt;
-&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Should track what he has played and what took him a long time vs what was easy and took less time.&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Should track what has been played and what took a long time vs what was easy and took less time.&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled/&gt; Make the selection more obvious i.e. rotate colour of selected?&lt;/li&gt;
 &lt;li class="task-list-item"&gt;
 &lt;p&gt;&lt;input type="checkbox" disabled/&gt; Bling Effects when:&lt;/p&gt;
 &lt;ul class="task-list"&gt;
@@ -15,8 +16,11 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li class="task-list-item"&gt;
-&lt;p&gt;&lt;input type="checkbox" disabled checked/&gt; Change background with word.&lt;/p&gt;
+&lt;p&gt;&lt;input type="checkbox" disabled checked/&gt; Have the word written somewhere, top right.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled checked/&gt; Full screen&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled checked/&gt; Update the letter asset images.&lt;/li&gt;
+&lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled checked/&gt; Change background with word.&lt;/li&gt;
 &lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled checked/&gt; The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.&lt;/li&gt;
 &lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled checked/&gt; Bug in which the first word is repeated.&lt;/li&gt;
 &lt;li class="task-list-item"&gt;&lt;input type="checkbox" disabled checked/&gt; Rest of the words.&lt;ul class="task-list"&gt;
