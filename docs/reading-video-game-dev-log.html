@@ -42,30 +42,27 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Aug 13, 2023
+                    <em>Aug 18, 2023
 </em></p>
         </header>
 
         <article>
             <h2>TODOs:</h2>
 <ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> BLocks use Pastel colours and selected to be Bright Red</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Port to Android</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Port to iOS</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Splash screen?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Announce the number of words left to explode.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Should track what has been played and what took a long time vs what was easy and took less time.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Make the selection more obvious i.e. rotate colour of selected?</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> Bling Effects when:</p>
-<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Bling Effects when:<ul class="task-list">
 <li class="task-list-item"><input type="checkbox" disabled/> the countdown time is updated.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> word changes.</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> background?</li>
 </ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> Have the word written somewhere, top right.</p>
-</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Have the word written somewhere, top right.</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> Full screen</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> Update the letter asset images.</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> Change background with word.</li>
@@ -78,6 +75,13 @@
 </li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> Empty scene transition between word.</li>
 </ul>
+<h2>18 August, 2023 - Pivot back to Rust</h2>
+<p>So porting to Android and iOS is not going to be trivial. For vanilla <code>pygame</code> its ok but the <code>pymunk</code> is making it a nightmare with long lists of C++ errors. There is a fairly comprehensive guide but I&rsquo;m not interested it learning all the ins and outs of porting python to Android let alone doing it all again for iOS (I&rsquo;d need a Mac with enough space to install Xcode on which isn&rsquo;t readily available.). I could port to Kivy, which might make things better but again fighting to export to different platforms.</p>
+<h3>Deploy to the Web!</h3>
+<p>I&rsquo;m thinking of going back to Rust + Bevy (CMS game engine) + Rapier (physics) with the WASM target output so I can just deploy it to an S3 bucket and any platform can use it. Will mean that I can also share with my son when I&rsquo;m in Sydney for extended an period. It will also mean no App store(s) to deal with and it will be really easy to share with anyone for testing, it just a link.</p>
+<p>I knew this wisdom from my web-dev days but somehow have forgotten it: <em>The web is the best distribution medium for digital anything.</em></p>
+<h3>Bye-bye Python</h3>
+<p>Prototyping in Python was great as its fast which means iteration time is short, which is what you want when building a throw away prototype. Too much effort and you get attached to the code.</p>
 <h2>12 August, 2023 - more play testing</h2>
 <p>Got an hour to work on the game today, Saturday. Added all the two word content. The three letter words is going to be <em>a lot</em> of work.</p>
 <p>I wrote a script to download the word audio from Google search page results when you proceed the word with &ldquo;define&rdquo;. Worked really well and got most of the missing two and three letter words.</p>
@@ -122,11 +126,10 @@
 <h2>23 July, 2023 - Physics is fun</h2>
 <p><img alt="pymunk demp / animated logo" src="http://alexander.whillas.com/images/pymunk_logo_animation.gif" /></p>
 <p>So I have a basic concept for the game. Its going to involve blocks dropping and using a physics engine to simulate that. I found a simple 2D physics engine called <a href="http://www.pymunk.org/">pymunk</a> which is an interface to the C library <a href="http://chipmunk-physics.net/">Chipmunk2D</a>. pymunk is under active development while Chipmunk2D seems to be feature complete. There is heaps of tutorials with pygame and pymunk so getting up-to-speed is quite easy and fun! There was a lot of low hanging fruit! To list what I went through:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">-</span><span class="w"> </span>[<span class="nv">Python</span><span class="w"> </span><span class="nv">Physics</span><span class="w"> </span><span class="nv">Simulation</span>.<span class="w"> </span><span class="nv">Galton</span><span class="w"> </span><span class="nv">Board</span>.<span class="w"> </span><span class="nv">Pymunk</span><span class="w"> </span><span class="nv">Tutorial</span>]<span class="ss">(</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">www</span>.<span class="nv">youtube</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">watch</span>?<span class="nv">v</span><span class="o">=-</span><span class="nv">q_Vje2a6eY</span><span class="o">&amp;</span><span class="nv">t</span><span class="o">=</span><span class="mi">15</span><span class="nv">s</span><span class="o">&amp;</span><span class="nv">ab_channel</span><span class="o">=</span><span class="nv">CoderSpace</span><span class="ss">)</span><span class="w"> </span><span class="nv">I</span><span class="w"> </span><span class="nv">watched</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">used</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">code</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">starting</span><span class="w"> </span><span class="nv">point</span>.<span class="w"> </span><span class="nv">Great</span><span class="w"> </span><span class="nv">template</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">getting</span><span class="w"> </span><span class="nv">pygame</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">pymunk</span><span class="w"> </span><span class="nv">talking</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">other</span>.
-<span class="o">-</span><span class="w"> </span>[<span class="nv">Using</span><span class="w"> </span><span class="nv">mouse</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">keyboard</span>]<span class="ss">(</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">pymunk</span><span class="o">-</span><span class="nv">tutorial</span>.<span class="nv">readthedocs</span>.<span class="nv">io</span><span class="o">/</span><span class="nv">en</span><span class="o">/</span><span class="nv">latest</span><span class="o">/</span><span class="nv">mouse</span><span class="o">/</span><span class="nv">mouse</span>.<span class="nv">html</span><span class="ss">)</span><span class="w"> </span><span class="nv">helped</span><span class="w"> </span><span class="nv">me</span><span class="w"> </span><span class="nv">create</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">touch</span><span class="o">/</span><span class="nv">click</span><span class="w"> </span><span class="nv">interaction</span><span class="w"> </span><span class="nv">I</span><span class="w"> </span><span class="nv">need</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">interacting</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">blocks</span>.
-</code></pre></div></td></tr></table></div>
-
+<ul>
+<li><a href="https://www.youtube.com/watch?v=-q_Vje2a6eY&amp;t=15s&amp;ab_channel=CoderSpace">Python Physics Simulation. Galton Board. Pymunk Tutorial</a> I watched this and used the code as a starting point. Great template for getting pygame and pymunk talking to each other.</li>
+<li><a href="https://pymunk-tutorial.readthedocs.io/en/latest/mouse/mouse.html">Using mouse and keyboard</a> helped me create the touch/click interaction I need for interacting with the blocks.</li>
+</ul>
 <p>I did give up on trying to rotate the images to the same angle as the physics block.</p>
 <h2>14th July, 2023 - Just graphemes to phonemes</h2>
 <p>Phonetics is quite the rabbit hole. I just need English spellings, or graphemes, and their related phonemes. I found this chart for Australian English (I think)</p>

@@ -3,12 +3,13 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read by sounding out words.
 date: 2023-06-11
-Modified: 2023-08-13
+Modified: 2023-08-18
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
 ## TODOs:
 
+- [ ] BLocks use Pastel colours and selected to be Bright Red
 - [ ] Port to Android
 - [ ] Port to iOS
 - [ ] Splash screen?
@@ -19,7 +20,6 @@ Category: Rust, Software Engineering, Game Development, Linguistics
     - [ ] the countdown time is updated.
     - [ ] word changes.
     - [X] background?
-
 - [X] Have the word written somewhere, top right.
 - [X] Full screen
 - [X] Update the letter asset images.
@@ -30,6 +30,22 @@ Category: Rust, Software Engineering, Game Development, Linguistics
     - [X] Sound recordings of words being said, get from?
     - [X] Update the syllabus file, checking phonemes against OED.
 - [x] Empty scene transition between word.
+
+
+## 18 August, 2023 - Pivot back to Rust
+
+So porting to Android and iOS is not going to be trivial. For vanilla `pygame` its ok but the `pymunk` is making it a nightmare with long lists of C++ errors. There is a fairly comprehensive guide but I'm not interested it learning all the ins and outs of porting python to Android let alone doing it all again for iOS (I'd need a Mac with enough space to install Xcode on which isn't readily available.). I could port to Kivy, which might make things better but again fighting to export to different platforms.
+
+### Deploy to the Web!
+
+I'm thinking of going back to Rust + Bevy (CMS game engine) + Rapier (physics) with the WASM target output so I can just deploy it to an S3 bucket and any platform can use it. Will mean that I can also share with my son when I'm in Sydney for extended an period. It will also mean no App store(s) to deal with and it will be really easy to share with anyone for testing, it just a link.
+
+I knew this wisdom from my web-dev days but somehow have forgotten it: _The web is the best distribution medium for digital anything._
+
+### Bye-bye Python
+
+Prototyping in Python was great as its fast which means iteration time is short, which is what you want when building a throw away prototype. Too much effort and you get attached to the code.
+
 
 ## 12 August, 2023 - more play testing
 
@@ -101,8 +117,8 @@ I think that games could be that space for me.
 
 So I have a basic concept for the game. Its going to involve blocks dropping and using a physics engine to simulate that. I found a simple 2D physics engine called [pymunk](http://www.pymunk.org/) which is an interface to the C library [Chipmunk2D](http://chipmunk-physics.net/). pymunk is under active development while Chipmunk2D seems to be feature complete. There is heaps of tutorials with pygame and pymunk so getting up-to-speed is quite easy and fun! There was a lot of low hanging fruit! To list what I went through:
 
-    - [Python Physics Simulation. Galton Board. Pymunk Tutorial](https://www.youtube.com/watch?v=-q_Vje2a6eY&t=15s&ab_channel=CoderSpace) I watched this and used the code as a starting point. Great template for getting pygame and pymunk talking to each other.
-    - [Using mouse and keyboard](https://pymunk-tutorial.readthedocs.io/en/latest/mouse/mouse.html) helped me create the touch/click interaction I need for interacting with the blocks.
+- [Python Physics Simulation. Galton Board. Pymunk Tutorial](https://www.youtube.com/watch?v=-q_Vje2a6eY&t=15s&ab_channel=CoderSpace) I watched this and used the code as a starting point. Great template for getting pygame and pymunk talking to each other.
+- [Using mouse and keyboard](https://pymunk-tutorial.readthedocs.io/en/latest/mouse/mouse.html) helped me create the touch/click interaction I need for interacting with the blocks.
 
 I did give up on trying to rotate the images to the same angle as the physics block.
 
