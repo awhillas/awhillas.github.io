@@ -9,14 +9,16 @@ Category: Rust, Software Engineering, Game Development, Linguistics
 
 ## TODOs:
 
+- [ ] Reimplement in Rust + Bevy + Rapier 😨
+
 - [ ] BLocks use Pastel colours and selected to be Bright Red
-- [ ] Port to Android
-- [ ] Port to iOS
 - [ ] Splash screen?
 - [ ] Announce the number of words left to explode.
 - [ ] Should track what has been played and what took a long time vs what was easy and took less time.
 - [ ] Make the selection more obvious i.e. rotate colour of selected?
 - [ ] Bling Effects when:
+    - [ ] Reverse gravity for a word
+    - [X] Streaking, don't update the background
     - [ ] the countdown time is updated.
     - [ ] word changes.
     - [X] background?
@@ -31,6 +33,8 @@ Category: Rust, Software Engineering, Game Development, Linguistics
     - [X] Update the syllabus file, checking phonemes against OED.
 - [x] Empty scene transition between word.
 
+- [ ] ~~Port python to Android~~
+- [ ] ~~Port python to iOS~~
 
 ## 18 August, 2023 - Pivot back to Rust
 

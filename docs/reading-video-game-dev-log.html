@@ -49,14 +49,19 @@
         <article>
             <h2>TODOs:</h2>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> BLocks use Pastel colours and selected to be Bright Red</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Port to Android</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Port to iOS</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled/> Reimplement in Rust + Bevy + Rapier</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled/> BLocks use Pastel colours and selected to be Bright Red</p>
+</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Splash screen?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Announce the number of words left to explode.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Should track what has been played and what took a long time vs what was easy and took less time.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Make the selection more obvious i.e. rotate colour of selected?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Bling Effects when:<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Reverse gravity for a word</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Streaking, don&rsquo;t update the background</li>
 <li class="task-list-item"><input type="checkbox" disabled/> the countdown time is updated.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> word changes.</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> background?</li>
@@ -73,7 +78,13 @@
 <li class="task-list-item"><input type="checkbox" disabled checked/> Update the syllabus file, checking phonemes against OED.</li>
 </ul>
 </li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Empty scene transition between word.</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked/> Empty scene transition between word.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled/> <del>Port python to Android</del></p>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <del>Port python to iOS</del></li>
 </ul>
 <h2>18 August, 2023 - Pivot back to Rust</h2>
 <p>So porting to Android and iOS is not going to be trivial. For vanilla <code>pygame</code> its ok but the <code>pymunk</code> is making it a nightmare with long lists of C++ errors. There is a fairly comprehensive guide but I&rsquo;m not interested it learning all the ins and outs of porting python to Android let alone doing it all again for iOS (I&rsquo;d need a Mac with enough space to install Xcode on which isn&rsquo;t readily available.). I could port to Kivy, which might make things better but again fighting to export to different platforms.</p>
