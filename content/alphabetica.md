@@ -10,17 +10,24 @@ Category: Rust, Software Engineering, Game Development, Linguistics
 ## TODOs:
 
 - [ ] Reimplement in Rust + Bevy + Rapier 😨
+    - [ ] Selecting blocks
+    - [ ] Change appearance of selected
+    - [ ] Track current state of selected
+    - [ ] Exploding blocks
+    - [ ] Make words for JSON
+    - [X] Falling blocks
+    - [X] Group of three blocks
 
-- [ ] BLocks use Pastel colours and selected to be Bright Red
+- [ ] Blocks use Pastel colours and selected to be Bright Red
 - [ ] Splash screen?
 - [ ] Announce the number of words left to explode.
 - [ ] Should track what has been played and what took a long time vs what was easy and took less time.
 - [ ] Make the selection more obvious i.e. rotate colour of selected?
 - [ ] Bling Effects when:
     - [ ] Reverse gravity for a word
-    - [X] Streaking, don't update the background
     - [ ] the countdown time is updated.
     - [ ] word changes.
+    - [X] Streaking, don't update the background
     - [X] background?
 - [X] Have the word written somewhere, top right.
 - [X] Full screen
@@ -42,7 +49,7 @@ So porting to Android and iOS is not going to be trivial. For vanilla `pygame` i
 
 ### Deploy to the Web!
 
-I'm thinking of going back to Rust + Bevy (CMS game engine) + Rapier (physics) with the WASM target output so I can just deploy it to an S3 bucket and any platform can use it. Will mean that I can also share with my son when I'm in Sydney for extended an period. It will also mean no App store(s) to deal with and it will be really easy to share with anyone for testing, it just a link.
+I'm thinking of going back to Rust + Bevy (ECS game engine) + Rapier (physics) with the WASM target output so I can just deploy it to an S3 bucket and any platform can use it. Will mean that I can also share with my son when I'm in Sydney for extended an period. It will also mean no App store(s) to deal with and it will be really easy to share with anyone for testing, it just a link.
 
 I knew this wisdom from my web-dev days but somehow have forgotten it: _The web is the best distribution medium for digital anything._
 
@@ -79,6 +86,7 @@ So I gave it to my son this morning and he played through it a bit. Some notes:
 
 I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in **alphabetical order**! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I'm using phonemes not letters maybe its not. Though some letters have limited number of 2 and 3 words... still, will be easy for 3 letter words.
 
+*[ECS]: Entity Component System
 
 ## 5th August, 2023 - "-er"?
 

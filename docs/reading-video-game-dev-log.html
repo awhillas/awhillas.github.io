@@ -50,10 +50,19 @@
             <h2>TODOs:</h2>
 <ul class="task-list">
 <li class="task-list-item">
-<p><input type="checkbox" disabled/> Reimplement in Rust + Bevy + Rapier</p>
+<p><input type="checkbox" disabled/> Reimplement in Rust + Bevy + Rapier 😨</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Selecting blocks</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Change appearance of selected</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Track current state of selected</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Exploding blocks</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Make words for JSON</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Falling blocks</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Group of three blocks</li>
+</ul>
 </li>
 <li class="task-list-item">
-<p><input type="checkbox" disabled/> BLocks use Pastel colours and selected to be Bright Red</p>
+<p><input type="checkbox" disabled/> Blocks use Pastel colours and selected to be Bright Red</p>
 </li>
 <li class="task-list-item"><input type="checkbox" disabled/> Splash screen?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Announce the number of words left to explode.</li>
@@ -61,9 +70,9 @@
 <li class="task-list-item"><input type="checkbox" disabled/> Make the selection more obvious i.e. rotate colour of selected?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Bling Effects when:<ul class="task-list">
 <li class="task-list-item"><input type="checkbox" disabled/> Reverse gravity for a word</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Streaking, don&rsquo;t update the background</li>
 <li class="task-list-item"><input type="checkbox" disabled/> the countdown time is updated.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> word changes.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Streaking, don&rsquo;t update the background</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> background?</li>
 </ul>
 </li>
@@ -89,7 +98,7 @@
 <h2>18 August, 2023 - Pivot back to Rust</h2>
 <p>So porting to Android and iOS is not going to be trivial. For vanilla <code>pygame</code> its ok but the <code>pymunk</code> is making it a nightmare with long lists of C++ errors. There is a fairly comprehensive guide but I&rsquo;m not interested it learning all the ins and outs of porting python to Android let alone doing it all again for iOS (I&rsquo;d need a Mac with enough space to install Xcode on which isn&rsquo;t readily available.). I could port to Kivy, which might make things better but again fighting to export to different platforms.</p>
 <h3>Deploy to the Web!</h3>
-<p>I&rsquo;m thinking of going back to Rust + Bevy (CMS game engine) + Rapier (physics) with the WASM target output so I can just deploy it to an S3 bucket and any platform can use it. Will mean that I can also share with my son when I&rsquo;m in Sydney for extended an period. It will also mean no App store(s) to deal with and it will be really easy to share with anyone for testing, it just a link.</p>
+<p>I&rsquo;m thinking of going back to Rust + Bevy (<abbr title="Entity Component System">ECS</abbr> game engine) + Rapier (physics) with the WASM target output so I can just deploy it to an S3 bucket and any platform can use it. Will mean that I can also share with my son when I&rsquo;m in Sydney for extended an period. It will also mean no App store(s) to deal with and it will be really easy to share with anyone for testing, it just a link.</p>
 <p>I knew this wisdom from my web-dev days but somehow have forgotten it: <em>The web is the best distribution medium for digital anything.</em></p>
 <h3>Bye-bye Python</h3>
 <p>Prototyping in Python was great as its fast which means iteration time is short, which is what you want when building a throw away prototype. Too much effort and you get attached to the code.</p>
@@ -249,7 +258,7 @@ I also found a great <a href="https://global-asp.github.io/storybooks-sah/storie
 <h3>New Strategy</h3>
 <p>I might do two versions of the project at the same time. Since it takes soooooo loooong to get Bev answers I&rsquo;ll work in Bevy until I hit a blocker, ask a question and then swtich to Kivy until I hot a blocker and then switch back again. I really want to learn Rust and I don&rsquo;t have the bandwidth to learn it separately from the one side project I do have time for so I&rsquo;ll keep tyring to shoehorn it in.</p>
 <h2>23 June, 2023 - Pivot to pygame</h2>
-<p>So as much as I like the setup of Bevy&rsquo;s ECS I hit a major road block and can&rsquo;t get any help on it. I basically want to get the pixel size of a scaled image and there doesn&rsquo;t seem to be any way to do that in Bevy. I think because transforms are in WebGPU (WGPU) and Bevy its a one way street with from Bevy to WGPU.</p>
+<p>So as much as I like the setup of Bevy&rsquo;s <abbr title="Entity Component System">ECS</abbr> I hit a major road block and can&rsquo;t get any help on it. I basically want to get the pixel size of a scaled image and there doesn&rsquo;t seem to be any way to do that in Bevy. I think because transforms are in WebGPU (WGPU) and Bevy its a one way street with from Bevy to WGPU.</p>
 <p>I found a hard time getting help with this as the Bevy subreddit has been taken down due the the <a href="https://www.eff.org/deeplinks/2023/06/what-reddit-got-wrong?utm_source=pocket_saves">Reddit hullabaloo</a> that is going on. The moderator didn&rsquo;t bother with a transition period so there is nowhere to ask questions. I tried posting the same question on the <a href="https://github.com/bevyengine/bevy/discussions/8919">bevy&rsquo;s github discussion board</a>, <a href="https://www.reddit.com/r/rust_gamedev/comments/14fkzwk/how_to_get_the_actual_pixel_size_of_a_transformed/">/r/rust_gamedev</a> and <a href="https://stackoverflow.com/questions/76527423/how-to-get-the-actual-pixel-size-of-a-transformed-sprite-in-bevy">Stack Overflow</a> to see which one would get a response but so far nada.</p>
 <p>In the mean time my son needs some help with reading so I&rsquo;m going to pivot to pygame as I know I can bag out something fast.</p>
 <p>I&rsquo;ll learn Rust on one of my other side projects. I think approaching it from the other side, see what low hanging fruit there is a and make a game around it rather than fighting Bevy to do something specific. There is a <a href="https://github.com/dimforge/salva">fluid simulation lib</a> I found (which is based on a good, <a href="https://nalgebra.org/">pure Rust linear algebra lib</a>) which would be fun for kids as they love water parks especially sandpits with water!</p>
