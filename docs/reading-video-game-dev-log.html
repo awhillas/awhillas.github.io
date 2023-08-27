@@ -42,58 +42,43 @@
             <p class="date">Started
                 <em><time datetime="2023-06-11T00:00:00+12:00">Jun 11, 2023</time></em>
 ; Updated
-                    <em>Aug 18, 2023
+                    <em>Aug 28, 2023
 </em></p>
         </header>
 
         <article>
             <h2>TODOs:</h2>
+<h3>MVP - Reimplement in Rust</h3>
 <ul class="task-list">
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> Reimplement in Rust + Bevy + Rapier 😨</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Selecting blocks</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Change appearance of selected</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Unselect when wrong order<ul class="task-list">
 <li class="task-list-item"><input type="checkbox" disabled/> Track current state of selected</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Exploding blocks</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Make words for JSON</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Falling blocks</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Group of three blocks</li>
 </ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> Blocks use Pastel colours and selected to be Bright Red</p>
+<li class="task-list-item"><input type="checkbox" disabled/> Make words from JSON syllabus</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Sound!<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Play word sound when word appears.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Play phoneme when block selected.</li>
+</ul>
 </li>
+<li class="task-list-item"><input type="checkbox" disabled/> Exploding blocks<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Make block disappear</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Explosion in Rapier?</li>
+</ul>
+</li>
+</ul>
+<h3>Prototype</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Blocks use Pastel colours and selected to be Bright Red</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Splash screen?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Announce the number of words left to explode.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Should track what has been played and what took a long time vs what was easy and took less time.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Make the selection more obvious i.e. rotate colour of selected?</li>
 <li class="task-list-item"><input type="checkbox" disabled/> Bling Effects when:<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Reverse gravity for a word</li>
 <li class="task-list-item"><input type="checkbox" disabled/> the countdown time is updated.</li>
 <li class="task-list-item"><input type="checkbox" disabled/> word changes.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Streaking, don&rsquo;t update the background</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> background?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Reverse gravity for a word?</li>
 </ul>
 </li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Have the word written somewhere, top right.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Full screen</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Update the letter asset images.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Change background with word.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Bug in which the first word is repeated.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Rest of the words.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled checked/> Sound recordings of words being said, get from?</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Update the syllabus file, checking phonemes against OED.</li>
-</ul>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> Empty scene transition between word.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> <del>Port python to Android</del></p>
-</li>
-<li class="task-list-item"><input type="checkbox" disabled/> <del>Port python to iOS</del></li>
 </ul>
 <h2>18 August, 2023 - Pivot back to Rust</h2>
 <p>So porting to Android and iOS is not going to be trivial. For vanilla <code>pygame</code> its ok but the <code>pymunk</code> is making it a nightmare with long lists of C++ errors. There is a fairly comprehensive guide but I&rsquo;m not interested it learning all the ins and outs of porting python to Android let alone doing it all again for iOS (I&rsquo;d need a Mac with enough space to install Xcode on which isn&rsquo;t readily available.). I could port to Kivy, which might make things better but again fighting to export to different platforms.</p>

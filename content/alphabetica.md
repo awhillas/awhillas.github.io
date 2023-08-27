@@ -3,20 +3,25 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read by sounding out words.
 date: 2023-06-11
-Modified: 2023-08-18
+Modified: 2023-08-28
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
 ## TODOs:
 
-- [ ] Reimplement in Rust + Bevy + Rapier 😨
-    - [ ] Selecting blocks
-    - [ ] Change appearance of selected
+### MVP - Reimplement in Rust
+
+- [ ] Unselect when wrong order
     - [ ] Track current state of selected
-    - [ ] Exploding blocks
-    - [ ] Make words for JSON
-    - [X] Falling blocks
-    - [X] Group of three blocks
+- [ ] Make words from JSON syllabus
+- [ ] Sound!
+    - [ ] Play word sound when word appears.
+    - [ ] Play phoneme when block selected.
+- [ ] Exploding blocks
+    - [ ] Make block disappear
+    - [ ] Explosion in Rapier?
+
+### Prototype
 
 - [ ] Blocks use Pastel colours and selected to be Bright Red
 - [ ] Splash screen?
@@ -24,24 +29,10 @@ Category: Rust, Software Engineering, Game Development, Linguistics
 - [ ] Should track what has been played and what took a long time vs what was easy and took less time.
 - [ ] Make the selection more obvious i.e. rotate colour of selected?
 - [ ] Bling Effects when:
-    - [ ] Reverse gravity for a word
     - [ ] the countdown time is updated.
     - [ ] word changes.
-    - [X] Streaking, don't update the background
-    - [X] background?
-- [X] Have the word written somewhere, top right.
-- [X] Full screen
-- [X] Update the letter asset images.
-- [X] Change background with word.
-- [X] The selection order mechanic was confusing. Should clear as soon as the wrong letter is chosen.
-- [x] Bug in which the first word is repeated.
-- [X] Rest of the words.
-    - [X] Sound recordings of words being said, get from?
-    - [X] Update the syllabus file, checking phonemes against OED.
-- [x] Empty scene transition between word.
+    - [ ] Reverse gravity for a word?
 
-- [ ] ~~Port python to Android~~
-- [ ] ~~Port python to iOS~~
 
 ## 18 August, 2023 - Pivot back to Rust
 
