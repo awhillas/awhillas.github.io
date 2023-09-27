@@ -7,19 +7,28 @@ Modified: 2023-08-28
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
+## 27 September, 2023 - WASM is a dead end?
+
+SO there are some limitations with WASM the main one being it can't access external assets directly. After doing a Rust to WASM tutorial for making Game of Life I realise that to get it to work with all the resources is going to require a lot of custom JavaScript. It might be better to try and compile for iOS and Android separately.
+
+I'm kind of demoralised by this setback. I shelve this project for now. I might try and use Rust to do some MLOps and build a SaaS service, get some experience with Rust and then come back to this.
+
+I thought there would be some easy low hanging fruit in developing educational games but the gatekeeping on iOS and Android is very off putting and I can see why the market is limited at the moment.
+
+
 ## TODOs:
 
 ### MVP - Reimplement in Rust
 
 - [ ] Unselect when wrong order
     - [ ] Track current state of selected
-- [ ] Make words from JSON syllabus
 - [ ] Sound!
     - [ ] Play word sound when word appears.
     - [ ] Play phoneme when block selected.
 - [ ] Exploding blocks
     - [ ] Make block disappear
     - [ ] Explosion in Rapier?
+- [X] Make words from JSON syllabus
 
 ### Prototype
 
