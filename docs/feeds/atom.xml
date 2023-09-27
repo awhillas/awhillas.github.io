@@ -56,6 +56,7 @@ How do you give it an objective like walk, do the laundry or make money on the s
 &lt;p&gt;SO there are some limitations with WASM the main one being it can&amp;rsquo;t access external assets directly. After doing a Rust to WASM tutorial for making Game of Life I realise that to get it to work with all the resources is going to require a lot of custom JavaScript. It might be better to try and compile for iOS and Android separately.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m kind of demoralised by this setback. I shelve this project for now. I might try and use Rust to do some MLOps and build a SaaS service, get some experience with Rust and then come back to this.&lt;/p&gt;
 &lt;p&gt;I thought there would be some easy low hanging fruit in developing educational games but the gatekeeping on iOS and Android is very off putting and I can see why the market is limited at the moment.&lt;/p&gt;
+&lt;p&gt;Maybe I&amp;rsquo;ll just start again from scratch and do it in Javascipt?&lt;/p&gt;
 &lt;h2&gt;TODOs:&lt;/h2&gt;
 &lt;h3&gt;MVP - Reimplement in Rust&lt;/h3&gt;
 &lt;ul class="task-list"&gt;

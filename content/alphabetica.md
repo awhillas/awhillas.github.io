@@ -15,6 +15,8 @@ I'm kind of demoralised by this setback. I shelve this project for now. I might 
 
 I thought there would be some easy low hanging fruit in developing educational games but the gatekeeping on iOS and Android is very off putting and I can see why the market is limited at the moment.
 
+Maybe I'll just start again from scratch and do it in Javascipt?
+
 
 ## TODOs:
 
