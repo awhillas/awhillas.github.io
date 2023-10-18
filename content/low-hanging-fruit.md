@@ -1,13 +1,11 @@
 ---
-Title: Low Hanging Fruit Business Model
+Title: Engineering First Business Model
 slug: the-low-hanging-fruit-business-model
 summary: An alternative approach to tech business development in which all product decisions are made by the developers not Product Managers with the aim of keeping engineering effort minimal.
 date: 2023-10-02
 Modified: 2023-10-02
 Category: Business
 ---
-
-# Low Hanging Fruit Business Model
 
 I've been around the tech business for 25 years and have noticed that companies that put an MBA guy in charge usually fail (or fire them). One might also note that some of the biggest tech companies in the world have been started and lead by engineers, Facebook and Google notably.
 
@@ -20,7 +18,7 @@ The general argument for VC is that they "fund startups that drive innovation an
 
 > ...our definition of success is that the founders **get rich**... If you can just avoid dying, you ***get rich***... So even in the middle of **getting rich** we were fighting off the grim reaper... you can now **get rich** by not letting your company die... If so many startups get demoralized and fail when merely by hanging on they could **get rich**... I wish every startup we funded could appear in a Newsweek article describing them as the **next generation of billionaires**...etc
 
-You get the point, which is to "get rich", because then the VC get rich, and that is the VC talking. There is no talk about making the world a better place or the quality of the product/service, which is what motivates engineers. But this is not new or surprising, but if you do do a deal with the VC[^the_devil] you should have no illusions that's what your motivation is now to become. And there is nothing wrong with making a buck, but have no illusions, its not noble and its not for the betterment of humanity, its just a cynical money making activity. So where does it sit morally?
+You get the point, which is to "get rich", because then the VC get rich, and that is the VC talking in that quote. There is no talk about making the world a better place or the quality of the product/service, or even serving the customers, which is what motivates engineers. This is not new or surprising, but if you do do a deal with the VC[^the_devil] you should have no illusions that that is what your motivation is now to become. And there is nothing wrong with making a buck, but have no illusions, its not noble and its not for the betterment of humanity, its just a cynical money making activity. So where does it sit morally?
 
 [^the_devil]: in the classical blues sense of [The Devil](https://en.wikipedia.org/wiki/Deal_with_the_Devil)
 
