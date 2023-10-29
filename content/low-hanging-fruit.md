@@ -31,6 +31,10 @@ So the objective is to make money fast by producing low quality products. Where 
 
 [^evidence]: The only evidence I have is the memory of looking at a successful VC's company portfolio and finding that nearly all the websites of the supposed successes were all dead links. TODO: find an updated source for this, perhaps Y Combinator?
 
+Here is a video from Elon Musk, how ever you feel about the man he is undeniably a successful business man, say MBAs suck at running businesses, don't spend time making power point presentations and in meetings, get amongst the frontline workers and the customers and make the product as good as you can. Doesn't even need to be particularly innovative:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y6P8qdanszw?si=QZ0lfWeYUDjnP243" title="'Too many MBAs ruining companies' Elon Musk explains" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Enshitification!
 
 > Amazon now feels more like a racket than an open shopping platform; you can't find posts from your friends on Facebook because it's clogged with unsolicited advertising; and Uber no longer seems like a cool, efficient taxi service, it's morphed instead into a global machine for turning gig workers into the new underclass – it's all part of a process Cory Doctorow has dubbed "enshittification".[^podcast]
