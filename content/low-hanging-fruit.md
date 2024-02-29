@@ -3,7 +3,7 @@ Title: Engineering First Business Model
 slug: the-low-hanging-fruit-business-model
 summary: An alternative approach to tech business development in which all product decisions are made by the developers not Product Managers with the aim of keeping engineering effort minimal.
 date: 2023-10-02
-Modified: 2023-10-02
+Modified: 2024-03-02
 Category: Business
 ---
 
@@ -76,3 +76,8 @@ He solved a problem he was having, turned out it was not just him and after dick
 - Don't be scared, ashamed, or discouraged to make it paid
 - Don't let anyone tell you how much you should charge for your work
 
+## A collection of anecdotal evidence
+
+In the spirit of all great ideas I shall create a list where this princible hold:
+
+- Film: [Godzilla Minus One](https://www.youtube.com/watch?v=T4pi1F25sxg) - Hear from writer, director, and VFX supervisor Takashi Yamazaki and learn more about the unique approach Shirogumi took with the visual effects. A key innovation was actually the team structure; the Director cut out layers of decision makers by giving notes direct to the artists on the same floor. But that was only possible because he is a VFX artist himself.
