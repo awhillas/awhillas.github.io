@@ -44,11 +44,18 @@ So the only way that the new custodians/shareholders of company can get value ou
 
 > the platform tries to establish this equilibrium where there is as little value left as possible as is needed to keep you from going, but no more, where all the additional value can be handed off to its shareholders - [Cory Doctorow](https://pca.st/yr3hd7f9)
 
-Is this worth spending our time on?
+## But why?
+
+Coming from an AI background I know that if a learning algorithm is capable of representing sufficiently complex solutions it will learn shortcuts[^shortcuts] instead of the objective as intended by it's designer. I believe this is what is happening when businesses are optimising for exit profitability.
+
+[^shortcuts]: [Shortcut Learning in Deep Neural Networks](https://arxiv.org/abs/2004.07780), 2020, Robert Geirhos et. al.
+
+The solution might be to remove objective and open up to exploration, seeking interestingness according to the book [Why Greatness Cannot Be Planned: The Myth of the Objective](https://www.goodreads.com/book/show/25670869-why-greatness-cannot-be-planned) by the ex-OpenAI'er Kenneth O. Stanley.
+
 
 ## But is 'Engineering First' the answer?
 
-Engineers are adverse to making garbage. They are into making quality things or at the least, things that elegantly fix the design spec within the prism of the PMT. This can impact the business and dictate where engineering effort goes as this comment from hacker news on billing systems states:
+Engineers/domain-experts are adverse to making garbage. They are into making quality things or at the least, things that elegantly fix the design spec within the prism of the PMT. This can impact the business and dictate where engineering effort goes as this comment from hacker news on billing systems states:
 
 ![Comment from Hacker News on including engineers in the design process of billing systems]({static}/images/hacker_news_comment-01.png)
 
@@ -78,6 +85,6 @@ He solved a problem he was having, turned out it was not just him and after dick
 
 ## A collection of anecdotal evidence
 
-In the spirit of all great ideas I shall create a list where this princible hold:
+In the spirit of all great ideas I shall create a list where this principle hold:
 
 - Film: [Godzilla Minus One](https://www.youtube.com/watch?v=T4pi1F25sxg) - Hear from writer, director, and VFX supervisor Takashi Yamazaki and learn more about the unique approach Shirogumi took with the visual effects. A key innovation was actually the team structure; the Director cut out layers of decision makers by giving notes direct to the artists on the same floor. But that was only possible because he is a VFX artist himself.
