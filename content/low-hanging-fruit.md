@@ -58,6 +58,18 @@ Coming from an AI background I know that if a learning algorithm is capable of r
 
 The solution might be to remove objective and open up to exploration, seeking interestingness according to the book [Why Greatness Cannot Be Planned: The Myth of the Objective](https://www.goodreads.com/book/show/25670869-why-greatness-cannot-be-planned) by the ex-OpenAI'er Kenneth O. Stanley.
 
+## Is the VC model a good idea?
+
+Two stats I came accross (need to verify source):
+
+- 84% of high growth companies are not built with venture capital.
+- Only 144 of the 900 fastest growing companies in America ('97-'07) had venture capital.
+
+And the famous one:
+
+> 95% of all start-ups fail in the first 5 years
+
+If you knew these odds would you roll the dice for anything other than start-ups?
 
 ## But is 'Engineering First' the answer?
 
@@ -94,3 +106,15 @@ He solved a problem he was having, turned out it was not just him and after dick
 In the spirit of all great ideas I shall create a list where this principle hold:
 
 - Film: [Godzilla Minus One](https://www.youtube.com/watch?v=T4pi1F25sxg) - Hear from writer, director, and VFX supervisor Takashi Yamazaki and learn more about the unique approach Shirogumi took with the visual effects. A key innovation was actually the team structure; the Director cut out layers of decision makers by giving notes direct to the artists on the same floor. But that was only possible because he is a VFX artist himself.
+- From [a Quora thread](https://www.quora.com/What-great-companies-did-not-raise-venture-capital) on this topic:
+    - Webtrends
+    - Siebel Systems
+    - CraigsList
+    - Survey Monkey
+    - Mailchimp
+    - Atlassian
+    - IKEA
+    - Sears
+    - Campaingn Monitor
+    - Vizio
+    - Github
