@@ -9,11 +9,13 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="./theme/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://alexander.whillas.com/theme/favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM Fell English">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="./theme/css/cid.css">
-        <link rel="stylesheet" href="./theme/css/highlight.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/highlight.css">
+        <link href="https://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="https://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8WYQX7V0K"></script>
@@ -35,12 +37,12 @@
             <div class="container">
 
 <header class="blog-header">
-    <h1><a href=".">Alexander Whillas</a></h1>
+    <h1><a href="https://alexander.whillas.com">Alexander Whillas</a></h1>
     <p></p>
     <nav>
-        <a href="./">INDEX</a>
-        <a href="./archives">ARCHIVES</a>
-        <a href="./categories">CATEGORIES</a>
+        <a href="https://alexander.whillas.com/">INDEX</a>
+        <a href="https://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="https://alexander.whillas.com/categories">CATEGORIES</a>
     </nav>
 </header>
 
@@ -118,7 +120,7 @@
 <li>He found blowing up his own name a kick 😂</li>
 </ul>
 <h3>New material</h3>
-<p><img alt="Word list from Sons's school" src="./images/word_list_from_sons_school.jpg" /></p>
+<p><img alt="Word list from Sons's school" src="https://alexander.whillas.com/images/word_list_from_sons_school.jpg" /></p>
 <p>I too the kid to school this morning and while I was waiting for the teacher to show up I found a phonetic chart. On the back were lists of words in <strong>alphabetical order</strong>! Looping through the alphabet can make up a level! Seems obvious now, but I guess since I&rsquo;m using phonemes not letters maybe its not. Though some letters have limited number of 2 and 3 words&hellip; still, will be easy for 3 letter words.</p>
 <h2>5th August, 2023 - &ldquo;-er&rdquo;?</h2>
 <p>So I ran into an issue with translating &ldquo;Asher&rdquo; into phonemes. <a href="https://github.com/open-dict-data/ipa-dict"><abbr title="International Phonetic Alphabet">IPA</abbr>-dict</a> says its /&rsquo;æʃɐ/ but I was unsure about the &lsquo;ɐ&rsquo; sound/phone for UK English as it&rsquo;s the same as vowel in fox /fˈɒks/ (according to the same dictionary, but now that I look at it, its a different upside-down &lsquo;a&rsquo;). According to the video <a href="https://www.youtube.com/watch?v=ZyULNC_8SNw&amp;ab_channel=EnglishLanguageClub">&lsquo;er&rsquo; Ending Words and the Schwa Phoneme</a> it should be the Schwa &lsquo;ə&rsquo; sound.</p>
@@ -127,7 +129,7 @@
 <p>Got the explosions working. Had to improvise with pymunk as it doesn&rsquo;t have a built in explosion effect. I replace the block to blow up with a circle for ~200ms and then make it disappear. I also made the explosion weightless so it wouldn&rsquo;t roll down.</p>
 <p>I got the explosions sounds <a href="https://www.freesoundeffects.com/free-sounds/explosion-10070/">here</a> and the image from <a href="https://commons.wikimedia.org/wiki/File:Explosion-153710_icon.svg">wikimedia</a>. Good bless creative commons!</p>
 <h2>25th July, 2023 - First demo</h2>
-<p><img alt="First Demo" src="./images/phonetica/mvp01.gif" /></p>
+<p><img alt="First Demo" src="https://alexander.whillas.com/images/phonetica/mvp01.gif" /></p>
 <p>So I&rsquo;ve started to code up the demo of the idea. Still much to do:</p>
 <ul class="task-list">
 <li class="task-list-item"><input type="checkbox" disabled checked/> Sound phenome when clicking box</li>
@@ -144,7 +146,7 @@
 </blockquote>
 <p>I think that games could be that space for me.</p>
 <h2>23 July, 2023 - Physics is fun</h2>
-<p><img alt="pymunk demp / animated logo" src="./images/pymunk_logo_animation.gif" /></p>
+<p><img alt="pymunk demp / animated logo" src="https://alexander.whillas.com/images/pymunk_logo_animation.gif" /></p>
 <p>So I have a basic concept for the game. Its going to involve blocks dropping and using a physics engine to simulate that. I found a simple 2D physics engine called <a href="http://www.pymunk.org/">pymunk</a> which is an interface to the C library <a href="http://chipmunk-physics.net/">Chipmunk2D</a>. pymunk is under active development while Chipmunk2D seems to be feature complete. There is heaps of tutorials with pygame and pymunk so getting up-to-speed is quite easy and fun! There was a lot of low hanging fruit! To list what I went through:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=-q_Vje2a6eY&amp;t=15s&amp;ab_channel=CoderSpace">Python Physics Simulation. Galton Board. Pymunk Tutorial</a> I watched this and used the code as a starting point. Great template for getting pygame and pymunk talking to each other.</li>
@@ -153,7 +155,7 @@
 <p>I did give up on trying to rotate the images to the same angle as the physics block.</p>
 <h2>14th July, 2023 - Just graphemes to phonemes</h2>
 <p>Phonetics is quite the rabbit hole. I just need English spellings, or graphemes, and their related phonemes. I found this chart for Australian English (I think)</p>
-<p><img alt="alphabetic-code-chart" src="./images/alphabetic-code-chart.png" /></p>
+<p><img alt="alphabetic-code-chart" src="https://alexander.whillas.com/images/alphabetic-code-chart.png" /></p>
 <blockquote>
 <p>In order to represent the 44 phonemes of Australian English we use a range of graphemes (letters or letter combinations).  Children need to know 150 - 200 of these phoneme/grapheme correspondences in order to read a reasonably complex text and these need to be taught explicitly and systematically. - <a href="https://www.jocelynseamereducation.com/blog/46913-phonemes-and-graphemes">cite</a></p>
 </blockquote>
@@ -166,7 +168,7 @@
 <blockquote>
 <p>In Sound Waves Foundation, phoneme–grapheme relationships are introduced in a very specific order. This minimises confusion for students and ensures they are up and running quickly with reading and spelling. The order begins with m, a, t, s, i, d, f, n and p so students can read and spell <abbr title="Consonant-Vowel-Consonant e.g mat, sat, did, nap">CVC</abbr> words such as mat, sat, did, nap etc.</p>
 </blockquote>
-<p><img alt="Sound Waves Foundation principles" src="./images/sound_wave_foundation_princibles.png" /></p>
+<p><img alt="Sound Waves Foundation principles" src="https://alexander.whillas.com/images/sound_wave_foundation_princibles.png" /></p>
 <p>They have a system of pairing graphical icons for phonemes with the graphemes which is a good idea but stems from using print as a medium. I hope that I can just relate the sound of the phoneme directly with the graphemes by playing the sound when they touch the grapheme. This is the advantage of using an interactive medium (I hope).</p>
 <h3>Tracking learning</h3>
 <p>Also, I want to track the learning of a child. At the very minimum I&rsquo;m going to need keep track of which part of the syllabus they are up to. The video game way is to just make them start from the beginning every time. Perhaps they unlock levels as they progress which gives them new icons at the start of they game so they can jump start at the latest or revisit previous levels?</p>
@@ -178,7 +180,7 @@
 
 <p>I&rsquo;m focusing on the first step, but would like to incorporate some of the second. To begin with I need a list of the phonemes in English and grouped into vowels and consonants. I also need a list of short words (2-3 letters/phonemes) starting with the simple consonants, one vowel sound only. I combined the word frequencies with the word-&gt;phoneme dictionary and then filtered to a list of words with one-to-one mapping of letters to phonemes (was a crude estimate will update the Gruut <abbr title="International Phonetic Alphabet">IPA</abbr> module [see bellow])</p>
 <h3>Gruut <abbr title="International Phonetic Alphabet">IPA</abbr> module</h3>
-<p><img alt="International Phonetic Alphabet code diagram" src="./images/ipa.png" /></p>
+<p><img alt="International Phonetic Alphabet code diagram" src="https://alexander.whillas.com/images/ipa.png" /></p>
 <p>I found a great python module for working with phonemes called <a href="https://github.com/rhasspy/gruut-ipa">Gruut <abbr title="International Phonetic Alphabet">IPA</abbr></a>. It has some <a href="https://github.com/rhasspy/gruut-ipa/tree/master/gruut_ipa/data">data</a> for different languages (I&rsquo;m keeping this in the back of my mind). I might try and do Russian in parallel so I can use the game for learning Russian and use myself as a test subject, but don&rsquo;t want to get too side tracked for now. The <a href="https://github.com/rhasspy/gruut-ipa/blob/master/gruut_ipa/data/en-gb/phonemes.txt">British English file</a> has phonemes grouped which is handy. There are 42 phonemes. I don&rsquo;t know where the 44 came from?.</p>
 <p>I tried to install the module and use the &ldquo;print&rdquo; function but it seems to only spit out 33 phonemes? I&rsquo;m just going to write my own parser for its data files and move on. Lost a day to digging around it&rsquo;s code. Its got way more info than I need.</p>
 <h3>Elsewhere</h3>
@@ -197,7 +199,7 @@ Decodable texts contain a very large percentage of words that incorporate the le
 <p>But now what?</p>
 <h3>Data driven syllabus</h3>
 <p>I was thinking of taking a data driven approach to building a syllabus. Look at word frequencies in large corpus which I found for download on Kaggle&rsquo;s <a href="https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download">English Word Frequency: ⅓ Million Most Frequent English Words on the Web</a>. So I can get the most frequent 2, 3 and 4 letter words. But what I really need is frequency of 2-4 letter phonemes. So I need a dictionary that can translate the <abbr title="the conventional spelling system of a language">orthography</abbr> into <abbr title="International Phonetic Alphabet">IPA</abbr> phonemes. Fortunately someone has compiled such a dictionary: <a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> - Monolingual wordlists with pronunciation information in <abbr title="International Phonetic Alphabet">IPA</abbr>.</p>
-<p><img alt="Storybooks Speech and Hearing" src="./images/african_stories.jpg" />
+<p><img alt="Storybooks Speech and Hearing" src="https://alexander.whillas.com/images/african_stories.jpg" />
 I also found a great <a href="https://global-asp.github.io/storybooks-sah/stories/en/#">collection of African stories</a> for different reading levels which might come in handy with <abbr title="International Phonetic Alphabet">IPA</abbr> versions.</p>
 <h3>Name change</h3>
 <p>Change the project name to &ldquo;Phonetica&rdquo;! Maybe that can be the name of a fantasy kingdom and the phonemes that inhabit it can anthropomorphised?</p>
@@ -218,7 +220,7 @@ I also found a great <a href="https://global-asp.github.io/storybooks-sah/storie
 <blockquote>
 <p>phonemic awareness performance can predict literacy performance more accurately than variables such as intelligence, vocabulary knowledge, and socioeconomic status<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup> The good news is that phonological awareness is one of the few factors that teachers are able to influence significantly through instruction—unlike intelligence, vocabulary, and socioeconomic status <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>. <a href="https://www.readnaturally.com/research/5-components-of-reading/phonological-awareness#:~:text=Phonological%20Awareness%20Skills,onset%2Drime%2C%20and%20phoneme.">cite</a></p>
 </blockquote>
-<p><img alt="Phonological Awareness Skills" src="./images/Phonological_Awareness_Skills.png" /></p>
+<p><img alt="Phonological Awareness Skills" src="https://alexander.whillas.com/images/Phonological_Awareness_Skills.png" /></p>
 <blockquote>
 <p>Blending phonemes into words and segmenting words into phonemes contribute directly to learning to read and spell well. In fact, these two phonemic awareness skills contribute more to learning to read and spell well than any of the other activities under the phonological awareness umbrella. <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup></p>
 </blockquote>
@@ -361,10 +363,10 @@ I also found a great <a href="https://global-asp.github.io/storybooks-sah/storie
 
         <footer>
             <p>This entry is posted in:
-                    <a href="./category/rust.html">Rust</a>, 
-                    <a href="./category/software-engineering.html">Software Engineering</a>, 
-                    <a href="./category/game-development.html">Game Development</a>, 
-                    <a href="./category/linguistics.html">Linguistics</a>
+                    <a href="https://alexander.whillas.com/category/rust.html">Rust</a>, 
+                    <a href="https://alexander.whillas.com/category/software-engineering.html">Software Engineering</a>, 
+                    <a href="https://alexander.whillas.com/category/game-development.html">Game Development</a>, 
+                    <a href="https://alexander.whillas.com/category/linguistics.html">Linguistics</a>
             </p>
         </footer>
 

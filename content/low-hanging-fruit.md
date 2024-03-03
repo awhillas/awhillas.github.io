@@ -7,31 +7,37 @@ Modified: 2024-03-02
 Category: Business
 ---
 
-I've been around the tech business for 25 years and have noticed that companies that put an MBA guy in charge usually fail (or fire them). One might also note that some of the biggest tech companies in the world have been started and lead by engineers, Facebook and Google notably.
+I've been around the tech business for 25 years and have noticed that companies that put an MBA guy in charge usually fail (or fire them). One might also note that some of the biggest tech companies in the world have been started and lead by engineers, Facebook, Google and Apple () notably.
 
 
 ## The VC model
 
-The general argument for VC is that they "fund startups that drive innovation and make the world a better place" (this is not actually a quote but an attempt to steel man their argument).
+The general argument for VC is that they "fund startups that drive innovation and make the world a better place" (this is not actually a quote but an attempt to steel man their argument). Or this is what anyone with an MBA will tell/sell you.
 
 [This Y Combinator talk](http://www.paulgraham.com/die.html) is drenched in their value system:
 
 > ...our definition of success is that the founders **get rich**... If you can just avoid dying, you ***get rich***... So even in the middle of **getting rich** we were fighting off the grim reaper... you can now **get rich** by not letting your company die... If so many startups get demoralized and fail when merely by hanging on they could **get rich**... I wish every startup we funded could appear in a Newsweek article describing them as the **next generation of billionaires**...etc
 
-You get the point, which is to "get rich", because then the VC get rich, and that is the VC talking in that quote. There is no talk about making the world a better place or the quality of the product/service, or even serving the customers, which is what motivates engineers. This is not new or surprising, but if you do do a deal with the VC[^the_devil] you should have no illusions that that is what your motivation is now to become. And there is nothing wrong with making a buck, but have no illusions, its not noble and its not for the betterment of humanity, its just a cynical money making activity. So where does it sit morally?
+You get the point, which is to "get rich", because then the VC(s) get rich, and that is this VC, talking in that quote, is on about. There is no talk about _making the world a better place_ or the _quality_ of the product/service, or even _serving the customers_, all of which is the main motivation of engineers.
+
+This is not new or surprising, but if you do do a deal with the VC/devil[^the_devil] you should have no illusions that that is what your motivation is now to become, getting them rich. And there is nothing wrong with making a buck, but have no illusions, its not noble and its not for the betterment of humanity, its just a cynical money making activity. So where does it sit morally?
 
 [^the_devil]: in the classical blues sense of [The Devil](https://en.wikipedia.org/wiki/Deal_with_the_Devil)
 
-The basic premise of the VC is similar to a [pump-and-dump](https://en.wikipedia.org/wiki/Pump_and_dump) stock market scheme. The idea being "pump" the start-up with a some cash to get it off the ground, or at least make it appear that way with demos[^demos], which ever, and then when enough people are convinced "exit" (dump it), ideally for much more than the VC put into it. Also, ideally in the shortest space of time possible which is why antithetical to the idea of "organic growth" or "quality". If you know the [project management triangle](https://en.wikipedia.org/wiki/Project_management_triangle)[^pmt](PMT) you've fixed the time and the cost dimensions so the quality _has_ to suffer.
+The basic premise of VC is similar to a [pump-and-dump](https://en.wikipedia.org/wiki/Pump_and_dump) stock market scheme. The idea being "pump" the start-up with a some cash to get it off the ground, or at least make it appear that way with demos[^demos], which ever, and then when enough people are convinced and the valuation goes up enough: "exit" (dump it), ideally for much more than the VC put in and in the shortest span of time possible, which is why this approach is antithetical to the idea of "organic growth" or "quality" or "socially responsible".
 
 [^demos]: In my experience demos are _always_ [smoke and mirrors](https://en.wikipedia.org/wiki/Smoke_and_mirrors).
+
+If you know the [project management triangle](https://en.wikipedia.org/wiki/Project_management_triangle)[^pmt](PMT) you have fixed the _time_ and the _cost_ dimensions so the **quality has to suffer**.
+
 [^pmt]: PMT 😛 or in other words: "Good, fast, cheap. Choose two."
 
-So the objective is to make money fast by producing low quality products. Where does this money come from? Inevitably someone has to buy the shares of the company after the VC has exited. These people are left with a low quality product (most of the time) if any at all. They have been duped. The VC will tell you this happen very rarely but my intuition tells me this can't be true[^evidence]. Where does this perpetual well spring of money come from if that is the case?
+So the objective is to make money fast by producing the lowest quality products that will give the highest stock valuation. Where does this money come from? Inevitably someone has to buy the shares of the company after the VC has exited. These people are left with an Minimum Viable Product (MVP[^MVP]) if they are lucky, or with nothing function at all. The investors have been duped. The VC will tell you this happen very rarely (95% of all start-ups fail in the first 5years apparently) but my intuition tells me this can't be true[^evidence]. Where does this perpetual well spring of money come from if that is the case?
 
-[^evidence]: The only evidence I have is the memory of looking at a successful VC's company portfolio and finding that nearly all the websites of the supposed successes were all dead links. TODO: find an updated source for this, perhaps Y Combinator?
+[^evidence]: Weirdly I haven't been able to find stats on companies success rates after their IPOs? Funlly enough VCs don't publish those stats. TODO: ask around about this...
+[^MVP]: [Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product)" is a version of a product with just enough features to be usable by early customers who can then provide feedback for future product development."
 
-Here is a video from Elon Musk, how ever you feel about the man he is undeniably a successful business man, say MBAs suck at running businesses, don't spend time making power point presentations and in meetings, get amongst the frontline workers and the customers and make the product as good as you can. Doesn't even need to be particularly innovative:
+Here is a video from Elon Musk, how ever you feel about the man he is undeniably a successful business man, saying MBAs suck at running businesses. Don't spend time making power point presentations and going to meetings, get amongst the frontline workers and the customers and make the product as good as you can. Doesn't even need to be particularly innovative:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Y6P8qdanszw?si=QZ0lfWeYUDjnP243" title="'Too many MBAs ruining companies' Elon Musk explains" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -83,7 +89,7 @@ He solved a problem he was having, turned out it was not just him and after dick
 - Don't be scared, ashamed, or discouraged to make it paid
 - Don't let anyone tell you how much you should charge for your work
 
-## A collection of anecdotal evidence
+## Some more anecdotal evidence
 
 In the spirit of all great ideas I shall create a list where this principle hold:
 

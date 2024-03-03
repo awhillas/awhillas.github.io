@@ -9,11 +9,13 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="./theme/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://alexander.whillas.com/theme/favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM Fell English">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="./theme/css/cid.css">
-        <link rel="stylesheet" href="./theme/css/highlight.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/highlight.css">
+        <link href="https://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="https://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8WYQX7V0K"></script>
@@ -35,12 +37,12 @@
             <div class="container">
 
 <header class="blog-header">
-    <h1><a href=".">Alexander Whillas</a></h1>
+    <h1><a href="https://alexander.whillas.com">Alexander Whillas</a></h1>
     <p></p>
     <nav>
-        <a href="./">INDEX</a>
-        <a href="./archives">ARCHIVES</a>
-        <a href="./categories">CATEGORIES</a>
+        <a href="https://alexander.whillas.com/">INDEX</a>
+        <a href="https://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="https://alexander.whillas.com/categories">CATEGORIES</a>
     </nav>
 </header>
 
@@ -59,7 +61,7 @@
         <article>
             <h2>But why&hellip;?</h2>
 <p>Its always good to make decision based on data.</p>
-<p><img alt="Graph from Stackoverflow Trends. Extrapolate the lines..." src="./images/cpp_vs_rust_2023.svg" /></p>
+<p><img alt="Graph from Stackoverflow Trends. Extrapolate the lines..." src="https://alexander.whillas.com/images/cpp_vs_rust_2023.svg" /></p>
 <p>I&rsquo;m interested in Rust as I predict it will overtake C++ in popularity within the next 1-2 years if the trends in the above graph from <a href="https://insights.stackoverflow.com/trends?tags=c%2B%2B%2Crust">Stackoverflow Trends</a> continues. Rust is growing in popularity exponentially and C++ seems to have a linear decline.</p>
 <p>There is also the results of the <a href="https://survey.stackoverflow.co/2023/?utm_source=banner&amp;utm_medium=display&amp;utm_campaign=dev-survey-results-2023&amp;utm_content=survey-results#section-admired-and-desired-programming-scripting-and-markup-languages">Stackoverflow Annual Survey for 2023 Admired and Desired section</a></p>
 <blockquote>
@@ -68,7 +70,7 @@
 <p>The reasons for this, I think, are many.</p>
 <p>Rust has a built in package manager which also handles compilation and makes the developer experience easy. Easy always trumps difficult, every time<sup id="fnref:everytime"><a class="footnote-ref" href="#fn:everytime">2</a></sup>. This is a huge boon to productivity and also a huge breath of fresh air after C++. It took me about 6 weeks to get started with C++ (finding a package manager amongst many, trying to understand CMake). I think what is happening is young<sup id="fnref:young"><a class="footnote-ref" href="#fn:young">1</a></sup>, C++ developers are trying Rust and then being won over by this after struggling through C++.</p>
 <p>Rust has a lot of modern language features like the Monads Option(Maybe) and Result(Either) which tackle uncertainty up front. They are used consistently and everywhere within the standard lib.</p>
-<p><img alt="C++ vs Rust meme" src="./images/cpp_vs_rust_meme.png" /></p>
+<p><img alt="C++ vs Rust meme" src="https://alexander.whillas.com/images/cpp_vs_rust_meme.png" /></p>
 <p>Some C++ people say that the syntax is horrible, but I find it quite a contrary. I&rsquo;ve studied C++ for a year and I still can&rsquo;t open a C++ project and understand it. For example compare a tokenizer written in C++, Google&rsquo;s <a href="https://github.com/google/sentencepiece">sentencepiece</a> written in a modern C++ style and following the conventions of Google&rsquo;s C++ guideline (presumably), verse OpenAI&rsquo;s <a href="https://github.com/openai/tiktoken">TikToken</a> which are both <a href="https://www.wikiwand.com/en/Byte_pair_encoding">BPE</a> tokeniser. I know what they both do so it should be easy to interpret the code, right?</p>
 <p>To start with I have no idea where to begin with the C++ project. There are no conventions for project layout or naming stuff. I know CMake is the de facto build tool for C++ but the <a href="https://github.com/google/sentencepiece/blob/master/CMakeLists.txt">CMakeLists.txt</a> file is long and cryptic. It imperative unlike the declarative Cargo.toml of TiKToken which is much shorter (21 lines vs 170!). I know exactly where to look for the entry point in any Rust project in ether the <code>src/lib.rs</code> if it a library or the <code>src/main.rs</code> if its an executable.</p>
 <p>The splitting of C++ code into header files and implementation files is bananas. No other language does this, is laborious to write and painful to read.</p>
@@ -90,9 +92,9 @@
 <p>Some projects I&rsquo;m thinking of starting or have started in current order of enthusiasm:</p>
 <!-- - [Alphabetica Game]({filename}/alphabetica.md) - My son is learning to read at the moment and I think a game to help him match letters to sounds might help. Repetition is the key. I'm going to build it off the back of the Bevy tutorial I've been going through. -->
 <ul>
-<li><a href="./realtime-machine-learning.html">Online Machine Learning</a> - I&rsquo;ve seen some simple simulations on YouTube where people evolve neural networks (NN) to operate, embodied in a simple simulated environment. I want to do something similar but I want to do online/real-time training of the NN. I think this will lead to a more aware AI.</li>
+<li><a href="https://alexander.whillas.com/realtime-machine-learning.html">Online Machine Learning</a> - I&rsquo;ve seen some simple simulations on YouTube where people evolve neural networks (NN) to operate, embodied in a simple simulated environment. I want to do something similar but I want to do online/real-time training of the NN. I think this will lead to a more aware AI.</li>
 <li><a href="https://github.com/awhillas/check">Chess engine</a> - or now I&rsquo;m thinking, rather a general purpose discreet, game engine. Create an interface to some set of rules which generate moves for a given position (and also indicate a winning move/position) it should be able to learn via self-play. I guess replicating AlphaZero would be the first step?</li>
-<li><a href="./solid-pod-server.html">Solid Pod Server</a> - all in one identity/public+private content server with built in authorization (OAuth+). The hard part of Solid, because it was very boring, was trying to understand the standards which are verbose and incomplete. It also uses OAuth + OpenID Connect at the core of its authorization protocol which in itself was the hardest part, because its complicated and I found it hard to find a <a href="https://www.youtube.com/results?search_query=oauth2+flow">straight forward explanation</a>.</li>
+<li><a href="https://alexander.whillas.com/solid-pod-server.html">Solid Pod Server</a> - all in one identity/public+private content server with built in authorization (OAuth+). The hard part of Solid, because it was very boring, was trying to understand the standards which are verbose and incomplete. It also uses OAuth + OpenID Connect at the core of its authorization protocol which in itself was the hardest part, because its complicated and I found it hard to find a <a href="https://www.youtube.com/results?search_query=oauth2+flow">straight forward explanation</a>.</li>
 <li><strong>Cave Boy</strong>, a kids, open-world, adventure game. I&rsquo;ve started <a href="https://github.com/awhillas/caveboy">prototyping in Python</a>. I&rsquo;m thinking something like Don&rsquo;t Starve (but less scary), or Stardew valley (with less detail) with a Captain Underpants sense of humour (i.e. potty). I&rsquo;m thinking to aim it for 4-8 year olds, full touch screen and very simple mechanics. Everything is visually displayed at all times (no hidden menus or state i.e. inventory). TODO: break this out into a full blog post (i will as I get more into it). I have some concept art already!</li>
 </ul>
 <p>This list is getting long&hellip;</p>
@@ -111,8 +113,8 @@
 
         <footer>
             <p>This entry is posted in:
-                    <a href="./category/rust.html">Rust</a>, 
-                    <a href="./category/software-engineering.html">Software Engineering</a>
+                    <a href="https://alexander.whillas.com/category/rust.html">Rust</a>, 
+                    <a href="https://alexander.whillas.com/category/software-engineering.html">Software Engineering</a>
             </p>
         </footer>
 

@@ -9,11 +9,13 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="./theme/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://alexander.whillas.com/theme/favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM Fell English">
         <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="./theme/css/cid.css">
-        <link rel="stylesheet" href="./theme/css/highlight.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/highlight.css">
+        <link href="https://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="https://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8WYQX7V0K"></script>
@@ -35,12 +37,12 @@
             <div class="container">
 
 <header class="blog-header">
-    <h1><a href=".">Alexander Whillas</a></h1>
+    <h1><a href="https://alexander.whillas.com">Alexander Whillas</a></h1>
     <p></p>
     <nav>
-        <a href="./">INDEX</a>
-        <a href="./archives">ARCHIVES</a>
-        <a href="./categories">CATEGORIES</a>
+        <a href="https://alexander.whillas.com/">INDEX</a>
+        <a href="https://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="https://alexander.whillas.com/categories">CATEGORIES</a>
     </nav>
 </header>
 
@@ -67,13 +69,13 @@
 <p>If you understand what you&rsquo;re doing then you can adapt what you&rsquo;re doing when the world changes you can learn and adapt and improve and if you don&rsquo;t understand what you&rsquo;re doing then you&rsquo;re stuck with a static skill and that&rsquo;s really how you tell the difference between understanding and not understanding</p>
 </blockquote>
 <p>This made me think of what used to be called &ldquo;online learning&rdquo; or real-time learning<sup id="fnref:online"><a class="footnote-ref" href="#fn:online">1</a></sup>.</p>
-<p>So now I&rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&rsquo;m <a href="./a-new-hope.html">learning Rust</a> incidentally.</p>
+<p>So now I&rsquo;m interested in doing some experiments with basic simulations, with neural networks that update their weights in real time and see where that leads. This is why I&rsquo;m <a href="https://alexander.whillas.com/a-new-hope.html">learning Rust</a> incidentally.</p>
 <h2>Predator and Prey</h2>
 <p>The first experiment I&rsquo;m going to try is a simple hunter-prey simulation like this</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tVNoetVLuQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <p>What <a href="https://www.youtube.com/@PezzzasWork">Pezzza</a> is doing here is to take a fixed architecture neural network (NN) with input from a visual field, lines that trace out from the agent and detect the presence of ether friend or foe, and fully connect them to two outputs: speed and direction.</p>
-<p><img alt="Pezzza's agent Neural Network" src="./images/Pezzzas_NN.png" /></p>
+<p><img alt="Pezzza's agent Neural Network" src="https://alexander.whillas.com/images/Pezzzas_NN.png" /></p>
 <p>Then, instead of using backpropagation to tune the NN&rsquo;s weights he is choosing them randomly and letting natural selection kill off the bad ones<sup id="fnref:mutation"><a class="footnote-ref" href="#fn:mutation">2</a></sup> while the ones that survive long enough to multiply propagate. This allows him to train a NN without an objective function.</p>
 <p>I want to take this basic setup and introduce real-time learning via backpropagation (BP). The problem with BP is that you need an objective function, which says how to update the weights. Its not obvious how to do this in this setup where the output is not the same as the objective function. This is where Reinforcement Learning traditionally.</p>
 <p>There is also <a href="https://www.reddit.com/r/bevy/comments/1464kcq/i_built_a_self_driving_car_ai_using_rust_and_bevy/">this very similar approch</a>, in <a href="https://github.com/bones-ai/rust-drive-ai">Rust and using the Bevy framework</a> which is exactly where I wanted to go with it.
@@ -81,7 +83,7 @@
 <h2>In search of an objective</h2>
 <p><a href="https://www.deepmind.com/blog/alphazero-shedding-new-light-on-chess-shogi-and-go">AlphaZero</a> they seem to have trained a NN to rate chess board positions without the needing of an immediate objective, sort of.</p>
 <p>From the paper <a href="https://arxiv.org/pdf/1712.01815.pdf">Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</a></p>
-<p>The <a href="./free-energy-principle.html">Free Energy Principle</a> seems to solve this problem by making the model try to predict the next sensor readings and minimising the difference between these predictions and the actual model state at the next time step. The model can also choose actions that it needs to predict the change in environment from. But how does it choose the action? Predicting the environment is key here but how does one steer the model to perform survival actions?</p>
+<p>The <a href="https://alexander.whillas.com/free-energy-principle.html">Free Energy Principle</a> seems to solve this problem by making the model try to predict the next sensor readings and minimising the difference between these predictions and the actual model state at the next time step. The model can also choose actions that it needs to predict the change in environment from. But how does it choose the action? Predicting the environment is key here but how does one steer the model to perform survival actions?</p>
 <h2>Predictive Models</h2>
 <p><a href="http://blog.piekniewski.info/">Filip Piekniewski</a> has this idea of <a href="http://blog.piekniewski.info/2016/11/04/predictive-vision-in-a-nutshell/">predictive vision models</a> which basically try to guess the next frame of video and there by model the world. One might look at this as the <a href="https://en.wikipedia.org/wiki/Language_model">language modelling</a> task of vision. He&rsquo;s also suggesting adding online learning to this mix so the model trains and predicts at the same time, thus, according to Francois Chollet&rsquo;s thesis would make it adaptive and thus conscious? And he&rsquo;s got feedback from top back to bottom. He carries on about <a href="https://www.tutorialspoint.com/artificial_neural_network/artificial_neural_network_associate_memory.htm">Associate Memory</a> which is a type of NN (I need to look into)</p>
 <p>to be continued&hellip;<sup id="fnref:wip"><a class="footnote-ref" href="#fn:wip">3</a></sup></p>
@@ -103,7 +105,7 @@
 
         <footer>
             <p>This entry is posted in:
-                    <a href="./category/machine-learning.html">Machine Learning</a>
+                    <a href="https://alexander.whillas.com/category/machine-learning.html">Machine Learning</a>
             </p>
         </footer>
 
