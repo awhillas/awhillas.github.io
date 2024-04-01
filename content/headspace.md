@@ -2,7 +2,7 @@
 Title: Project: Headspace
 summary: A new type of interface to data and media which takes ideas from Pure-data/Max-MSP and online whiteboard spaces like Miro while at the same time leveraging linked-data
 date: 2024-03-31
-Modified: 2024-04-01
+Modified: 2024-04-02
 Category: Software Engineering
 ---
 
