@@ -6,9 +6,20 @@ Modified: 2024-04-01
 Category: Software Engineering
 ---
 
+# 2nd April, 2024 - Hypermodel
+
+Going to go with a Level 2 hypermodel using `[fastapi-hypermodel](https://jtc42.github.io/fastapi-hypermodel/)` which is...
+
+> FastAPI-HyperModel is a FastAPI + Pydantic extension for simplifying hypermedia-driven API development.
+> Hypermedia consist of enriching API responses by providing links to other URIs within the services to fetch related resources or perform certain actions. There are several levels according to the [Hypermedia Maturity Model Levels](https://8thlight.com/insights/the-hypermedia-maturity-model). Using Hypermedia makes APIs reach Level 3 of the [Richardson Maturity Model (RMM)](https://en.wikipedia.org/wiki/Richardson_Maturity_Model), which involves leveraging [Hypertext As The Engine Of Application State (HATEOAS)](https://en.wikipedia.org/wiki/HATEOAS), that is, Hypermedia.
+
+This basically allows me to define media types and exposed hyperlinks (URIs) to perform all the actions on those media types. It has the equivalent of HTML forms but in JSON if those actions or mutations need more information. This should allow me to keep the React FE fairly generic which was the idea of the REST principles. If I take it all the way to RMM Level 3 it even has all the RDF stuff so people can expose the data to the public and do real linked data.
+
+*[FE]: frontend
+
 # 1st April, 2024 - No Fooling
 
-I've been working on, what I call Headspace[^headspace] (working tittle), for about 3 months. I imagine it as a virtual space in which you can organise your ideas, various types of data and interface with AI models on the backend with a click of a button. Kind of a cross between a virtual whiteboard and a database knitted together with RDF metadata.
+I've been working on, what I call Headspace[^headspace] (working tittle), for about 3 months. I imagine it as a virtual space in which you can organise your ideas, various types of data and interface with AI models on the backend with a click of a button. Kind of a cross between a virtual whiteboard and a database knitted together with RDF metadata.gi
 
 [^headspace]: Yes I'm aware of the mental health app and the Australia’s National Youth Mental Health Foundation, thanks. Its not related to mental health.
 
