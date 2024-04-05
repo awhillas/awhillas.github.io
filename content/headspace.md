@@ -6,6 +6,28 @@ Modified: 2024-04-02
 Category: Software Engineering
 ---
 
+# 4th April, 2024 - The revolution is televised
+
+Found this great talk that breaks down the kind of API that I want to build which is a [Hypermedia Maturity Model](https://8thlight.com/insights/the-hypermedia-maturity-model) level 3 me thinks
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zM5t6DaYrqM?si=dkAb8PhJP1zngC5B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Which I found in the videos section of the [FastAPI HyperModel resources page](https://jtc42.github.io/fastapi-hypermodel/resources/).
+
+## htmlx?
+
+> htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
+
+I got a little side tracked with [htmlx](https://htmx.org/) in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a large system or at least their reported stats:
+
+![Refactoring from SAP to hypermedia system]({static}/images/savings_with_hypermedia.png)
+
+Performance over thousands of elements is a factor (2nd last point above) because its just rendered HTML at the end of the day, which React struggles with. Performance being one of the biggest complaints of Miro. It also seems to reduce the frontend by about 90%, which if your a lone developer is huge!
+
+Checkout:
+- [PyHAT: Awesome Python htmx](https://github.com/PyHAT-stack/awesome-python-htmx) - PyHAT is more than just a snake with a hat 🐍🤠. It stands for Python htmx ASGI Tailwind—a web stack that allows you to build powerful web applications using nothing more than... drumroll... Python, htmx, and Tailwind.
+- [Hypermedia Systems](https://hypermedia.systems/) book by the htmlx guys with an example using Flask and htmlx and Jinja2 for rendering HTML fragments.
+
 # 2nd April, 2024 - Hypermodel
 
 Going to go with a Level 2 hypermodel using `[fastapi-hypermodel](https://jtc42.github.io/fastapi-hypermodel/)` which is...

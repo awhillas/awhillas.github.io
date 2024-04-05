@@ -54,12 +54,27 @@
             <p class="date">Started
                 <em><time datetime="2024-03-31T00:00:00+13:00">Mar 31, 2024</time></em>
 ; Updated
-                    <em>Apr 01, 2024
+                    <em>Apr 02, 2024
 </em></p>
         </header>
 
         <article>
-            <h1>2nd April, 2024 - Hypermodel</h1>
+            <h1>4th April, 2024 - The revolution is televised</h1>
+<p>Found this great talk that breaks down the kind of API that I want to build which is a <a href="https://8thlight.com/insights/the-hypermedia-maturity-model">Hypermedia Maturity Model</a> level 3 me thinks</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zM5t6DaYrqM?si=dkAb8PhJP1zngC5B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Which I found in the videos section of the <a href="https://jtc42.github.io/fastapi-hypermodel/resources/">FastAPI HyperModel resources page</a>.</p>
+<h2>htmlx?</h2>
+<blockquote>
+<p>htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext</p>
+</blockquote>
+<p>I got a little side tracked with <a href="https://htmx.org/">htmlx</a> in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a large system or at least their reported stats:</p>
+<p><img alt="Refactoring from SAP to hypermedia system" src="https://alexander.whillas.com/images/savings_with_hypermedia.png" /></p>
+<p>Performance over thousands of elements is a factor (2nd last point above) because its just rendered HTML at the end of the day, which React struggles with. Performance being one of the biggest complaints of Miro. It also seems to reduce the frontend by about 90%, which if your a lone developer is huge!</p>
+<p>Checkout:
+- <a href="https://github.com/PyHAT-stack/awesome-python-htmx">PyHAT: Awesome Python htmx</a> - PyHAT is more than just a snake with a hat 🐍🤠. It stands for Python htmx ASGI Tailwind—a web stack that allows you to build powerful web applications using nothing more than&hellip; drumroll&hellip; Python, htmx, and Tailwind.
+- <a href="https://hypermedia.systems/">Hypermedia Systems</a> book by the htmlx guys with an example using Flask and htmlx and Jinja2 for rendering HTML fragments.</p>
+<h1>2nd April, 2024 - Hypermodel</h1>
 <p>Going to go with a Level 2 hypermodel using <code>[fastapi-hypermodel](https://jtc42.github.io/fastapi-hypermodel/)</code> which is&hellip;</p>
 <blockquote>
 <p>FastAPI-HyperModel is a FastAPI + Pydantic extension for simplifying hypermedia-driven API development.
