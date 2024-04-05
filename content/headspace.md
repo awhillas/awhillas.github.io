@@ -18,9 +18,10 @@ Which I found in the videos section of the [FastAPI HyperModel resources page](h
 
 > htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
 
-I got a little side tracked with [htmlx](https://htmx.org/) in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a large system or at least their reported stats:
+I got a little side tracked with [htmlx](https://htmx.org/) in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a large system or at least their reported stats which look like:
 
-![Refactoring from SAP to hypermedia system]({static}/images/savings_with_hypermedia.png)
+![Refactoring from SPA to hypermedia system]({static}/images/savings_with_hypermedia.png)
+(From [Back to the Future of Hypermedia in Django with Mario Munoz](https://www.youtube.com/watch?v=LwH4ifjt3Y4&ab_channel=DjangoConUS))
 
 Performance over thousands of elements is a factor (2nd last point above) because its just rendered HTML at the end of the day, which React struggles with. Performance being one of the biggest complaints of Miro. It also seems to reduce the frontend by about 90%, which if your a lone developer is huge!
 
