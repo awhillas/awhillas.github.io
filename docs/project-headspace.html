@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <title>    Project: Headspace
@@ -17,6 +17,8 @@
         <link href="https://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
         <link href="https://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
 
+        <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8WYQX7V0K"></script>
         <script>
@@ -26,10 +28,7 @@
         gtag('config', 'G-V8WYQX7V0K');
         </script>
     </head>
-
-
-
-    <body>
+    <body hx-boost="true">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -54,26 +53,52 @@
             <p class="date">Started
                 <em><time datetime="2024-03-31T00:00:00+13:00">Mar 31, 2024</time></em>
 ; Updated
-                    <em>Apr 02, 2024
+                    <em>Apr 06, 2024
 </em></p>
         </header>
 
         <article>
-            <h1>4th April, 2024 - The revolution is televised</h1>
+            <h1>6th April, 2024 - My Kingdom for a Hypermedia backend!</h1>
+<p>I realised that if I&rsquo;m going to the hypermedia route I&rsquo;m going to be doing a lot of backend again like the good old days. It also occurred to me that FastAPI is not really optimised for hypermedia but instead JSON APIs. So ether I go back to <a href="https://flask.palletsprojects.com/">Flask</a> or <a href="https://www.djangoproject.com/">Django</a>, but Django is very heave and mainly for setups with a database as the main driver of the content. I&rsquo;m mainly using the file system(s), until I have to start to manage logins that is, which I should perhaps just think about from the begging since collaboration is going to be a big part of Headspace.</p>
+<p>By hypermedia doesn&rsquo;t care what your backend is written in so I was flirting with the idea of using Rust?</p>
+<ul>
+<li>Rust web frameworks:<ul>
+<li><a href="https://docs.rs/poem/latest/poem/">Poem</a> which doesn&rsquo;t look straight forward.</li>
+<li><a href="https://rocket.rs/">Rocket</a>: &ldquo;Rocket is great with all of the bells and whistles but it&rsquo;s heavy use of macros, while it makes things easy, requires you to jump into the documentation more to look up the correct way to do things.&rdquo;</li>
+<li>[Axum][https://docs.rs/axum/latest/axum/] &ldquo;Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you&rsquo;d expect. But that is also because how you expect it to work is usually &ldquo;build the thing yourself or use another crate&rdquo;.<ul>
+<li><a href="https://loco.rs/">Loco</a> - Loco follows Rails. There, I said it. Rails concepts are carefully adapted to modern Rust development. (I don&rsquo;t like Rails, convention over configuration :@ Try remebering convention after 6 months!)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTML Templating in Rust:<ul>
+<li><a href="https://maud.lambda.xyz/">maud</a>: light weight macro, Pug like, for writing html templates</li>
+<li><a href="https://docs.rs/minijinja/latest/minijinja/">minijinja</a> jinja templates in Rust!</li>
+</ul>
+</li>
+</ul>
+<p>But I&rsquo;m kidding myself. Using Rust for this will just slow me down&hellip; Flask it is&hellip;</p>
+<h2>Now using htmx Boosting</h2>
+<p>So if you include the htmx CDN file in your page and then turn bosting by putting <code>hx-boost="true"</code> in the body tag of your page all the links on you page go AJaX and your page body is swapped out instead of a page reload. No extra work required!</p>
+<h1>4th April, 2024 - The revolution is televised</h1>
 <p>Found this great talk that breaks down the kind of API that I want to build which is a <a href="https://8thlight.com/insights/the-hypermedia-maturity-model">Hypermedia Maturity Model</a> level 3 me thinks</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zM5t6DaYrqM?si=dkAb8PhJP1zngC5B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>Which I found in the videos section of the <a href="https://jtc42.github.io/fastapi-hypermodel/resources/">FastAPI HyperModel resources page</a>.</p>
-<h2>htmlx?</h2>
+<h2>htmx?</h2>
 <blockquote>
 <p>htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext</p>
 </blockquote>
-<p>I got a little side tracked with <a href="https://htmx.org/">htmlx</a> in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a large system or at least their reported stats:</p>
-<p><img alt="Refactoring from SAP to hypermedia system" src="https://alexander.whillas.com/images/savings_with_hypermedia.png" /></p>
+<p>I got a little side tracked with <a href="https://htmx.org/">htmx</a> in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a <a href="https://www.youtube.com/watch?v=3GObi93tjZI&amp;t=493s&amp;ab_channel=DjangoConEurope">real system</a> or at least their reported stats which look like:</p>
+<p><img alt="Refactoring from SPA to hypermedia system" src="https://alexander.whillas.com/images/savings_with_hypermedia.png" />
+(From <a href="https://www.youtube.com/watch?v=LwH4ifjt3Y4&amp;ab_channel=DjangoConUS">Back to the Future of Hypermedia in Django with Mario Munoz</a>)</p>
 <p>Performance over thousands of elements is a factor (2nd last point above) because its just rendered HTML at the end of the day, which React struggles with. Performance being one of the biggest complaints of Miro. It also seems to reduce the frontend by about 90%, which if your a lone developer is huge!</p>
-<p>Checkout:
-- <a href="https://github.com/PyHAT-stack/awesome-python-htmx">PyHAT: Awesome Python htmx</a> - PyHAT is more than just a snake with a hat 🐍🤠. It stands for Python htmx ASGI Tailwind—a web stack that allows you to build powerful web applications using nothing more than&hellip; drumroll&hellip; Python, htmx, and Tailwind.
-- <a href="https://hypermedia.systems/">Hypermedia Systems</a> book by the htmlx guys with an example using Flask and htmlx and Jinja2 for rendering HTML fragments.</p>
+<p>He also claims that their product velocity has increased dramatically and the team is smaller.</p>
+<p>Checkout:</p>
+<ul>
+<li><a href="https://github.com/PyHAT-stack/awesome-python-htmx">PyHAT: Awesome Python htmx</a> - PyHAT is more than just a snake with a hat 🐍🤠. It stands for Python htmx ASGI Tailwind—a web stack that allows you to build powerful web applications using nothing more than&hellip; drumroll&hellip; Python, htmx, and Tailwind.</li>
+<li><a href="https://hypermedia.systems/">Hypermedia Systems</a> book by the htmlx guys with an example using Flask and htmlx and Jinja2 for rendering HTML fragments.</li>
+</ul>
 <h1>2nd April, 2024 - Hypermodel</h1>
 <p>Going to go with a Level 2 hypermodel using <code>[fastapi-hypermodel](https://jtc42.github.io/fastapi-hypermodel/)</code> which is&hellip;</p>
 <blockquote>

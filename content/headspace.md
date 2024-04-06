@@ -2,9 +2,31 @@
 Title: Project: Headspace
 summary: A new type of interface to data and media which takes ideas from Pure-data/Max-MSP and online whiteboard spaces like Miro while at the same time leveraging linked-data
 date: 2024-03-31
-Modified: 2024-04-02
+Modified: 2024-04-06
 Category: Software Engineering
 ---
+
+# 6th April, 2024 - My Kingdom for a Hypermedia backend!
+
+I realised that if I'm going to the hypermedia route I'm going to be doing a lot of backend again like the good old days. It also occurred to me that FastAPI is not really optimised for hypermedia but instead JSON APIs. So ether I go back to [Flask](https://flask.palletsprojects.com/) or [Django](https://www.djangoproject.com/), but Django is very heave and mainly for setups with a database as the main driver of the content. I'm mainly using the file system(s), until I have to start to manage logins that is, which I should perhaps just think about from the begging since collaboration is going to be a big part of Headspace.
+
+By hypermedia doesn't care what your backend is written in so I was flirting with the idea of using Rust?
+
+- Rust web frameworks:
+    - [Poem](https://docs.rs/poem/latest/poem/) which doesn't look straight forward.
+    - [Rocket](https://rocket.rs/): "Rocket is great with all of the bells and whistles but it's heavy use of macros, while it makes things easy, requires you to jump into the documentation more to look up the correct way to do things."
+    - [Axum][https://docs.rs/axum/latest/axum/] "Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you'd expect. But that is also because how you expect it to work is usually "build the thing yourself or use another crate".
+        - [Loco](https://loco.rs/) - Loco follows Rails. There, I said it. Rails concepts are carefully adapted to modern Rust development. (I don't like Rails, convention over configuration :@ Try remebering convention after 6 months!)
+- HTML Templating in Rust:
+    - [maud](https://maud.lambda.xyz/): light weight macro, Pug like, for writing html templates
+    - [minijinja](https://docs.rs/minijinja/latest/minijinja/) jinja templates in Rust!
+
+But I'm kidding myself. Using Rust for this will just slow me down... Flask it is...
+
+## Now using htmx Boosting
+
+So if you include the htmx CDN file in your page and then turn bosting by putting `hx-boost="true"` in the body tag of your page all the links on you page go AJaX and your page body is swapped out instead of a page reload. No extra work required!
+
 
 # 4th April, 2024 - The revolution is televised
 
@@ -14,18 +36,21 @@ Found this great talk that breaks down the kind of API that I want to build whic
 
 Which I found in the videos section of the [FastAPI HyperModel resources page](https://jtc42.github.io/fastapi-hypermodel/resources/).
 
-## htmlx?
+## htmx?
 
 > htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
 
-I got a little side tracked with [htmlx](https://htmx.org/) in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a large system or at least their reported stats which look like:
+I got a little side tracked with [htmx](https://htmx.org/) in combo with this type of hypermedia in which the server is rendering HTML snippets and sending them after in this video. This means ditching React and having simple HTML+HTMLx as the frontend. What gave me pause to seriously consider this was the results of doing this on a [real system](https://www.youtube.com/watch?v=3GObi93tjZI&t=493s&ab_channel=DjangoConEurope) or at least their reported stats which look like:
 
 ![Refactoring from SPA to hypermedia system]({static}/images/savings_with_hypermedia.png)
 (From [Back to the Future of Hypermedia in Django with Mario Munoz](https://www.youtube.com/watch?v=LwH4ifjt3Y4&ab_channel=DjangoConUS))
 
 Performance over thousands of elements is a factor (2nd last point above) because its just rendered HTML at the end of the day, which React struggles with. Performance being one of the biggest complaints of Miro. It also seems to reduce the frontend by about 90%, which if your a lone developer is huge!
 
+He also claims that their product velocity has increased dramatically and the team is smaller.
+
 Checkout:
+
 - [PyHAT: Awesome Python htmx](https://github.com/PyHAT-stack/awesome-python-htmx) - PyHAT is more than just a snake with a hat 🐍🤠. It stands for Python htmx ASGI Tailwind—a web stack that allows you to build powerful web applications using nothing more than... drumroll... Python, htmx, and Tailwind.
 - [Hypermedia Systems](https://hypermedia.systems/) book by the htmlx guys with an example using Flask and htmlx and Jinja2 for rendering HTML fragments.
 
