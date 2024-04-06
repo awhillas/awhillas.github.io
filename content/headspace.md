@@ -15,7 +15,7 @@ By hypermedia doesn't care what your backend is written in so I was flirting wit
 - Rust web frameworks:
     - [Poem](https://docs.rs/poem/latest/poem/): "sits somewhere between a focused micro-framework and a full-featured "batteries included" framework. I like the API design, it uses strong typing well to increase correctness and ergonomics, but without getting too crazy to keep things simple." & "it just doesn't get enough love and fast enough bugfixes" also "hard-to-google name"
     - [Rocket](https://rocket.rs/): "Rocket is great with all of the bells and whistles but it's heavy use of macros, while it makes things easy, requires you to jump into the documentation more to look up the correct way to do things."
-    - [Axum][https://docs.rs/axum/latest/axum/] "Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you'd expect. But that is also because how you expect it to work is usually "build the thing yourself or use another crate".
+    - [Axum](https://docs.rs/axum/latest/axum/) "Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you'd expect. But that is also because how you expect it to work is usually "build the thing yourself or use another crate".
         - [Loco](https://loco.rs/) - Loco follows Rails. There, I said it. Rails concepts are carefully adapted to modern Rust development. (I don't like Rails, convention over configuration :@ Try remebering convention after 6 months!)
 - HTML Templating in Rust:
     - [maud](https://maud.lambda.xyz/): light weight macro, Pug like, for writing html templates
