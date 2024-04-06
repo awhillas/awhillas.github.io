@@ -10,10 +10,10 @@ Category: Software Engineering
 
 I realised that if I'm going to the hypermedia route I'm going to be doing a lot of backend again like the good old days. It also occurred to me that FastAPI is not really optimised for hypermedia but instead JSON APIs. So ether I go back to [Flask](https://flask.palletsprojects.com/) or [Django](https://www.djangoproject.com/), but Django is very heave and mainly for setups with a database as the main driver of the content. I'm mainly using the file system(s), until I have to start to manage logins that is, which I should perhaps just think about from the begging since collaboration is going to be a big part of Headspace.
 
-By hypermedia doesn't care what your backend is written in so I was flirting with the idea of using Rust?
+By hypermedia doesn't care what your backend is written in so I was flirting with the idea of using Rust? Most of these opinions I git from [a Reddit post](https://www.reddit.com/r/rust/comments/18ogwtl/which_web_framework_do_you_use_in_rust/).
 
 - Rust web frameworks:
-    - [Poem](https://docs.rs/poem/latest/poem/) which doesn't look straight forward.
+    - [Poem](https://docs.rs/poem/latest/poem/): "sits somewhere between a focused micro-framework and a full-featured "batteries included" framework. I like the API design, it uses strong typing well to increase correctness and ergonomics, but without getting too crazy to keep things simple." & "it just doesn't get enough love and fast enough bugfixes" also "hard-to-google name"
     - [Rocket](https://rocket.rs/): "Rocket is great with all of the bells and whistles but it's heavy use of macros, while it makes things easy, requires you to jump into the documentation more to look up the correct way to do things."
     - [Axum][https://docs.rs/axum/latest/axum/] "Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you'd expect. But that is also because how you expect it to work is usually "build the thing yourself or use another crate".
         - [Loco](https://loco.rs/) - Loco follows Rails. There, I said it. Rails concepts are carefully adapted to modern Rust development. (I don't like Rails, convention over configuration :@ Try remebering convention after 6 months!)
