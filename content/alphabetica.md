@@ -3,7 +3,7 @@ Title: Phonetica Game Dev Log
 slug: reading-video-game-dev-log
 summary: A new game I'm working on to help kids learn to read by sounding out words.
 date: 2023-06-11
-Modified: 2023-09-27
+Modified: 2025-11-25
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
