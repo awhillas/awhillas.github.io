@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>    AWS on the Cheap(ish)
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="https://alexander.whillas.com/theme/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM Fell English">
+        <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/cid.css">
+        <link rel="stylesheet" href="https://alexander.whillas.com/theme/css/highlight.css">
+        <link href="https://alexander.whillas.com/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Alexander Whillas Atom Feed" />
+        <link href="https://alexander.whillas.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Alexander Whillas RSS Feed" />
+
+        <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8WYQX7V0K"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V8WYQX7V0K');
+        </script>
+    </head>
+    <body hx-boost="true">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="container">
+
+<header class="blog-header">
+    <h1><a href="https://alexander.whillas.com">Alexander Whillas</a></h1>
+    <p></p>
+    <nav>
+        <a href="https://alexander.whillas.com/">INDEX</a>
+        <a href="https://alexander.whillas.com/archives">ARCHIVES</a>
+        <a href="https://alexander.whillas.com/categories">CATEGORIES</a>
+    </nav>
+</header>
+
+    <div class="post">
+
+        <header>
+            <h1>AWS on the Cheap(ish)</h1>
+
+            <p class="date">Started
+                <em><time datetime="2024-05-06T00:00:00+12:00">May 06, 2024</time></em>
+; Updated
+                    <em>May 20, 2024
+</em></p>
+        </header>
+
+        <article>
+            <p><strong>TL;DR</strong>: You can&rsquo;t do a dynamic website on AWS on the cheap. I op&rsquo;ed for a K3s cluster on a Raspberry Pi instead on my local network. Cheap and I can scape it up if the projects go anywhere as it will not require much compute or storage.</p>
+<h1>AWS on the Cheap(ish), A Journey</h1>
+<p>Since Heroku is was bought by Salesforce, I&rsquo;ve been looking for a new place to host my side projects. Surely in the age of the cloud it must be cheaper than ever to host a small web app, right? This is my experiment in deploying to AWS for as little as possible in the hopes of keeping the web weird.</p>
+<h2>But why a &ldquo;journey&rdquo;?</h2>
+<p>Well i thought it might be useful to people to see my decision processes instead of just the final result. This might be useful to junior engineers and training LLMs. Why do I care about the latter? I guess I realise that the future is LLMs and I hope they get better.</p>
+<h2>Approach 1: ECS with Fargate</h2>
+<p>So my first attempt was using ECS with Fargate deployments and an application load balancer (ALB). This was a bit of a disaster. The ALB alone was going to cost me $20 a month! Its not wonder they are featured in every ECS example setup you find. <em>EVERYONE SINGLE ONE</em>. But they are completely unnecessary. The ECS service, which is a rip off of Kubernetes does exactly the same thing. So the hard part was figuring how to point a Route 53 domain to an ECS service.</p>
+<p>I found Aidan Steele&rsquo;s blog post <a href="https://awsteele.com/blog/2022/10/15/cheap-serverless-containers-using-api-gateway.html">Cheap serverless containers using API Gateway</a> which is genius (he even suggests Fargate spot instances for even cheaper deployments)! &hellip;if not unfortunate in that he outlines the whole setup in a CloudFormation template. I&rsquo;m not a fan of CloudFormation. I prefer CDK. So I set out to replicate his setup in CDK.</p>
+<p>But CDK is tedious! Thank god for LLMs! They can convert a CloudFormation template to CDK code. I have 4 at my disposal but which one(s) should I choose. I don&rsquo;t have all day and based on the <a href="https://evalplus.github.io/leaderboard.html">EvalPlus Leaderboard</a> and <a href="https://huggingface.co/spaces/mike-ravkine/can-ai-code-results">CanAiCode Leaderboard</a> (at this time 20/5/24) GPT-4-Turbo (April 2024) and <a href="https://www.meta.ai/">CodeLlama-Instruct</a> respectively are the bast at this point in time. Given that OpenAI seems to be the best most of the time (somehow) and Meta just finished training their latest Llama 3 model its what I&rsquo;d expect. Actually, GPT-4o is just out and supposedly better, faster and cheaprer than vanilla GPT-4 I&rsquo;ll use that one instead.</p>
+<h3>The prompts</h3>
+<p>Here are the prompts I gave to the LLMs:</p>
+<h4>The infrastructure stack</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">I</span> <span class="n">need</span> <span class="n">a</span> <span class="n">CDKv2</span> <span class="n">stack</span><span class="p">,</span> <span class="n">written</span> <span class="ow">in</span> <span class="n">python</span><span class="p">,</span> <span class="n">that</span> <span class="n">sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">infrastructure</span> <span class="k">for</span> <span class="n">a</span> <span class="n">second</span> <span class="n">stack</span><span class="o">.</span> <span class="n">This</span> <span class="n">first</span> <span class="n">stack</span> <span class="n">should</span><span class="p">:</span>
+
+<span class="o">-</span> <span class="n">A</span> <span class="n">VPC</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">associated</span> <span class="n">subnets</span><span class="p">,</span> <span class="n">route</span> <span class="n">tables</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">A</span> <span class="n">Route</span> <span class="mi">53</span> <span class="n">hosted</span> <span class="n">zone</span> <span class="k">for</span> <span class="n">your</span> <span class="n">DNS</span> <span class="n">records</span>
+<span class="o">-</span> <span class="n">An</span> <span class="n">ACM</span><span class="o">-</span><span class="n">managed</span> <span class="n">TLS</span> <span class="n">certificate</span> <span class="p">(</span><span class="n">used</span> <span class="n">by</span> <span class="n">API</span> <span class="n">Gateway</span> <span class="n">later</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">An</span> <span class="n">API</span> <span class="n">Gateway</span> <span class="n">VPC</span> <span class="n">Link</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">security</span> <span class="n">group</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">how</span> <span class="n">API</span> <span class="n">GW</span> <span class="err">“</span><span class="n">reaches</span> <span class="ow">in</span><span class="err">”</span> <span class="n">to</span> <span class="n">the</span> <span class="n">container</span> <span class="n">running</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">VPC</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">A</span> <span class="n">Cloud</span> <span class="n">Map</span> <span class="n">namespace</span><span class="o">.</span>
+
+<span class="n">Import</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">VPC_ID</span><span class="p">,</span> <span class="ow">and</span> <span class="n">HOSTED_ZONE_ID</span> <span class="ow">and</span> <span class="n">use</span> <span class="n">them</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">createing</span> <span class="n">a</span> <span class="n">VPC</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">new</span> <span class="n">hosted</span> <span class="n">zone</span><span class="o">.</span>
+</code></pre></div></td></tr></table></div>
+
+<h1>The project stack</h1>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">Create</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="nx">stack</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">passed</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">infrastructure</span><span class="w"> </span><span class="nx">stack</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">deploy</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">containerized</span><span class="w"> </span><span class="nx">web</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="nx">stack</span><span class="w"> </span><span class="nx">contains</span><span class="w"> </span><span class="nx">everything</span><span class="w"> </span><span class="nx">specific</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">single</span><span class="w"> </span><span class="nx">application</span><span class="w"> </span><span class="nx">hosted</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">example</span><span class="p">.</span><span class="nx">com</span><span class="p">.</span><span class="w"> </span><span class="nx">You</span><span class="w"> </span><span class="nx">would</span><span class="w"> </span><span class="nx">deploy</span><span class="w"> </span><span class="nx">multiple</span><span class="w"> </span><span class="nx">stacks</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">template</span><span class="p">,</span><span class="w"> </span><span class="nx">one</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">each</span><span class="w"> </span><span class="nx">serverless</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">developed</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="nx">contains</span><span class="p">:</span>
+
+<span class="o">-</span><span class="w"> </span><span class="nx">An</span><span class="w"> </span><span class="nx">ECS</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="nx">definition</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">IAM</span><span class="w"> </span><span class="nx">roles</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">ECS</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="nx">definition</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="nx">CloudMap</span><span class="w"> </span><span class="nx">service</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">holds</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">addresses</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">running</span><span class="w"> </span><span class="nx">containers</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">An</span><span class="w"> </span><span class="nx">ECS</span><span class="w"> </span><span class="nx">service</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">runs</span><span class="w"> </span><span class="nx">one</span><span class="w"> </span><span class="nx">copy</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">registers</span><span class="o">/</span><span class="nx">deregisters</span><span class="w"> </span><span class="nx">Fargate</span><span class="w"> </span><span class="nx">IPs</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">CloudMap</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="nx">when</span><span class="w"> </span><span class="nx">tasks</span><span class="w"> </span><span class="nx">start</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">stop</span><span class="p">.</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="nx">security</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">ECS</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="nx">allows</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">VPC</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">make</span><span class="w"> </span><span class="nx">requests</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">it</span><span class="p">.</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">An</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">gateway</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">forwards</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">requests</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">CloudMap</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="nx">via</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">VPC</span><span class="w"> </span><span class="nx">link</span><span class="p">.</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">An</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">Gateway</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">mapping</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">Route</span><span class="w"> </span><span class="mi">53</span><span class="w"> </span><span class="nx">record</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">make</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">accessible</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">my</span><span class="o">-</span><span class="nx">app</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">com</span><span class="p">.</span>
+
+<span class="nx">Note</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">ECS</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="nx">definition</span><span class="w"> </span><span class="nx">contains</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">health</span><span class="w"> </span><span class="nx">check</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">because</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">Gateway</span><span class="w"> </span><span class="nx">itself</span><span class="w"> </span><span class="nx">doesn</span><span class="err">’</span><span class="nx">t</span><span class="w"> </span><span class="nx">perform</span><span class="w"> </span><span class="nx">health</span><span class="p">,</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">ECS</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">curl</span><span class="w"> </span><span class="nx">inside</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span>
+</code></pre></div></td></tr></table></div>
+
+<h2>Results: Too hard</h2>
+<p>I gave up. This is to esoteric and if it breaks I have no way to change or improve it. CDK has become almost as complicatd as the thing its trying to replace i.e. CloudFormation. I&rsquo;m going to try a different approach.</p>
+<p>Now that I think of it I really don&rsquo;t need this infrastructure-as-code thing right now. Since its a tiny side project I&rsquo;m going to fight my instincts to do it the enterprise way and do the opposite:</p>
+<ul>
+<li>EC2 instance I&rsquo;m setting up and running by hand. I just need something up and running fast and cheap.</li>
+<li>K3s to deploy with.</li>
+<li>I find k8s YAML much easier to understand than CDK or CloudFormation even after coming back to it after a couple of years.</li>
+<li>There are also waaaay more examples out there.</li>
+<li>Need something to restart the containers if they fall over.</li>
+<li>I prefer it to Docker as you can do ingress routing based on domain name which i want to do as I&rsquo;ll deploy multiple (side projects) apps to the same cluster.</li>
+</ul>
+<p>So starting with <a href="https://subbaramireddyk.medium.com/k3s-cluster-on-aws-ec2-206893ab968a">K3s Cluster on AWS EC2</a>. Which worked like a charm (after an unmentioed reboot).</p>
+<h3>Perfect Django Dockerfile</h3>
+<p>Next step is to containerize my Django app. There was a <a href="https://www.reddit.com/r/django/comments/njt7b3/the_perfect_python_dockerfile_better_performance/">conversation on the django subreddit</a> about exactly this &ldquo;3y ago&rdquo;. On that thread I found this <a href="https://github.com/nickjj/docker-django-example/blob/main/Dockerfile">Dockerfile</a> which makes a good starting point (the forst half is building the frontend framework, which I&rsquo;m not doing). So here is my version of it:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.9-slim-bookworm</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">app</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="k">ARG</span><span class="w"> </span><span class="nv">UID</span><span class="o">=</span><span class="m">1000</span>
+<span class="k">ARG</span><span class="w"> </span><span class="nv">GID</span><span class="o">=</span><span class="m">1000</span>
+
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>build-essential<span class="w"> </span>curl<span class="w"> </span>libpq-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w"> </span>/usr/share/doc<span class="w"> </span>/usr/share/man<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>clean<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>groupadd<span class="w"> </span>-g<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>python<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>useradd<span class="w"> </span>--create-home<span class="w"> </span>--no-log-init<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">UID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-g<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>python<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/public_collected<span class="w"> </span>public<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>chown<span class="w"> </span>python:python<span class="w"> </span>-R<span class="w"> </span>/public_collected<span class="w"> </span>/app
+
+<span class="k">USER</span><span class="w"> </span><span class="s">python</span>
+
+<span class="k">COPY</span><span class="w"> </span>--chown<span class="o">=</span>python:python<span class="w"> </span>requirements.txt<span class="w"> </span>./
+
+<span class="k">RUN</span><span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>--no-warn-script-location<span class="w"> </span>--no-cache-dir<span class="w"> </span>--user<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="k">ARG</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DEBUG</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">:/home/python/.local/bin&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">USER</span><span class="o">=</span><span class="s2">&quot;python&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="s2">&quot;config.production&quot;</span>
+
+<span class="k">COPY</span><span class="w"> </span>--chown<span class="o">=</span>python:python<span class="w"> </span>.<span class="w"> </span>.
+
+<span class="k">RUN</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DEBUG</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;false&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--no-input<span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/app/public_collected<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">5555</span>
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gunicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:5555&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--worker-tmp-dir&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/dev/shm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mindikatta.wsgi&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+
+<p>which I had to remove all the special user stuff as k3s was bugging out with write permissions to the volume if it wasn&rsquo;t root. So</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.9-slim-bookworm</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">app</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>build-essential<span class="w"> </span>curl<span class="w"> </span>libpq-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w"> </span>/usr/share/doc<span class="w"> </span>/usr/share/man<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>clean
+
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>./
+
+<span class="k">RUN</span><span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="k">ARG</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DEBUG</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">:/home/python/.local/bin&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="s2">&quot;config.production&quot;</span>
+
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gunicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:3000&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-w&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--worker-tmp-dir&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/dev/shm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mindikatta.wsgi&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+
+<p>So much simpler!</p>
+<h3>k3s deployment</h3>
+<p>So I have a nice containerized Django app. Now I need to deploy it to my k3s cluster. Tricky parts are I need to make the ingress to the app only happen for a certain domain name. Also need to put the database connection string in a secret. I&rsquo;ll start with the secret.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-database-secret</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="nt">stringData</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">database_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;postgres://&lt;username&gt;:&lt;password&gt;@&lt;location&gt;:5432/postgres&quot;</span>
+</code></pre></div></td></tr></table></div>
+
+<p>Also need to create a secret so k3s can access a private image on docker hub. Just do this using the kubectl command line.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>dockerreg<span class="w"> </span>--docker-server<span class="o">=</span>docker.io<span class="w"> </span>--docker-username<span class="o">=</span>someone<span class="w"> </span>--docker-password<span class="o">=</span>a_password<span class="w"> </span>--docker-email<span class="o">=</span>somebody@example.com<span class="w"> </span>--namespace<span class="w"> </span>myapp
+</code></pre></div></td></tr></table></div>
+
+<p>Finally the deployment that pulls the image to make the pod, the service and sets up the ingress.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">someone/myapp</span>
+<span class="w">          </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span>
+<span class="w">          </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-service</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-service</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5555-80&quot;</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5555</span>
+<span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">sessionAffinity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span>
+<span class="nt">status</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">loadBalancer</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-ingress</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ingress.kubernetes.io/ssl-redirect</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp.example.com</span>
+<span class="w">      </span><span class="nt">http</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">service</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-service</span>
+<span class="w">                </span><span class="nt">port</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5555</span>
+</code></pre></div></td></tr></table></div>
+
+<p>AAAAAAAAAAAAAAAAnd, it doesn&rsquo;t work 😬</p>
+<p>Getting 502 Bad Gateway. After scratching my head for 48 hours I did a search for &ldquo;k8s Django deployment&rdquo; and found this heavenly repo <a href="https://github.com/mukulmantosh/django-kubernetes/tree/main">django-kubernetes</a> 👼 Trick is to stick an <code>ngix</code> in front of the <code>gunicorn</code>. Even has jobs to run to do the collect static assets!</p>
+        </article>
+
+        <footer>
+            <p>This entry is posted in:
+                    <a href="https://alexander.whillas.com/category/software-engineering.html">Software Engineering</a>, 
+                    <a href="https://alexander.whillas.com/category/web-development.html">Web Development</a>
+            </p>
+        </footer>
+
+
+    </div>
+
+
+<footer class="blog-footer">
+
+    <ul class="nav">
+            <li><a href="https://twitter.com/awhillas">Twitter</a></li>
+            <li><a href="https://github.com/awhillas">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/whillas/">Linkedin</a></li>
+        <li><a rel="me" href="https://mastodon.social/@whillas">Mastodon</a></li>
+    </ul>
+
+    <p class="disclaimer">
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.<br />
+    <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+    </p>
+
+</footer>
+            </div>
+    </body>
+</html>

@@ -60,12 +60,12 @@
         <article>
             <h1>6th April, 2024 - My Kingdom for a Hypermedia backend!</h1>
 <p>I realised that if I&rsquo;m going to the hypermedia route I&rsquo;m going to be doing a lot of backend again like the good old days. It also occurred to me that FastAPI is not really optimised for hypermedia but instead JSON APIs. So ether I go back to <a href="https://flask.palletsprojects.com/">Flask</a> or <a href="https://www.djangoproject.com/">Django</a>, but Django is very heave and mainly for setups with a database as the main driver of the content. I&rsquo;m mainly using the file system(s), until I have to start to manage logins that is, which I should perhaps just think about from the begging since collaboration is going to be a big part of Headspace.</p>
-<p>By hypermedia doesn&rsquo;t care what your backend is written in so I was flirting with the idea of using Rust?</p>
+<p>By hypermedia doesn&rsquo;t care what your backend is written in so I was flirting with the idea of using Rust? Most of these opinions I git from <a href="https://www.reddit.com/r/rust/comments/18ogwtl/which_web_framework_do_you_use_in_rust/">a Reddit post</a>.</p>
 <ul>
 <li>Rust web frameworks:<ul>
-<li><a href="https://docs.rs/poem/latest/poem/">Poem</a> which doesn&rsquo;t look straight forward.</li>
+<li><a href="https://docs.rs/poem/latest/poem/">Poem</a>: &ldquo;sits somewhere between a focused micro-framework and a full-featured &ldquo;batteries included&rdquo; framework. I like the API design, it uses strong typing well to increase correctness and ergonomics, but without getting too crazy to keep things simple.&rdquo; &amp; &ldquo;it just doesn&rsquo;t get enough love and fast enough bugfixes&rdquo; also &ldquo;hard-to-google name&rdquo;</li>
 <li><a href="https://rocket.rs/">Rocket</a>: &ldquo;Rocket is great with all of the bells and whistles but it&rsquo;s heavy use of macros, while it makes things easy, requires you to jump into the documentation more to look up the correct way to do things.&rdquo;</li>
-<li>[Axum][https://docs.rs/axum/latest/axum/] &ldquo;Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you&rsquo;d expect. But that is also because how you expect it to work is usually &ldquo;build the thing yourself or use another crate&rdquo;.<ul>
+<li><a href="https://docs.rs/axum/latest/axum/">Axum</a> &ldquo;Axum is light and flexible, you can usually guess correctly how to do things without popping into the docs too often because it just works how you&rsquo;d expect. But that is also because how you expect it to work is usually &ldquo;build the thing yourself or use another crate&rdquo;.<ul>
 <li><a href="https://loco.rs/">Loco</a> - Loco follows Rails. There, I said it. Rails concepts are carefully adapted to modern Rust development. (I don&rsquo;t like Rails, convention over configuration :@ Try remebering convention after 6 months!)</li>
 </ul>
 </li>
@@ -78,6 +78,9 @@
 </li>
 </ul>
 <p>But I&rsquo;m kidding myself. Using Rust for this will just slow me down&hellip; Flask it is&hellip;</p>
+<p>After much consideration I&rsquo;m going to use <a href="https://github.com/candidtim/cookiecutter-flask-minimal/tree/master">cookiecutter-flask-minimal</a> template to start the project. <a href="https://github.com/microsoft/cookiecutter-python-flask-clean-architecture">cookiecutter-python-flask-clean-architecture</a> from Micro$oft looked interesting but I&rsquo;m not sure I want to spend more time on the Onion Architecture and&hellip; well its Micro$oft.</p>
+<p>Useful Flask resources:
+- <a href="https://www.trackawesomelist.com/mjhea0/awesome-flask/readme/">Awesome Flask</a> just an up-to-date list of useful Flask stuff</p>
 <h2>Now using htmx Boosting</h2>
 <p>So if you include the htmx CDN file in your page and then turn bosting by putting <code>hx-boost="true"</code> in the body tag of your page all the links on you page go AJaX and your page body is swapped out instead of a page reload. No extra work required!</p>
 <h1>4th April, 2024 - The revolution is televised</h1>

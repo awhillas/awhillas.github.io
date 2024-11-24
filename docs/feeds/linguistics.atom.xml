@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Linguistics</title><link href="https://alexander.whillas.com/" rel="alternate"></link><link href="https://alexander.whillas.com/feeds/linguistics.atom.xml" rel="self"></link><id>https://alexander.whillas.com/</id><updated>2023-09-27T00:00:00+13:00</updated><entry><title>Phonetica Game Dev Log</title><link href="https://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-09-27T00:00:00+13:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read by sounding out words.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;27 September, 2023 - WASM is a dead end?&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alexander Whillas - Linguistics</title><link href="https://alexander.whillas.com/" rel="alternate"></link><link href="https://alexander.whillas.com/feeds/linguistics.atom.xml" rel="self"></link><id>https://alexander.whillas.com/</id><updated>2023-09-27T00:00:00+13:00</updated><entry><title>Phonetica Game Dev Log</title><link href="https://alexander.whillas.com/reading-video-game-dev-log.html" rel="alternate"></link><published>2023-06-11T00:00:00+12:00</published><updated>2023-09-27T00:00:00+13:00</updated><author><name>Alexander Whillas</name></author><id>tag:alexander.whillas.com,2023-06-11:/reading-video-game-dev-log.html</id><summary type="html">&lt;p&gt;A new game I&amp;rsquo;m working on to help kids learn to read by sounding out words.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;24 November, 2024 - The fire is not out&lt;/h2&gt;
+&lt;p&gt;So I&amp;rsquo;m thinking of trying to get this going again. The motivation is my son who needs help with his reading. He hates reading right now. I think he is just not confident in his ability to sound out words. I think this game could help him with that. I&amp;rsquo;m going to try and get it going again.&lt;/p&gt;
+&lt;h3&gt;2D Web Game Frameworks&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;m not going to try and complicate things with Rust or WASM. I&amp;rsquo;m going to try and use a 2D web game framework. First some research:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.pixijs.com/"&gt;PixiJS&lt;/a&gt; 456 contributors, 44k stars&lt;ul&gt;
+&lt;li&gt;PROS: Fast; Open source; WebGL renderer.&lt;/li&gt;
+&lt;li&gt;CONS: No physics engine (but can &lt;a href="https://www.html5gamedevs.com/topic/43673-physics-library/#comment-244642"&gt;integrate with one&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://phaser.io/"&gt;Phaser&lt;/a&gt; 573 contributors, 37k stars&lt;ul&gt;
+&lt;li&gt;PROS: Popular; Open source; Basic physics engine.&lt;/li&gt;
+&lt;li&gt;CONS: 30-day trial for free version; And limited functionality in free version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.babylonjs.com/"&gt;BabylonJS&lt;/a&gt; 533 contributors, 23.3k stars
+    CONS: 3D engine&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://melonjs.org/"&gt;MelonJS&lt;/a&gt; 231 contributors, 5.9k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://craftyjs.com/"&gt;Crafty&lt;/a&gt; 106 contributors, 3.4k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.createjs.com/easeljs"&gt;EaselJS&lt;/a&gt; 47 contributors, 8.1k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://straker.github.io/kontra/"&gt;Kontra&lt;/a&gt; 37 contributors, 978 stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://impactjs.com/"&gt;Impact&lt;/a&gt; 5 contributors, 2k stars&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think I&amp;rsquo;ll go with PixiJS as it seems to be the most popular and has the second most contributors. Its also fully open source and has a WebGL renderer. I&amp;rsquo;ll need to find a physics engine to integrate with it.&lt;/p&gt;
+&lt;h2&gt;27 September, 2023 - WASM is a dead end?&lt;/h2&gt;
 &lt;p&gt;SO there are some limitations with WASM the main one being it can&amp;rsquo;t access external assets directly. After doing a Rust to WASM tutorial for making Game of Life I realise that to get it to work with all the resources is going to require a lot of custom JavaScript. It might be better to try and compile for iOS and Android separately.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m kind of demoralised by this setback. I shelve this project for now. I might try and use Rust to do some MLOps and build a SaaS service, get some experience with Rust and then come back to this.&lt;/p&gt;
 &lt;p&gt;I thought there would be some easy low hanging fruit in developing educational games but the gatekeeping on iOS and Android is very off putting and I can see why the market is limited at the moment.&lt;/p&gt;

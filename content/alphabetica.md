@@ -7,6 +7,30 @@ Modified: 2023-09-27
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
+## 24 November, 2024 - The fire is not out
+
+So I'm thinking of trying to get this going again. The motivation is my son who needs help with his reading. He hates reading right now. I think he is just not confident in his ability to sound out words. I think this game could help him with that. I'm going to try and get it going again.
+
+### 2D Web Game Frameworks
+
+I'm not going to try and complicate things with Rust or WASM. I'm going to try and use a 2D web game framework. First some research:
+
+- [PixiJS](https://www.pixijs.com/) 456 contributors, 44k stars
+    - PROS: Fast; Open source; WebGL renderer.
+    - CONS: No physics engine (but can [integrate with one](https://www.html5gamedevs.com/topic/43673-physics-library/#comment-244642))
+- [Phaser](https://phaser.io/) 573 contributors, 37k stars
+    - PROS: Popular; Open source; Basic physics engine.
+    - CONS: 30-day trial for free version; And limited functionality in free version.
+- [BabylonJS](https://www.babylonjs.com/) 533 contributors, 23.3k stars
+    CONS: 3D engine
+- [MelonJS](https://melonjs.org/) 231 contributors, 5.9k stars
+- [Crafty](https://craftyjs.com/) 106 contributors, 3.4k stars
+- [EaselJS](https://www.createjs.com/easeljs) 47 contributors, 8.1k stars
+- [Kontra](https://straker.github.io/kontra/) 37 contributors, 978 stars
+- [Impact](https://impactjs.com/) 5 contributors, 2k stars
+
+I think I'll go with PixiJS as it seems to be the most popular and has the second most contributors. Its also fully open source and has a WebGL renderer. I'll need to find a physics engine to integrate with it.
+
 ## 27 September, 2023 - WASM is a dead end?
 
 SO there are some limitations with WASM the main one being it can't access external assets directly. After doing a Rust to WASM tutorial for making Game of Life I realise that to get it to work with all the resources is going to require a lot of custom JavaScript. It might be better to try and compile for iOS and Android separately.

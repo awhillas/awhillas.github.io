@@ -58,7 +58,31 @@
         </header>
 
         <article>
-            <h2>27 September, 2023 - WASM is a dead end?</h2>
+            <h2>24 November, 2024 - The fire is not out</h2>
+<p>So I&rsquo;m thinking of trying to get this going again. The motivation is my son who needs help with his reading. He hates reading right now. I think he is just not confident in his ability to sound out words. I think this game could help him with that. I&rsquo;m going to try and get it going again.</p>
+<h3>2D Web Game Frameworks</h3>
+<p>I&rsquo;m not going to try and complicate things with Rust or WASM. I&rsquo;m going to try and use a 2D web game framework. First some research:</p>
+<ul>
+<li><a href="https://www.pixijs.com/">PixiJS</a> 456 contributors, 44k stars<ul>
+<li>PROS: Fast; Open source; WebGL renderer.</li>
+<li>CONS: No physics engine (but can <a href="https://www.html5gamedevs.com/topic/43673-physics-library/#comment-244642">integrate with one</a>)</li>
+</ul>
+</li>
+<li><a href="https://phaser.io/">Phaser</a> 573 contributors, 37k stars<ul>
+<li>PROS: Popular; Open source; Basic physics engine.</li>
+<li>CONS: 30-day trial for free version; And limited functionality in free version.</li>
+</ul>
+</li>
+<li><a href="https://www.babylonjs.com/">BabylonJS</a> 533 contributors, 23.3k stars
+    CONS: 3D engine</li>
+<li><a href="https://melonjs.org/">MelonJS</a> 231 contributors, 5.9k stars</li>
+<li><a href="https://craftyjs.com/">Crafty</a> 106 contributors, 3.4k stars</li>
+<li><a href="https://www.createjs.com/easeljs">EaselJS</a> 47 contributors, 8.1k stars</li>
+<li><a href="https://straker.github.io/kontra/">Kontra</a> 37 contributors, 978 stars</li>
+<li><a href="https://impactjs.com/">Impact</a> 5 contributors, 2k stars</li>
+</ul>
+<p>I think I&rsquo;ll go with PixiJS as it seems to be the most popular and has the second most contributors. Its also fully open source and has a WebGL renderer. I&rsquo;ll need to find a physics engine to integrate with it.</p>
+<h2>27 September, 2023 - WASM is a dead end?</h2>
 <p>SO there are some limitations with WASM the main one being it can&rsquo;t access external assets directly. After doing a Rust to WASM tutorial for making Game of Life I realise that to get it to work with all the resources is going to require a lot of custom JavaScript. It might be better to try and compile for iOS and Android separately.</p>
 <p>I&rsquo;m kind of demoralised by this setback. I shelve this project for now. I might try and use Rust to do some MLOps and build a SaaS service, get some experience with Rust and then come back to this.</p>
 <p>I thought there would be some easy low hanging fruit in developing educational games but the gatekeeping on iOS and Android is very off putting and I can see why the market is limited at the moment.</p>

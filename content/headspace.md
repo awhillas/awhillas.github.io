@@ -23,6 +23,11 @@ By hypermedia doesn't care what your backend is written in so I was flirting wit
 
 But I'm kidding myself. Using Rust for this will just slow me down... Flask it is...
 
+After much consideration I'm going to use [cookiecutter-flask-minimal](https://github.com/candidtim/cookiecutter-flask-minimal/tree/master) template to start the project. [cookiecutter-python-flask-clean-architecture](https://github.com/microsoft/cookiecutter-python-flask-clean-architecture) from Micro$oft looked interesting but I'm not sure I want to spend more time on the Onion Architecture and... well its Micro$oft.
+
+Useful Flask resources:
+- [Awesome Flask](https://www.trackawesomelist.com/mjhea0/awesome-flask/readme/) just an up-to-date list of useful Flask stuff
+
 ## Now using htmx Boosting
 
 So if you include the htmx CDN file in your page and then turn bosting by putting `hx-boost="true"` in the body tag of your page all the links on you page go AJaX and your page body is swapped out instead of a page reload. No extra work required!
