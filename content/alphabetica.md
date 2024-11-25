@@ -7,7 +7,7 @@ Modified: 2025-11-25
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
-## 24 November, 2024 - 2D Physics Engines
+## 25 November, 2024 - 2D Physics Engines
 
 I've been looking into 2D physics engines to use with PixiJS. Turns out I've already experimented with MatterJS. There is an easy way to find the most popular on [Github with a search](https://github.com/topics/physics-engine?l=javascript).
 
