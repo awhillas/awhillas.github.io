@@ -22,6 +22,52 @@ Comparison table in order of activity:
 
 MattterJS is the most popular and has the most contributors. We have a winner!
 
+### MatterJS
+
+Here is an example of combining PixiJS and MatterJS from [stackoverflow](https://stackoverflow.com/a/77436034/196732):
+
+```javascript
+// Matter.js
+
+const engine = Matter.Engine.create();
+const box = Matter.Bodies.rectangle(150, 0, 50, 50); // x y w h
+const ground = Matter.Bodies.rectangle(
+    // x   y    w    h    options
+    200, 200, 400, 120, { isStatic: true }
+);
+const mouseConstraint = Matter.MouseConstraint.create(
+    engine, { element: document.body }
+);
+Matter.Composite.add(engine.world, [box, ground, mouseConstraint]);
+
+// Pixi.js
+
+const app = new PIXI.Application({ width: 640, height: 360 });
+document.body.appendChild(app.view);
+const boxSprite = PIXI.Sprite.from("https://picsum.photos/50/50");
+const groundSprite = PIXI.Sprite.from("https://picsum.photos/400/120");
+boxSprite.anchor.set(0.5, 0.5);
+groundSprite.anchor.set(0.5, 0.5);
+app.stage.addChild(boxSprite);
+app.stage.addChild(groundSprite);
+app.ticker.add((delta) => {
+    // Intergrate the two systems together
+    boxSprite.rotation = box.angle;
+    boxSprite.x = box.position.x;
+    boxSprite.y = box.position.y;
+    groundSprite.x = ground.position.x;
+    groundSprite.y = ground.position.y;
+    Matter.Engine.update(engine, delta * (1000 / 60));
+});
+```
+
+and the CDNs look like
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.2/pixi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+```
+
 ## 24 November, 2024 - 2D Game Web Frameworks
 
 So I'm thinking of trying to get this going again. The motivation is my son who needs help with his reading. He hates reading right now. I think he is just not confident in his ability to sound out words. I think this game could help him with that. I'm going to try and get it going again.
@@ -38,6 +84,9 @@ I'm not going to try and complicate things with Rust or WASM. I'm going to try a
     - CONS: 30-day trial for free version; And limited functionality in free version.
 - [BabylonJS](https://www.babylonjs.com/) 533 contributors, 23.3k stars
     CONS: 3D engine
+- [p5.js](https://p5js.org/) 651 contributors, 21.7k stars
+    - PROS: Open source; Easy to use; Good for beginners; Large community.
+    - CONS: Not a game framework per se.
 
 The rest have too few contributors or stars to be considered.
 

@@ -113,6 +113,79 @@
 </tbody>
 </table>
 <p>MattterJS is the most popular and has the most contributors. We have a winner!</p>
+<h3>MatterJS</h3>
+<p>Here is an example of combining PixiJS and MatterJS from <a href="https://stackoverflow.com/a/77436034/196732">stackoverflow</a>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Matter.js</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Matter</span><span class="p">.</span><span class="nx">Engine</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Matter</span><span class="p">.</span><span class="nx">Bodies</span><span class="p">.</span><span class="nx">rectangle</span><span class="p">(</span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span><span class="w"> </span><span class="c1">// x y w h</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Matter</span><span class="p">.</span><span class="nx">Bodies</span><span class="p">.</span><span class="nx">rectangle</span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// x   y    w    h    options</span>
+<span class="w">    </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">120</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isStatic</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mouseConstraint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Matter</span><span class="p">.</span><span class="nx">MouseConstraint</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">engine</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">element</span><span class="o">:</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+<span class="nx">Matter</span><span class="p">.</span><span class="nx">Composite</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">engine</span><span class="p">.</span><span class="nx">world</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">box</span><span class="p">,</span><span class="w"> </span><span class="nx">ground</span><span class="p">,</span><span class="w"> </span><span class="nx">mouseConstraint</span><span class="p">]);</span>
+
+<span class="c1">// Pixi.js</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PIXI</span><span class="p">.</span><span class="nx">Application</span><span class="p">({</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">640</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">360</span><span class="w"> </span><span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">view</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">boxSprite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PIXI</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="s2">&quot;https://picsum.photos/50/50&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">groundSprite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PIXI</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="s2">&quot;https://picsum.photos/400/120&quot;</span><span class="p">);</span>
+<span class="nx">boxSprite</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="nx">groundSprite</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">boxSprite</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">groundSprite</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ticker</span><span class="p">.</span><span class="nx">add</span><span class="p">((</span><span class="nx">delta</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Intergrate the two systems together</span>
+<span class="w">    </span><span class="nx">boxSprite</span><span class="p">.</span><span class="nx">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">box</span><span class="p">.</span><span class="nx">angle</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">boxSprite</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">box</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">boxSprite</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">box</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">groundSprite</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ground</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">groundSprite</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ground</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">Matter</span><span class="p">.</span><span class="nx">Engine</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">engine</span><span class="p">,</span><span class="w"> </span><span class="nx">delta</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">60</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+
+<p>and the CDNs look like</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.2/pixi.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+
 <h2>24 November, 2024 - 2D Game Web Frameworks</h2>
 <p>So I&rsquo;m thinking of trying to get this going again. The motivation is my son who needs help with his reading. He hates reading right now. I think he is just not confident in his ability to sound out words. I think this game could help him with that. I&rsquo;m going to try and get it going again.</p>
 <h3>2D Web Game Frameworks</h3>
@@ -130,6 +203,11 @@
 </li>
 <li><a href="https://www.babylonjs.com/">BabylonJS</a> 533 contributors, 23.3k stars
     CONS: 3D engine</li>
+<li><a href="https://p5js.org/">p5.js</a> 651 contributors, 21.7k stars<ul>
+<li>PROS: Open source; Easy to use; Good for beginners; Large community.</li>
+<li>CONS: Not a game framework per se.</li>
+</ul>
+</li>
 </ul>
 <p>The rest have too few contributors or stars to be considered.</p>
 <ul>
