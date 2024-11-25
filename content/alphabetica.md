@@ -7,7 +7,22 @@ Modified: 2025-11-25
 Category: Rust, Software Engineering, Game Development, Linguistics
 ---
 
-## 24 November, 2024 - The fire is not out
+## 24 November, 2024 - 2D Physics Engines
+
+I've been looking into 2D physics engines to use with PixiJS. Turns out I've already experimented with MatterJS. There is an easy way to find the most popular on [Github with a search](https://github.com/topics/physics-engine?l=javascript).
+
+Comparison table in order of activity:
+
+| Name | Stars | Contributors | Last Commit | Notes |
+|------|-------|--------------|-------|-------|
+| [MatterJS](https://github.com/liabru/matter-js) | 16.9k | 25 | 5 months ago | Feature rich. Dev. has stopped? |
+| [P2.js](https://schteppe.github.io/p2.js/) | 2.6k | 20 | 6 years ago ||
+| [Chipmunk2D](https://github.com/slembcke/Chipmunk2D/) | 2.2k | 50 | 1 year ago |
+| [box2d.js](https://github.com/kripken/box2d.js/) | 1.3k | 15 | 4 years ago | |
+
+MattterJS is the most popular and has the most contributors. We have a winner!
+
+## 24 November, 2024 - 2D Game Web Frameworks
 
 So I'm thinking of trying to get this going again. The motivation is my son who needs help with his reading. He hates reading right now. I think he is just not confident in his ability to sound out words. I think this game could help him with that. I'm going to try and get it going again.
 
@@ -23,6 +38,9 @@ I'm not going to try and complicate things with Rust or WASM. I'm going to try a
     - CONS: 30-day trial for free version; And limited functionality in free version.
 - [BabylonJS](https://www.babylonjs.com/) 533 contributors, 23.3k stars
     CONS: 3D engine
+
+The rest have too few contributors or stars to be considered.
+
 - [MelonJS](https://melonjs.org/) 231 contributors, 5.9k stars
 - [Crafty](https://craftyjs.com/) 106 contributors, 3.4k stars
 - [EaselJS](https://www.createjs.com/easeljs) 47 contributors, 8.1k stars
